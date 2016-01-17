@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>D</title>
-    <link>http://replace-this-with-your-hugo-site.com/</link>
+    <link>http://dongri.github.io/</link>
     <description>Recent content on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Jan 2016 15:20:15 +0900</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://dongri.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hugo</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2016-01-17-hugo/</link>
+      <link>http://dongri.github.io/post/2016-01-17-hugo/</link>
       <pubDate>Sun, 17 Jan 2016 15:20:15 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2016-01-17-hugo/</guid>
+      <guid>http://dongri.github.io/post/2016-01-17-hugo/</guid>
       <description>&lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
 もともとビルドが遅いmiddlemanそんなに好きではなかったし、いいきっかけたと思って引越しした。いい感じ。&lt;/p&gt;
 
@@ -69,10 +69,10 @@ hogehoge
     
     <item>
       <title>Android Stagefright</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</link>
+      <link>http://dongri.github.io/post/2015-07-28-android-stagefright/</link>
       <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</guid>
+      <guid>http://dongri.github.io/post/2015-07-28-android-stagefright/</guid>
       <description>
 
 &lt;p&gt;詳しいことはこちら。&lt;/p&gt;
@@ -110,10 +110,10 @@ hogehoge
     
     <item>
       <title>Goodbye Heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</link>
+      <link>http://dongri.github.io/post/2015-05-11-goodbye-heroku/</link>
       <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</guid>
+      <guid>http://dongri.github.io/post/2015-05-11-goodbye-heroku/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;
@@ -144,10 +144,10 @@ hogehoge
     
     <item>
       <title>OnePlus One</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</link>
+      <link>http://dongri.github.io/post/2015-04-14-oneplus-one/</link>
       <pubDate>Tue, 14 Apr 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</guid>
+      <guid>http://dongri.github.io/post/2015-04-14-oneplus-one/</guid>
       <description>
 
 &lt;h3 id=&#34;1-bootloader-unlock:fc0cb677d021b8b13df165453b383262&#34;&gt;1. Bootloader Unlock&lt;/h3&gt;
@@ -213,10 +213,10 @@ TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
     
     <item>
       <title>OxygenOS</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</link>
+      <link>http://dongri.github.io/post/2015-04-05-oxygenos/</link>
       <pubDate>Sun, 05 Apr 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</guid>
+      <guid>http://dongri.github.io/post/2015-04-05-oxygenos/</guid>
       <description>
 
 &lt;p&gt;(下に追記あり)&lt;/p&gt;
@@ -299,10 +299,10 @@ $ vim oxygen_1.0.0_flashable.md5
     
     <item>
       <title>Ghost On Heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</link>
+      <link>http://dongri.github.io/post/2015-02-17-ghost-on-heroku/</link>
       <pubDate>Tue, 17 Feb 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</guid>
+      <guid>http://dongri.github.io/post/2015-02-17-ghost-on-heroku/</guid>
       <description>
 
 &lt;p&gt;Ghostをherokuにデプロイしてみた。&lt;/p&gt;
@@ -412,10 +412,10 @@ Ghost is running in development...
     
     <item>
       <title>Google OAuth2</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-16-google-oauth2/</link>
+      <link>http://dongri.github.io/post/2015-02-16-google-oauth2/</link>
       <pubDate>Mon, 16 Feb 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-16-google-oauth2/</guid>
+      <guid>http://dongri.github.io/post/2015-02-16-google-oauth2/</guid>
       <description>
 
 &lt;p&gt;Google OAuth2のトークンを手動で取得メモ。通常はWebアプリはブラウザで取得してトークンとか保存すればいいのだが、
@@ -490,10 +490,10 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
     
     <item>
       <title>new vs make</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-09-new-vs-make/</link>
+      <link>http://dongri.github.io/post/2015-02-09-new-vs-make/</link>
       <pubDate>Mon, 09 Feb 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-09-new-vs-make/</guid>
+      <guid>http://dongri.github.io/post/2015-02-09-new-vs-make/</guid>
       <description>
 
 &lt;h2 id=&#34;new:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;new&lt;/h2&gt;
@@ -558,10 +558,10 @@ func main() {
     
     <item>
       <title>Birthday</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-03-birthday/</link>
+      <link>http://dongri.github.io/post/2015-02-03-birthday/</link>
       <pubDate>Tue, 03 Feb 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-03-birthday/</guid>
+      <guid>http://dongri.github.io/post/2015-02-03-birthday/</guid>
       <description>&lt;p&gt;先月にFacebookの誕生日をOnly Meに設定して、誰も知らないように設定したのが始まり。&lt;/p&gt;
 
 &lt;p&gt;今までは誕生日になると一日中、Facebookの友達から「誕生日おめでとう！」「Happy Birthday!」「생일축하해요」などのメッセージでnotificationが止まらない。
@@ -584,10 +584,10 @@ Google+から「생일이에요? 축하해요」だったり、とにかく意�
     
     <item>
       <title>GHOST (CVE-2015-0235)</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-28-ghost-cve-2015-0235/</link>
+      <link>http://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/</link>
       <pubDate>Wed, 28 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-28-ghost-cve-2015-0235/</guid>
+      <guid>http://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/</guid>
       <description>
 
 &lt;p&gt;クラウドセキュリティ企業Qualysの研究者が、Linux GNU Cライブラリ（glibc）に深刻なセキュリティホールである「GHOST」（CVE-2015-0235）を発見したらしい。&lt;/p&gt;
@@ -681,10 +681,10 @@ $
     
     <item>
       <title>Carthage</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</link>
+      <link>http://dongri.github.io/post/2015-01-15-carthage/</link>
       <pubDate>Thu, 15 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</guid>
+      <guid>http://dongri.github.io/post/2015-01-15-carthage/</guid>
       <description>
 
 &lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
@@ -757,10 +757,10 @@ $ git push origin v0.1.0
     
     <item>
       <title>Migrating to Cedar-14 Stack</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</link>
+      <link>http://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</link>
       <pubDate>Sat, 10 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
+      <guid>http://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
       <description>&lt;p&gt;bamboo-mri-1.9.2 stack 下岗了。&lt;/p&gt;
 
 &lt;p&gt;Migrating to the Celadon Cedar-14 Stack&lt;/p&gt;
@@ -779,10 +779,10 @@ $ git push heroku master
     
     <item>
       <title>Revel on Heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</link>
+      <link>http://dongri.github.io/post/2014-12-11-revel-on-heroku/</link>
       <pubDate>Thu, 11 Dec 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</guid>
+      <guid>http://dongri.github.io/post/2014-12-11-revel-on-heroku/</guid>
       <description>
 
 &lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
@@ -841,10 +841,10 @@ $ git push origin master
     
     <item>
       <title>Docker Commands</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-29-docker-commands/</link>
+      <link>http://dongri.github.io/post/2014-11-29-docker-commands/</link>
       <pubDate>Sat, 29 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-29-docker-commands/</guid>
+      <guid>http://dongri.github.io/post/2014-11-29-docker-commands/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Installing Docker on Mac OS X&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1350,10 +1350,10 @@ $ docker stop 108233ba9a1d
     
     <item>
       <title>github multiple accounts</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-18-github-multiple-accounts/</link>
+      <link>http://dongri.github.io/post/2014-11-18-github-multiple-accounts/</link>
       <pubDate>Tue, 18 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-18-github-multiple-accounts/</guid>
+      <guid>http://dongri.github.io/post/2014-11-18-github-multiple-accounts/</guid>
       <description>
 
 &lt;p&gt;ある事情により、githubに公開アカウントと秘密アカウントが必要になって、複数のアカウントを扱うようになりました。&lt;/p&gt;

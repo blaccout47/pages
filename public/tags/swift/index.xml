@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Swift on D</title>
-    <link>http://replace-this-with-your-hugo-site.com/tags/swift/</link>
+    <link>http://dongri.github.io/tags/swift/</link>
     <description>Recent content in Swift on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Jan 2015 11:28:57 +0900</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://dongri.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Carthage</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</link>
+      <link>http://dongri.github.io/post/2015-01-15-carthage/</link>
       <pubDate>Thu, 15 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</guid>
+      <guid>http://dongri.github.io/post/2015-01-15-carthage/</guid>
       <description>
 
 &lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
@@ -87,10 +87,10 @@ $ git push origin v0.1.0
     
     <item>
       <title>OAuthSwift</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-06-29-oauthswift/</link>
+      <link>http://dongri.github.io/post/2014-06-29-oauthswift/</link>
       <pubDate>Sun, 29 Jun 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-06-29-oauthswift/</guid>
+      <guid>http://dongri.github.io/post/2014-06-29-oauthswift/</guid>
       <description>
 
 &lt;p&gt;先日社内SwiftハッカソンでFlickrのPrivate写真を見せるアプリを作ろうとしたところ、

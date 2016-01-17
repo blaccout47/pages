@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on D</title>
-    <link>http://replace-this-with-your-hugo-site.com/tags/android/</link>
+    <link>http://dongri.github.io/tags/android/</link>
     <description>Recent content in Android on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Jul 2015 11:28:57 +0900</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://dongri.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android Stagefright</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</link>
+      <link>http://dongri.github.io/post/2015-07-28-android-stagefright/</link>
       <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</guid>
+      <guid>http://dongri.github.io/post/2015-07-28-android-stagefright/</guid>
       <description>
 
 &lt;p&gt;詳しいことはこちら。&lt;/p&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>OnePlus One</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</link>
+      <link>http://dongri.github.io/post/2015-04-14-oneplus-one/</link>
       <pubDate>Tue, 14 Apr 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</guid>
+      <guid>http://dongri.github.io/post/2015-04-14-oneplus-one/</guid>
       <description>
 
 &lt;h3 id=&#34;1-bootloader-unlock:fc0cb677d021b8b13df165453b383262&#34;&gt;1. Bootloader Unlock&lt;/h3&gt;
@@ -121,10 +121,10 @@ TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
     
     <item>
       <title>OxygenOS</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</link>
+      <link>http://dongri.github.io/post/2015-04-05-oxygenos/</link>
       <pubDate>Sun, 05 Apr 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</guid>
+      <guid>http://dongri.github.io/post/2015-04-05-oxygenos/</guid>
       <description>
 
 &lt;p&gt;(下に追記あり)&lt;/p&gt;
@@ -207,10 +207,10 @@ $ vim oxygen_1.0.0_flashable.md5
     
     <item>
       <title>Nexus5 Lollipop</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-13-nexus5-lollipop/</link>
+      <link>http://dongri.github.io/post/2014-11-13-nexus5-lollipop/</link>
       <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-13-nexus5-lollipop/</guid>
+      <guid>http://dongri.github.io/post/2014-11-13-nexus5-lollipop/</guid>
       <description>&lt;p&gt;数ヶ月間ずっとAndroid L Preview版入れて使ってたけど、今日やっとGoogleのデベロッパーサイトにNexus5のLollipop Factory Imageが現れたので、手動で入れてみた。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;Factory Images for Nexus Devices&lt;/a&gt;
@@ -229,10 +229,10 @@ $ ./flash-all.sh
     
     <item>
       <title>Pull APK</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-13-pull-apk/</link>
+      <link>http://dongri.github.io/post/2014-11-13-pull-apk/</link>
       <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-13-pull-apk/</guid>
+      <guid>http://dongri.github.io/post/2014-11-13-pull-apk/</guid>
       <description>&lt;p&gt;Androidにあるapkファイルを取り出す方法紹介。&lt;/p&gt;
 
 &lt;p&gt;PlayStoreに「apk 抽出」アプリたくさんあるけど、あえてadb shellで取り出す。&lt;/p&gt;

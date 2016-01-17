@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on D</title>
-    <link>http://replace-this-with-your-hugo-site.com/tags/tool/</link>
+    <link>http://dongri.github.io/tags/tool/</link>
     <description>Recent content in Tool on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 14 Nov 2014 11:28:57 +0900</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://dongri.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>tmux on yosemite</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-14-tmux-on-yosemite/</link>
+      <link>http://dongri.github.io/post/2014-11-14-tmux-on-yosemite/</link>
       <pubDate>Fri, 14 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-14-tmux-on-yosemite/</guid>
+      <guid>http://dongri.github.io/post/2014-11-14-tmux-on-yosemite/</guid>
       <description>
 
 &lt;p&gt;やっとYosemiteにした。&lt;/p&gt;
@@ -71,10 +71,10 @@ set-option -g default-command &amp;quot;which reattach-to-user-namespace &amp;gt
     
     <item>
       <title>oh-my-zsh</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-27-oh-my-zsh/</link>
+      <link>http://dongri.github.io/post/2014-05-27-oh-my-zsh/</link>
       <pubDate>Tue, 27 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-27-oh-my-zsh/</guid>
+      <guid>http://dongri.github.io/post/2014-05-27-oh-my-zsh/</guid>
       <description>
 
 &lt;h3 id=&#34;oh-my-zshとは:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;oh-my-zshとは&lt;/h3&gt;
@@ -148,10 +148,10 @@ plugins=(git ruby gem)
     
     <item>
       <title>Powerline</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-26-powerline/</link>
+      <link>http://dongri.github.io/post/2014-05-26-powerline/</link>
       <pubDate>Mon, 26 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-26-powerline/</guid>
+      <guid>http://dongri.github.io/post/2014-05-26-powerline/</guid>
       <description>
 
 &lt;p&gt;Powerline化！&lt;/p&gt;
@@ -236,20 +236,20 @@ set noshowmode&lt;/p&gt;
 
 &lt;p&gt;以上で、vim, zsh, tmuxのstatuslineが格好良くなりました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/2014-05-26/powerline-zsh.png&#34; alt=&#34;zsh&#34; title=&#34;zsh&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://dongri.github.io/images/posts/2014-05-26/powerline-zsh.png&#34; alt=&#34;zsh&#34; title=&#34;zsh&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/2014-05-26/powerline-vim.png&#34; alt=&#34;vim&#34; title=&#34;vim&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://dongri.github.io/images/posts/2014-05-26/powerline-vim.png&#34; alt=&#34;vim&#34; title=&#34;vim&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/2014-05-26/powerline-tmux.png&#34; alt=&#34;tmux&#34; title=&#34;tmux&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://dongri.github.io/images/posts/2014-05-26/powerline-tmux.png&#34; alt=&#34;tmux&#34; title=&#34;tmux&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>tmuxinator</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-25-tmuxinator/</link>
+      <link>http://dongri.github.io/post/2014-05-25-tmuxinator/</link>
       <pubDate>Sun, 25 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-25-tmuxinator/</guid>
+      <guid>http://dongri.github.io/post/2014-05-25-tmuxinator/</guid>
       <description>
 
 &lt;p&gt;tmux使ってて一番困ったことがMac再起動した時にtmux sessionがクリアされて、windowを最初から
@@ -374,7 +374,7 @@ windows:
 
 &lt;h3 id=&#34;イメージ:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;イメージ&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/tmux.png&#34; alt=&#34;Tmux&#34; title=&#34;Tmux&amp;quot; width=&amp;quot;96px&amp;quot; height=&amp;quot;96px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://dongri.github.io/images/posts/tmux.png&#34; alt=&#34;Tmux&#34; title=&#34;Tmux&amp;quot; width=&amp;quot;96px&amp;quot; height=&amp;quot;96px&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

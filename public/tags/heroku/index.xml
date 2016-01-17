@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Heroku on D</title>
-    <link>http://replace-this-with-your-hugo-site.com/tags/heroku/</link>
+    <link>http://dongri.github.io/tags/heroku/</link>
     <description>Recent content in Heroku on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 May 2015 11:28:57 +0900</lastBuildDate>
-    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://dongri.github.io/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Goodbye Heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</link>
+      <link>http://dongri.github.io/post/2015-05-11-goodbye-heroku/</link>
       <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</guid>
+      <guid>http://dongri.github.io/post/2015-05-11-goodbye-heroku/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Ghost On Heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</link>
+      <link>http://dongri.github.io/post/2015-02-17-ghost-on-heroku/</link>
       <pubDate>Tue, 17 Feb 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</guid>
+      <guid>http://dongri.github.io/post/2015-02-17-ghost-on-heroku/</guid>
       <description>
 
 &lt;p&gt;Ghostをherokuにデプロイしてみた。&lt;/p&gt;
@@ -158,10 +158,10 @@ Ghost is running in development...
     
     <item>
       <title>Migrating to Cedar-14 Stack</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</link>
+      <link>http://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</link>
       <pubDate>Sat, 10 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
+      <guid>http://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
       <description>&lt;p&gt;bamboo-mri-1.9.2 stack 下岗了。&lt;/p&gt;
 
 &lt;p&gt;Migrating to the Celadon Cedar-14 Stack&lt;/p&gt;
@@ -180,10 +180,10 @@ $ git push heroku master
     
     <item>
       <title>Revel on Heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</link>
+      <link>http://dongri.github.io/post/2014-12-11-revel-on-heroku/</link>
       <pubDate>Thu, 11 Dec 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</guid>
+      <guid>http://dongri.github.io/post/2014-12-11-revel-on-heroku/</guid>
       <description>
 
 &lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
@@ -242,10 +242,10 @@ $ git push origin master
     
     <item>
       <title>Golang on heroku</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/2014-10-11-golang-on-heroku/</link>
+      <link>http://dongri.github.io/post/2014-10-11-golang-on-heroku/</link>
       <pubDate>Sat, 11 Oct 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/2014-10-11-golang-on-heroku/</guid>
+      <guid>http://dongri.github.io/post/2014-10-11-golang-on-heroku/</guid>
       <description>
 
 &lt;p&gt;今までGolangプロジェクトはGoogle App Engineにデプロイしたが、管理画面がいまだに
