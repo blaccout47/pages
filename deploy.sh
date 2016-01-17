@@ -17,4 +17,7 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin master
-git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git master
+# git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git master
+
+# force push
+git push git@github.com:dongri/dongri.github.io.git `git subtree split --prefix public master`:master --force
