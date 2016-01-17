@@ -15,31 +15,33 @@
       <pubDate>Sun, 17 Jan 2016 15:20:15 +0900</pubDate>
       
       <guid>https://dongri.github.io/post/2016-01-17-hugo/</guid>
-      <description>&lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
+      <description>
+
+&lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
 もともとビルドが遅いmiddlemanそんなに好きではなかったし、いいきっかけたと思って引越しした。いい感じ。&lt;/p&gt;
 
-&lt;p&gt;hgが必要なのでhgをインストールする&lt;/p&gt;
+&lt;h3 id=&#34;hgが必要なのでhgをインストールする:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;hgが必要なのでhgをインストールする&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ brew install hg
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;hugoインストール&lt;/p&gt;
+&lt;h3 id=&#34;hugoインストール:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;hugoインストール&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ go get -v github.com/spf13/hugo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;site作成&lt;/p&gt;
+&lt;h3 id=&#34;site作成:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;site作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new site dongri.github.io
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;テーマを取得&lt;/p&gt;
+&lt;h3 id=&#34;テーマを取得:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;テーマを取得&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cd dongri.github.io
 $ git clone --recursive https://github.com/spf13/hugoThemes themes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;テーマ設定&lt;/p&gt;
+&lt;h3 id=&#34;テーマ設定:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;テーマ設定&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vim config.toml
 ...
@@ -47,7 +49,7 @@ theme = &amp;quot;boro&amp;quot;
 ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;post作成&lt;/p&gt;
+&lt;h3 id=&#34;post作成:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;post作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new post/2016-01-17-hugo.md
 $ vim post/2016-01-17-hugo.md
@@ -60,12 +62,14 @@ tags = [&amp;quot;blog&amp;quot;]
 hogehoge
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;サーバー起動して確認&lt;/p&gt;
+&lt;h3 id=&#34;サーバー起動して確認:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;サーバー起動して確認&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo server -w
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;github pagesにデプロイ&lt;/p&gt;
+&lt;h3 id=&#34;github-pagesにデプロイ:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;github pagesにデプロイ&lt;/h3&gt;
+
+&lt;p&gt;hugo siteをrepoAにして、publicをsubtreeで username.github.io にして毎回pushする。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;deploy.sh&lt;/code&gt; を作成&lt;/p&gt;
 
