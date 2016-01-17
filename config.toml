@@ -1,0 +1,9 @@
+baseurl = "http://replace-this-with-your-hugo-site.com/"
+languageCode = "en-us"
+title = "D"
+# theme = "crisp"
+# theme = "pixyll"
+theme = "boro"
+
+[params]
+  message = "hello world"
