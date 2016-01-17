@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/android/</link>
+    <description>Recent content in Android on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jul 2015 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android Stagefright</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</link>
+      <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</guid>
+      <description>
+
+&lt;p&gt;詳しいことはこちら。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jp.techcrunch.com/2015/07/28/20150727nasty-bug-lets-hackers-into-nearly-any-android-phone-using-nothing-but-a-message/&#34;&gt;Androidに最悪の脆弱性発見―ビデオメッセージを受信するだけでデバイスが乗っ取られる&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ということで、まずSIMを抜いてOSのバージョンアップするようにした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://plus.google.com/+CyanogenMod/posts/7iuX21Tz7n8&#34;&gt;CyanogenMod: Recent Stagefright issues&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;zip-fileダウンロードしてインストール:9235ef80d1b45df8fed87cd3994fb28e&#34;&gt;Zip Fileダウンロードしてインストール&lt;/h3&gt;
+
+&lt;p&gt;こちらから最新版cm-12.1をダウンロード。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://download.cyanogenmod.org/?device=bacon&#34;&gt;https://download.cyanogenmod.org/?device=bacon&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push cm-12.1-20150728-NIGHTLY-bacon.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TWRPでinstallを選択して、cm-12.1-20150728-NIGHTLY-bacon.zipを選択してインストール&lt;/p&gt;
+
+&lt;h3 id=&#34;google-appsインストール:9235ef80d1b45df8fed87cd3994fb28e&#34;&gt;Google Appsインストール&lt;/h3&gt;
+
+&lt;p&gt;CMではデフォルトでGoogle Apps入ってないので、追加でインストールする。
+こちらからarmバージョンをダウンロードする。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/cgapps/vendor_google&#34;&gt;https://github.com/cgapps/vendor_google&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push gapps-5.1-arm-2015-07-17-13-29.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TWRPでinstallを選択して、gapps-5.1-arm-2015-07-17-13-29.zipを選択してインストール&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OnePlus One</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</link>
+      <pubDate>Tue, 14 Apr 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</guid>
+      <description>
+
+&lt;h3 id=&#34;1-bootloader-unlock:fc0cb677d021b8b13df165453b383262&#34;&gt;1. Bootloader Unlock&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;CyanogenMod Logoが出る&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ fastboot oem unlock
+...
+OKAY [  0.005s]
+finished. total time: 0.005s
+$  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-install-twrp:fc0cb677d021b8b13df165453b383262&#34;&gt;2. Install TWRP&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dl.twrp.me/bacon/&#34;&gt;http://dl.twrp.me/bacon/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;twrp-2.8.6.0-bacon.img ダウンロード&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
+
+$ fastboot flash recovery twrp-2.8.6.0-bacon.img
+target reported max download size of 536870912 bytes
+sending &#39;recovery&#39; (10180 KB)...
+OKAY [  0.323s]
+writing &#39;recovery&#39;...
+OKAY [  0.132s]
+finished. total time: 0.455s
+
+$ fastboot reboot
+rebooting...
+
+finished. total time: 0.005s
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;3-wipe:fc0cb677d021b8b13df165453b383262&#34;&gt;3. Wipe&lt;/h3&gt;
+
+&lt;p&gt;電源ボタンとボリュームダウンボタンを同時に押してTWRPを起動する。
+TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
+
+&lt;h3 id=&#34;4-install-oxygen-os:fc0cb677d021b8b13df165453b383262&#34;&gt;4. Install Oxygen OS&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://oneplus.net/oxygenos&#34;&gt;https://oneplus.net/oxygenos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;oxygenos_1.0.0.zip ダウンロード&lt;/p&gt;
+
+&lt;p&gt;oxygenos_1.0.0.zip を解凍して oxygenos_1.0.0.flashable.zip を OnePlus One に入れる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push oxygen_1.0.0_flashable.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TWRPでinstallを選択して、oxygen_1.0.0_flashable.zipを選択してインストール&lt;/p&gt;
+
+&lt;p&gt;SuperSUもインストールするようにする。デバイスが再起動したらもう一度SuperSUを起動してROOTを取る&lt;/p&gt;
+
+&lt;p&gt;以上&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OxygenOS</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</link>
+      <pubDate>Sun, 05 Apr 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</guid>
+      <description>
+
+&lt;p&gt;(下に追記あり)&lt;/p&gt;
+
+&lt;p&gt;昨日出たOxygenOS 1.0.0について簡単にメモでも残そうかと思って書いた。&lt;/p&gt;
+
+&lt;p&gt;結論から言うと、OxygenOSはやめてCyanogenmod 12Sにした。&lt;/p&gt;
+
+&lt;p&gt;April 3 2015&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.oneplus.net/2015/04/oxygenos-is-here-2/&#34;&gt;OxygenOS is Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://oneplus.net/oxygenos&#34;&gt;https://oneplus.net/oxygenos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://forums.oneplus.net/threads/oxygenos-is-here-installation-guide.289398/&#34;&gt;Installation Guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;インストールの流れは&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bootloader Unlock&lt;/li&gt;
+&lt;li&gt;TWRPをインストール&lt;/li&gt;
+&lt;li&gt;oxygenos_1.0.0.flashable.zipを実機に転送&lt;/li&gt;
+&lt;li&gt;TWRPでzip指定してインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;コマンドは以下のようになる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
+$ fastboot oem unlock
+$ fastboot flash recovery ***.img
+$ fastboot reboot
+$ adb push oxygenos_1.0.0.flashable.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上の手順で既存OnePlus OneのCyanogenmod 11SからOxygenOSにはアップグレードしたことは成功したが、
+人によって、まっさらな状態で綺麗にインストールしたいですよね（私だけ？）&lt;/p&gt;
+
+&lt;p&gt;で、TWRPで全てのデータ削除して、0からOxygenOSをインストールしてみた。結果やばいことになった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;そもそもステータスバー出て来ない。&lt;/li&gt;
+&lt;li&gt;画面が真っ黒で壁紙設定できない。&lt;/li&gt;
+&lt;li&gt;戻るボタン以外他のボタン効かない。&lt;/li&gt;
+&lt;li&gt;ソフトボタンの表示設定しても出て来ない。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;２，３回インストールし直しても結果は同じだった。推測だが、既存OSからOxygenOSにアップグレードはサポートするけど、
+クリーンインストールはサポートしてないかという疑惑。&lt;/p&gt;
+
+&lt;p&gt;上で使い物にならなかったので、Cyanogenmodに頼るしかない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://download.cyanogenmod.org/?device=bacon&amp;amp;type=nightly&#34;&gt;http://download.cyanogenmod.org/?device=bacon&amp;amp;type=nightly&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2015-04-04 04:19:52の最新版があったので、ダウンロードしてインストール。&lt;/p&gt;
+
+&lt;p&gt;これで、綺麗な状態で綺麗にインストール出来たわけだが、CyanogenMod IncとGoogleの関係上CyanogenModにGoogle系appsを入れちゃだめなので、別途インストールするしかない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wiki.cyanogenmod.org/w/Google_Apps&#34;&gt;Google Apps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここでもよいだが、若干古い感じがする。ググって最新版をダウンロードしてインストール。&lt;/p&gt;
+
+&lt;p&gt;その後Cyanogenmod 12Sの上にOxygenOSをインストールしてみてもダメだった。&lt;/p&gt;
+
+&lt;p&gt;ということで、しばらくはOxygenOSは使わないことにした。&lt;/p&gt;
+
+&lt;p&gt;以上、私の端末で起きたことでした。&lt;/p&gt;
+
+&lt;h3 id=&#34;追記-2015-04-09:8a13692dc8f329e5b1e7f22724762f59&#34;&gt;追記 (2015/04/09)&lt;/h3&gt;
+
+&lt;p&gt;もう一回oxygenos_1.0.0.zipをダウンロードしてインストールした成功。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ md5 oxygen_1.0.0_flashable.zip
+MD5 (oxygen_1.0.0_flashable.zip) = 2d79312774c44d2fa2bf5bb0c877d1b7
+$ vim oxygen_1.0.0_flashable.md5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;チェックしたら一致してた。前回ダメだったのは恐らくzipファイルがおかしかったかも。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nexus5 Lollipop</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-13-nexus5-lollipop/</link>
+      <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-13-nexus5-lollipop/</guid>
+      <description>&lt;p&gt;数ヶ月間ずっとAndroid L Preview版入れて使ってたけど、今日やっとGoogleのデベロッパーサイトにNexus5のLollipop Factory Imageが現れたので、手動で入れてみた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;Factory Images for Nexus Devices&lt;/a&gt;
+アクセスして、Nexus5用のimageファイルダウンロード。&lt;a href=&#34;https://dl.google.com/dl/android/aosp/hammerhead-lrx21o-factory-01315e08.tgz&#34;&gt;5.0 (LRX21O)&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar -zxvf hammerhead-lrx21o-factory-01315e08.tgz
+$ cd hammerhead-lrx21o
+$ adb reboot bootloader
+$ fastboot oem unlock
+$ ./flash-all.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pull APK</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-13-pull-apk/</link>
+      <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-13-pull-apk/</guid>
+      <description>&lt;p&gt;Androidにあるapkファイルを取り出す方法紹介。&lt;/p&gt;
+
+&lt;p&gt;PlayStoreに「apk 抽出」アプリたくさんあるけど、あえてadb shellで取り出す。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb shell pm list packages -f | grep
+package:/data/app/jp.naver.line.android-1/base.apk=jp.naver.line.android
+package:/data/app/jp.linecorp.LINEMAPS-1/base.apk=jp.linecorp.LINEMAPS
+
+$ adb pull /data/app/jp.naver.line.android-1/base.apk ~/Desktop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;取り出したapkファイルをインストールしてみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb install base.apk
+7522 KB/s (22969465 bytes in 2.981s)
+        pkg: /data/local/tmp/base.apk
+Success
+$ adb shell pm list packages -f | grep line
+package:/data/app/jp.naver.line.android-1/base.apk=jp.naver.line.android
+package:/data/app/jp.linecorp.LINEMAPS-1/base.apk=jp.linecorp.LINEMAPS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※ Lollipopからはroot化が困難になった模様&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/tool/</link>
+    <description>Recent content in Tool on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Nov 2014 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>tmux on yosemite</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-14-tmux-on-yosemite/</link>
+      <pubDate>Fri, 14 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-14-tmux-on-yosemite/</guid>
+      <description>
+
+&lt;p&gt;やっとYosemiteにした。&lt;/p&gt;
+
+&lt;p&gt;自分の環境でちょっと動かなかった、ぶつかった問題をまとめてみた。&lt;/p&gt;
+
+&lt;h3 id=&#34;homebrew:536d2a36bd5220e26f5d90a4fdea75fe&#34;&gt;homebrew&lt;/h3&gt;
+
+&lt;p&gt;まずはこのエラー&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/opt/boxen/homebrew/bin/brew: line 26: /opt/boxen/homebrew/Library/brew.rb: Undefined error: 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;brew.rbを修正&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;--- #!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -W0
++++ #!/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/ruby -W0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;brew-update:536d2a36bd5220e26f5d90a4fdea75fe&#34;&gt;brew update&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git add /opt/boxen/homebrew/Library/brew.rb
+$ git commit -am &amp;quot;Fix ruby version&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mysqlのバージョン固定する必要あるので&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew pin mysql
+$ brew update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;tmux:536d2a36bd5220e26f5d90a4fdea75fe&#34;&gt;tmux&lt;/h3&gt;
+
+&lt;p&gt;tmuxからatom, gitx起動できない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LSOpenURLsWithRole() failed for the application /Applications/Atom.app with error -10810.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;reattach-to-user-namespace インストール&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew install reattach-to-user-namespace
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;tumx.conf に追加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Fix LSOpenURLsWithRole() error on OS X. Requires reattach-to-user-namespace
+# to be installed.
+set-option -g default-command &amp;quot;which reattach-to-user-namespace &amp;gt; /dev/null &amp;amp;&amp;amp; reattach-to-user-namespace -l $SHELL || $SHELL&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(今さらだけど、Yosemiteキレイね！)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>oh-my-zsh</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-27-oh-my-zsh/</link>
+      <pubDate>Tue, 27 May 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-27-oh-my-zsh/</guid>
+      <description>
+
+&lt;h3 id=&#34;oh-my-zshとは:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;oh-my-zshとは&lt;/h3&gt;
+
+&lt;p&gt;zsh の設定を管理するフレームワーク&lt;/p&gt;
+
+&lt;h3 id=&#34;oh-my-zshをインストール:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;oh-my-zshをインストール&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;% wget http://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+Found ~/.zshrc. Backing up to ~/.zshrc.pre-oh-my-zsh
+Using the Oh My Zsh template file and adding it to ~/.zshrc
+Copying your current PATH and adding it to the end of ~/.zshrc for you.
+Time to change your default shell to zsh!
+Changing shell for dongri.
+Password for dongri:
+chsh: no changes made
+
+  ____  / /_     ____ ___  __  __   ____  _____/ /_
+ / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \
+/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / /
+\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
+                        /____/                       ....is now installed!
+
+
+ Please look over the ~/.zshrc file to select plugins, themes, and options.
+
+ p.s. Follow us at http://twitter.com/ohmyzsh.  
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;既存の .zschrc は .zshrc.pre-oh-py-zsh にバックアップされる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% source ~/.zshrc
+
+% vim ~/.zshrc
+
+ZSH_THEME=&amp;quot;agnoster&amp;quot;
+
+plugins=(git ruby gem)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;vimなどの文字化け対応:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;vimなどの文字化け対応&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;export LANG=en_US.UTF-8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;~/.zshrcに追加&lt;/p&gt;
+
+&lt;h4 id=&#34;既存パス設定:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;既存パス設定&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;source ~/.zshrc.pre-oh-my-zsh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;~/.zshrc の一番後ろに追加&lt;/p&gt;
+
+&lt;h4 id=&#34;tmuxのwindowの名前が勝手に変わる:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;tmuxのwindowの名前が勝手に変わる。&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;DISABLE_AUTO_TITLE=true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;~/.zshrc 編集&lt;/p&gt;
+
+&lt;h3 id=&#34;アンインストール:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;アンインストール&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;uninstall_oh_my_zsh
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Powerline</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-26-powerline/</link>
+      <pubDate>Mon, 26 May 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-26-powerline/</guid>
+      <description>
+
+&lt;p&gt;Powerline化！&lt;/p&gt;
+
+&lt;p&gt;歴史的には vim powerline, zsh powerline, tmux powerline がそれぞれあったみたいだったが、最近はそれがひとつに統合されました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Lokaltog/powerline&#34;&gt;https://github.com/Lokaltog/powerline&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;まず-vim-から:15f4daf82502e17d680aea3c3143ecee&#34;&gt;まず vim から&lt;/h3&gt;
+
+&lt;p&gt;vim プラグイン管理ツールNeoBundle.vimをインストール&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir -p ~/.vim/bundle
+$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;~/.vimrc 編集&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if has(&#39;vim_starting&#39;)
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand(&#39;~/.vim/bundle/&#39;))
+endif
+
+&amp;quot;&amp;quot; NeoBundle
+NeoBundle &#39;Shougo/neobundle.vim&#39;
+
+filetype plugin indent on
+filetype indent on
+syntax on
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;powerlineのインストール:15f4daf82502e17d680aea3c3143ecee&#34;&gt;Powerlineのインストール&lt;/h3&gt;
+
+&lt;p&gt;~/.vimrcに追加&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;NeoBundle &#39;alpaca-tc/alpaca_powertabline&#39;
+NeoBundle &#39;https://github.com/Lokaltog/powerline.git&#39;
+````
+
+保存して、もう一度開いてインストール
+:NeoBundleInstall
+
+ちなみにアンインストールは NeoBundleをvimrcから消してから
+:NeoBundleClean
+
+### powerlineのためfontにパッチをあてる
+
+Powerlineのステータスバーには特殊文字列を使うために既存fontにパッチを当てる必要ある。
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;% git clone &lt;a href=&#34;https://github.com/Lokaltog/vim-powerline.git&#34;&gt;https://github.com/Lokaltog/vim-powerline.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;% brew update
+% brew install fontforge
+% fontforge -script vim-powerline/fontpatcher/fontpatcher  ~/Library/Fonts/&lt;font&gt;
+% cp *-Powerline.ttf  ~/Library/Fonts/&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+もしくは [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts) 直接ダウンロードする。
+
+### ~/.vimrc 設定
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;set laststatus=2
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = &amp;lsquo;fancy&amp;rsquo;
+set noshowmode&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+### ~/.zshrc 設定
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;source ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+### ~/.tmux.conf 設定
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;source ~/.vim/bundle/powerline/powerline/bindings/tmux/powerline.conf
+```&lt;/p&gt;
+
+&lt;p&gt;以上で、vim, zsh, tmuxのstatuslineが格好良くなりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/2014-05-26/powerline-zsh.png&#34; alt=&#34;zsh&#34; title=&#34;zsh&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/2014-05-26/powerline-vim.png&#34; alt=&#34;vim&#34; title=&#34;vim&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/2014-05-26/powerline-tmux.png&#34; alt=&#34;tmux&#34; title=&#34;tmux&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>tmuxinator</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-25-tmuxinator/</link>
+      <pubDate>Sun, 25 May 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-25-tmuxinator/</guid>
+      <description>
+
+&lt;p&gt;tmux使ってて一番困ったことがMac再起動した時にtmux sessionがクリアされて、windowを最初から
+起動しないとだめだった。&lt;/p&gt;
+
+&lt;p&gt;そこでtmuxinatorが登場！&lt;/p&gt;
+
+&lt;p&gt;tmuxinator は、tmuxで起動するウィンドウやレイアウトを事前に設定しておき、
+tmuxinatorコマンドを実行することにより設定通りのウィンドウ配置にするツールです。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% tmux -V
+tmux 1.9a
+% gem -v
+2.0.14
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;tmuxinator-インストール-設定:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;tmuxinator インストール &amp;amp; 設定&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;% gem install tmuxinator
+% echo $SHELL
+/bin/zsh
+$ echo $EDITOR
+vim
+% echo &#39;source ~/.tmuxinator/tmuxinator.zsh&#39; &amp;gt;&amp;gt; ${HOME}/.zshrc
+% soruce ~/.zshrc
+% mux doctor
+Checking if tmux is installed ==&amp;gt; Yes
+Checking if $EDITOR is set ==&amp;gt; Yes
+Checking if $SHELL is set ==&amp;gt; Yes
+%
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;project-作成-設定:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;project 作成 &amp;amp; 設定&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;% mux new dongri
+
+# ~/.tmuxinator/dongri.yml
+
+name: dongri
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - local:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        -
+        -
+        -
+        -
+  - vagrant:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-backend
+        - cd project/project-web
+        - cd project/inside-project
+  - git-server:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-backend
+        - cd project/project-api
+        - cd project/project-api
+        - cd project/server-config
+  - git-others:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-ios
+        - cd project/project-android
+        - cd project/project-web
+        - cd project/inside-project
+  - project-local:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-backend
+        - cd project/project-web
+        - cd project/project-api
+        - cd project/inside-project
+  - project-dev:
+      layout: a916,237x59,0,0{118x59,0,0,74,118x59,119,0,90}
+      panes:
+        - ssh project-dev
+        - ssh project-dev
+  - project-script:
+      layout: a916,237x59,0,0{118x59,0,0,74,118x59,119,0,90}
+      panes:
+        - ssh project-script
+        - ssh project-script
+  - project-bastion:
+      layout: a916,237x59,0,0{118x59,0,0,74,118x59,119,0,90}
+      panes:
+        - ssh aws-project-bastion
+        - ssh aws-project-bastion
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;layoutはところわけわらない数字は list-windows で表示された数字です。自分の設定したtmuxの環境で以下のコマンドで確認&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% tmux list-windows
+0: local- (4 panes) [238x62] [layout 5297,238x62,0,0{119x62,0,0[119x31,0,0,0,119x30,0,32,8],118x62,120,0[118x31,120,0,9,118x30,120,32,10]}] @0
+1: vagrant* (3 panes) [238x62] [layout 162a,238x62,0,0{119x62,0,0[119x31,0,0,1,119x30,0,32,11],118x62,120,0,12}] @1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;[layout ****] ***の部分を ~/.tmuxinator/dongri.yml のlayoutのところにペスト&lt;/p&gt;
+
+&lt;h3 id=&#34;プロジェクト起動:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;プロジェクト起動&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mux dongri
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;イメージ:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;イメージ&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://replace-this-with-your-hugo-site.com/images/posts/tmux.png&#34; alt=&#34;Tmux&#34; title=&#34;Tmux&amp;quot; width=&amp;quot;96px&amp;quot; height=&amp;quot;96px&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

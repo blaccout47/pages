@@ -1,28 +1,1410 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on My New Hugo Site </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
+    <title>Posts on D</title>
     <link>http://replace-this-with-your-hugo-site.com/post/</link>
+    <description>Recent content in Posts on D</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    
-    
-    <updated>Sun, 17 Jan 2016 11:28:57 JST</updated>
+    <lastBuildDate>Sun, 17 Jan 2016 15:20:15 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>welcome</title>
-      <link>http://replace-this-with-your-hugo-site.com/post/welcome/</link>
-      <pubDate>Sun, 17 Jan 2016 11:28:57 JST</pubDate>
+      <title>Hugo</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2016-01-17-hugo/</link>
+      <pubDate>Sun, 17 Jan 2016 15:20:15 +0900</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/post/welcome/</guid>
+      <guid>http://replace-this-with-your-hugo-site.com/post/2016-01-17-hugo/</guid>
+      <description>&lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
+もともとビルドが遅いmiddlemanそんなに好きではなかったし、いいきっかけたと思って引越しした。いい感じ。&lt;/p&gt;
+
+&lt;p&gt;hgが必要なのでhgをインストールする&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew install hg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;hugoインストール&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go get -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;site作成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new site dongri.github.io
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;テーマを取得&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd dongri.github.io
+$ git clone --recursive https://github.com/spf13/hugoThemes themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;テーマ設定&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim config.toml
+...
+theme = &amp;quot;boro&amp;quot;
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;post作成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new post/2016-01-17-hugo.md
+$ vim post/2016-01-17-hugo.md
++++
+date = &amp;quot;2016-01-17T15:20:15+09:00&amp;quot;
+title = &amp;quot;Hugo&amp;quot;
+tags = [&amp;quot;blog&amp;quot;]
++++
+
+hogehoge
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;サーバー起動して確認&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server -w
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Android Stagefright</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</link>
+      <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-07-28-android-stagefright/</guid>
       <description>
 
-&lt;p&gt;こんにちには&lt;/p&gt;
+&lt;p&gt;詳しいことはこちら。&lt;/p&gt;
 
-&lt;h1 id=&#34;hoge:2cc7dc244eed4480e8b46c91e911e96b&#34;&gt;hoge&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://jp.techcrunch.com/2015/07/28/20150727nasty-bug-lets-hackers-into-nearly-any-android-phone-using-nothing-but-a-message/&#34;&gt;Androidに最悪の脆弱性発見―ビデオメッセージを受信するだけでデバイスが乗っ取られる&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;puts &amp;quot;hello world!&amp;quot;
+&lt;p&gt;ということで、まずSIMを抜いてOSのバージョンアップするようにした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://plus.google.com/+CyanogenMod/posts/7iuX21Tz7n8&#34;&gt;CyanogenMod: Recent Stagefright issues&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;zip-fileダウンロードしてインストール:9235ef80d1b45df8fed87cd3994fb28e&#34;&gt;Zip Fileダウンロードしてインストール&lt;/h3&gt;
+
+&lt;p&gt;こちらから最新版cm-12.1をダウンロード。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://download.cyanogenmod.org/?device=bacon&#34;&gt;https://download.cyanogenmod.org/?device=bacon&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push cm-12.1-20150728-NIGHTLY-bacon.zip /sdcard/
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TWRPでinstallを選択して、cm-12.1-20150728-NIGHTLY-bacon.zipを選択してインストール&lt;/p&gt;
+
+&lt;h3 id=&#34;google-appsインストール:9235ef80d1b45df8fed87cd3994fb28e&#34;&gt;Google Appsインストール&lt;/h3&gt;
+
+&lt;p&gt;CMではデフォルトでGoogle Apps入ってないので、追加でインストールする。
+こちらからarmバージョンをダウンロードする。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/cgapps/vendor_google&#34;&gt;https://github.com/cgapps/vendor_google&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push gapps-5.1-arm-2015-07-17-13-29.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TWRPでinstallを選択して、gapps-5.1-arm-2015-07-17-13-29.zipを選択してインストール&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Goodbye Heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</link>
+      <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;
+
+&lt;p&gt;その後gitが流行り始めgit pushでデプロイできるようになりましたね。heroku buttonも出てOne Clickでデプロイできるようになったり。&lt;/p&gt;
+
+&lt;p&gt;2007年から今まで使ってて、Privateのプロジェクトも一時には会社のプロジェクトにも使いました。&lt;/p&gt;
+
+&lt;p&gt;初めはRubyだけだったのが、今はjava, scala, php, python, nodejs, goまでサポートしてます。最近はdockerもサポートするので、言語問わなくデプロイできちゃいますね。&lt;/p&gt;
+
+&lt;p&gt;herokuの特徴と言えばとりあえず動かせるを場を提供する。そのかわりファイルアップロードできない、一定時間でスリープ、などいろいろ制限されるけど、sandboxとしては十分で便利なプラットフォームです。&lt;/p&gt;
+
+&lt;p&gt;自分のリポジトリ数えてみたらびっくりしました。50個近くのアプリがデプロイされてました。(ほとんどがゴミ w w w)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta&#34;&gt;https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;こんなので自分の遊びがなくなりました。$7 払えないわけではない。しかし昔みたいにとりあえずherokuみたいな感じにはなれない。&lt;/p&gt;
+
+&lt;p&gt;herokuの代わりのものを Google Cloud, AWS も検討してみましたが、結局は DigitalOceanでサーバー立てて、&lt;a href=&#34;https://github.com/progrium/dokku&#34;&gt;dokku&lt;/a&gt; 入れて自分専用の遊び場を作ることにしました。&lt;/p&gt;
+
+&lt;p&gt;今のところ4GBでnode, rails, goなど10個のcontainer立ち上げても問題なさそうです。&lt;/p&gt;
+
+&lt;p&gt;heroku長い間お世話になりました！&lt;/p&gt;
+
+&lt;p&gt;Goodbye! Heroku!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OnePlus One</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</link>
+      <pubDate>Tue, 14 Apr 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-14-oneplus-one/</guid>
+      <description>
+
+&lt;h3 id=&#34;1-bootloader-unlock:fc0cb677d021b8b13df165453b383262&#34;&gt;1. Bootloader Unlock&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;CyanogenMod Logoが出る&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ fastboot oem unlock
+...
+OKAY [  0.005s]
+finished. total time: 0.005s
+$  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-install-twrp:fc0cb677d021b8b13df165453b383262&#34;&gt;2. Install TWRP&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dl.twrp.me/bacon/&#34;&gt;http://dl.twrp.me/bacon/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;twrp-2.8.6.0-bacon.img ダウンロード&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
+
+$ fastboot flash recovery twrp-2.8.6.0-bacon.img
+target reported max download size of 536870912 bytes
+sending &#39;recovery&#39; (10180 KB)...
+OKAY [  0.323s]
+writing &#39;recovery&#39;...
+OKAY [  0.132s]
+finished. total time: 0.455s
+
+$ fastboot reboot
+rebooting...
+
+finished. total time: 0.005s
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;3-wipe:fc0cb677d021b8b13df165453b383262&#34;&gt;3. Wipe&lt;/h3&gt;
+
+&lt;p&gt;電源ボタンとボリュームダウンボタンを同時に押してTWRPを起動する。
+TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
+
+&lt;h3 id=&#34;4-install-oxygen-os:fc0cb677d021b8b13df165453b383262&#34;&gt;4. Install Oxygen OS&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://oneplus.net/oxygenos&#34;&gt;https://oneplus.net/oxygenos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;oxygenos_1.0.0.zip ダウンロード&lt;/p&gt;
+
+&lt;p&gt;oxygenos_1.0.0.zip を解凍して oxygenos_1.0.0.flashable.zip を OnePlus One に入れる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push oxygen_1.0.0_flashable.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TWRPでinstallを選択して、oxygen_1.0.0_flashable.zipを選択してインストール&lt;/p&gt;
+
+&lt;p&gt;SuperSUもインストールするようにする。デバイスが再起動したらもう一度SuperSUを起動してROOTを取る&lt;/p&gt;
+
+&lt;p&gt;以上&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OxygenOS</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</link>
+      <pubDate>Sun, 05 Apr 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-04-05-oxygenos/</guid>
+      <description>
+
+&lt;p&gt;(下に追記あり)&lt;/p&gt;
+
+&lt;p&gt;昨日出たOxygenOS 1.0.0について簡単にメモでも残そうかと思って書いた。&lt;/p&gt;
+
+&lt;p&gt;結論から言うと、OxygenOSはやめてCyanogenmod 12Sにした。&lt;/p&gt;
+
+&lt;p&gt;April 3 2015&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.oneplus.net/2015/04/oxygenos-is-here-2/&#34;&gt;OxygenOS is Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://oneplus.net/oxygenos&#34;&gt;https://oneplus.net/oxygenos&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://forums.oneplus.net/threads/oxygenos-is-here-installation-guide.289398/&#34;&gt;Installation Guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;インストールの流れは&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bootloader Unlock&lt;/li&gt;
+&lt;li&gt;TWRPをインストール&lt;/li&gt;
+&lt;li&gt;oxygenos_1.0.0.flashable.zipを実機に転送&lt;/li&gt;
+&lt;li&gt;TWRPでzip指定してインストール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;コマンドは以下のようになる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
+$ fastboot oem unlock
+$ fastboot flash recovery ***.img
+$ fastboot reboot
+$ adb push oxygenos_1.0.0.flashable.zip /sdcard/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上の手順で既存OnePlus OneのCyanogenmod 11SからOxygenOSにはアップグレードしたことは成功したが、
+人によって、まっさらな状態で綺麗にインストールしたいですよね（私だけ？）&lt;/p&gt;
+
+&lt;p&gt;で、TWRPで全てのデータ削除して、0からOxygenOSをインストールしてみた。結果やばいことになった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;そもそもステータスバー出て来ない。&lt;/li&gt;
+&lt;li&gt;画面が真っ黒で壁紙設定できない。&lt;/li&gt;
+&lt;li&gt;戻るボタン以外他のボタン効かない。&lt;/li&gt;
+&lt;li&gt;ソフトボタンの表示設定しても出て来ない。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;２，３回インストールし直しても結果は同じだった。推測だが、既存OSからOxygenOSにアップグレードはサポートするけど、
+クリーンインストールはサポートしてないかという疑惑。&lt;/p&gt;
+
+&lt;p&gt;上で使い物にならなかったので、Cyanogenmodに頼るしかない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://download.cyanogenmod.org/?device=bacon&amp;amp;type=nightly&#34;&gt;http://download.cyanogenmod.org/?device=bacon&amp;amp;type=nightly&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2015-04-04 04:19:52の最新版があったので、ダウンロードしてインストール。&lt;/p&gt;
+
+&lt;p&gt;これで、綺麗な状態で綺麗にインストール出来たわけだが、CyanogenMod IncとGoogleの関係上CyanogenModにGoogle系appsを入れちゃだめなので、別途インストールするしかない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wiki.cyanogenmod.org/w/Google_Apps&#34;&gt;Google Apps&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ここでもよいだが、若干古い感じがする。ググって最新版をダウンロードしてインストール。&lt;/p&gt;
+
+&lt;p&gt;その後Cyanogenmod 12Sの上にOxygenOSをインストールしてみてもダメだった。&lt;/p&gt;
+
+&lt;p&gt;ということで、しばらくはOxygenOSは使わないことにした。&lt;/p&gt;
+
+&lt;p&gt;以上、私の端末で起きたことでした。&lt;/p&gt;
+
+&lt;h3 id=&#34;追記-2015-04-09:8a13692dc8f329e5b1e7f22724762f59&#34;&gt;追記 (2015/04/09)&lt;/h3&gt;
+
+&lt;p&gt;もう一回oxygenos_1.0.0.zipをダウンロードしてインストールした成功。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ md5 oxygen_1.0.0_flashable.zip
+MD5 (oxygen_1.0.0_flashable.zip) = 2d79312774c44d2fa2bf5bb0c877d1b7
+$ vim oxygen_1.0.0_flashable.md5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;チェックしたら一致してた。前回ダメだったのは恐らくzipファイルがおかしかったかも。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ghost On Heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</link>
+      <pubDate>Tue, 17 Feb 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</guid>
+      <description>
+
+&lt;p&gt;Ghostをherokuにデプロイしてみた。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;以下はあくまでの自分の環境で、nodeとpostgresなど一通りの開発環境は整った環境です。&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ghostをローカルで動かしてみる:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Ghostをローカルで動かしてみる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /path/to/ghost/folder/
+$ npm install --production
+
+$ npm start
+$ open http://localhost:2368
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;herokuにpg-addon追加:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;herokuにpg addon追加&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku addons:add heroku-postgresql:dev
+
+$ heroku config
+DATABASE_URL:                 postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
+HEROKU_POSTGRESQL_PURPLE_URL: postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;package-json-修正:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;package.json 修正&lt;/h2&gt;
+
+&lt;p&gt;package.jsonのdependenciesにpg追加。バージョンは固定にしたほうがいいかも。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;dependencies&amp;quot;: {
+  ....,
+  &amp;quot;pg&amp;quot;: &amp;quot;4.2.0&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;config-js-修正:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;config.js 修正&lt;/h2&gt;
+
+&lt;p&gt;以下の部分をproductionのところに設定する。databaseの部分は上のDATABASE_URLのところ参照&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;database: {
+  client: &#39;postgres&#39;,
+  connection: {
+        host: &#39;ec2-***.compute-1.amazonaws.com&#39;,
+        user: &#39;{username}&#39;,
+        password: &#39;{password}&#39;,
+        database: &#39;{database}&#39;,
+        port: &#39;5432&#39;
+  }
+},
+
+server: {
+    host: &#39;0.0.0.0&#39;,
+    port: process.env.PORT
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;procfileファイル追加:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Procfileファイル追加&lt;/h2&gt;
+
+&lt;p&gt;herokuにnodejsアプリをデプロイした人にはわかると思うがProfileを作成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Procfile
+web: node index.js --production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-remote-push:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;git remote, push&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git init
+$ git remote add origin git@heroku.com:{app}.git
+$ git add .
+$ git commit -m &amp;quot;Ghost&amp;quot;
+$ git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;debug:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Debug&lt;/h2&gt;
+
+&lt;p&gt;heroku上でApplication Error!&lt;/p&gt;
+
+&lt;p&gt;log見てみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku logs --tail
+
+Ghost is running in development...
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;developmentで実行されたようだ。&lt;/p&gt;
+
+&lt;p&gt;NODE_ENVをproductionに設定&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku config:set NODE_ENV=production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上のコマンドでenv設定とrebootするので、tailで完了確認できたら、もう一度アクセスしてみる。&lt;/p&gt;
+
+&lt;p&gt;うまく表示されたようだ&lt;/p&gt;
+
+&lt;h2 id=&#34;ghost設定:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Ghost設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ open http://{app}.herokuapp.com/ghost/setup/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;所感:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;所感&lt;/h2&gt;
+
+&lt;p&gt;設定して自分が欲しかったmarkdownで書けるようになったけど、意識高い系に似合うデザインのせいか
+メモ、コードを書くにはいまいち。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Google OAuth2</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-16-google-oauth2/</link>
+      <pubDate>Mon, 16 Feb 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-16-google-oauth2/</guid>
+      <description>
+
+&lt;p&gt;Google OAuth2のトークンを手動で取得メモ。通常はWebアプリはブラウザで取得してトークンとか保存すればいいのだが、
+hubot scriptでcalendar情報とか取得したい場合は、そうはいかない。&lt;/p&gt;
+
+&lt;h2 id=&#34;クライアントid作成:ba9710434c30615632bec5302bcb66de&#34;&gt;クライアントID作成&lt;/h2&gt;
+
+&lt;p&gt;予めGoogle Developer Console画面で、クライアントIDを作成
+&lt;a href=&#34;https://console.developers.google.com/project&#34;&gt;https://console.developers.google.com/project&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;code-取得:ba9710434c30615632bec5302bcb66de&#34;&gt;code 取得&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;https://accounts.google.com/o/oauth2/auth
+?client_id={client_id}
+&amp;amp;redirect_uri={callback_url}
+&amp;amp;scope={scope}
+&amp;amp;response_type=code
+&amp;amp;approval_prompt=force
+&amp;amp;access_type=offline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;scopeは &lt;a href=&#34;https://www.googleapis.com/auth/calendar.readonly&#34;&gt;https://www.googleapis.com/auth/calendar.readonly&lt;/a&gt; など&lt;/p&gt;
+
+&lt;p&gt;GETで上のURLを叩く。認証画面が開き、承認すると、指定したcallback_urlにcodeが返ってくる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;{callback_url}?code=4/W30HqfsDKmamqdW*****************
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;access-token-refresh-token-取得:ba9710434c30615632bec5302bcb66de&#34;&gt;access_token, refresh_token 取得&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl
+-d client_id={client_id}
+-d client_secret={client_secret}
+-d redirect_uri={callback_url}
+-d grant_type=authorization_code
+-d code={code} https://accounts.google.com/o/oauth2/token
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下のJSON結果が返ってくる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;access_token&amp;quot; : &amp;quot;{access_token}&amp;quot;,
+  &amp;quot;token_type&amp;quot; : &amp;quot;Bearer&amp;quot;,
+  &amp;quot;expires_in&amp;quot; : 3600,
+  &amp;quot;refresh_token&amp;quot; : &amp;quot;{refresh_token}&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;access_tokenの情報を確認してみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={access_token}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アクセスする度にexpires_inが減って行くのがわかる。0になると、access_tokenは失効されるので、使えない。&lt;/p&gt;
+
+&lt;h2 id=&#34;新しいaccess-tokenを取得:ba9710434c30615632bec5302bcb66de&#34;&gt;新しいaccess_tokenを取得&lt;/h2&gt;
+
+&lt;p&gt;expires_inで有効期限切れるまえに以下のPOSTで新しいaccess_tokenを取得&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl
+-d client_id={client_id}
+-d client_secret={client_secret}
+-d refresh_token={refresh_token}
+-d grant_type=refresh_token https://accounts.google.com/o/oauth2/token
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上の結果、新しいexpires_inが3600の新しいaccess_tokenが返ってくる。&lt;/p&gt;
+
+&lt;p&gt;3600秒以内にaccess_tokenを更新して使えばOK!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>new vs make</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-09-new-vs-make/</link>
+      <pubDate>Mon, 09 Feb 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-09-new-vs-make/</guid>
+      <description>
+
+&lt;h2 id=&#34;new:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;new&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://golang.org/pkg/builtin/#new&#34;&gt;http://golang.org/pkg/builtin/#new&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func new(Type) *Type
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;組み込み関数 new はメモリの割り当て、第一引数は型であり、値ではない。戻り値はポインタである。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;make:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;make&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://golang.org/pkg/builtin/#make&#34;&gt;http://golang.org/pkg/builtin/#make&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func make(Type, size IntegerType) Type
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;組み込み関数 make は slice, map, chan型のメモリ割り当てとオブジェクトを初期化する。&lt;/li&gt;
+&lt;li&gt;new と似ている、第一に引数は型であり、値ではない。new との違いは、make の戻り値はポインタではなく、値である。第一引数の型による。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;まとめ:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;まとめ&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;new の役割はポインタの処理機か(*T)。make の役割は slice, map, chan 初期化かつ引用を戻す(T)。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+  i := new(int)
+  fmt.Println(&amp;amp;i)
+  fmt.Println(*i)
+  *i = 1
+  fmt.Println(*i)
+
+  mySlice := make([]int, 10, 100)
+  fmt.Println(mySlice)
+  mySlice[2] = 2
+  fmt.Println(mySlice)
+
+  myMap := make(map[string]string)
+  fmt.Println(myMap)
+  myMap[&amp;quot;Android&amp;quot;] = &amp;quot;OnePlus&amp;quot;
+  myMap[&amp;quot;iOS&amp;quot;] = &amp;quot;iPhone&amp;quot;
+  fmt.Println(myMap)
+
+  myChan := make(chan int, 2)
+  myChan &amp;lt;- 1
+  myChan &amp;lt;- 2
+  fmt.Println(myChan)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Birthday</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-03-birthday/</link>
+      <pubDate>Tue, 03 Feb 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-03-birthday/</guid>
+      <description>&lt;p&gt;先月にFacebookの誕生日をOnly Meに設定して、誰も知らないように設定したのが始まり。&lt;/p&gt;
+
+&lt;p&gt;今までは誕生日になると一日中、Facebookの友達から「誕生日おめでとう！」「Happy Birthday!」「생일축하해요」などのメッセージでnotificationが止まらない。
+そして、キリの良い時に、全てのメッセージにLikeと「ありがとうございます！」とコメントを残す。で終わり。なんの感情も入ってない。。。&lt;/p&gt;
+
+&lt;p&gt;今年はあえて見えないようにしてみた結果どうなったか？&lt;/p&gt;
+
+&lt;p&gt;朝からWechatで祝いメッセージが来たり、
+mixi経由でスタバックスのギフトカード送ってもらって一緒にスタバに行ったり、
+Twitterで「今日誕生日って本当？Google Nowがそう言ってるけど」、
+Facebookメッセンジャーで「誕生日おめでとうございます！」「どうやって知った？」「Skypeからreminderが来てね w」、
+Google+から「생일이에요? 축하해요」だったり、とにかく意外なところから。&lt;/p&gt;
+
+&lt;p&gt;一つ一つのメッセージが嬉しかった。一人一人が親しい友人だから！&lt;/p&gt;
+
+&lt;p&gt;Facebookは隠せたけど、社内カレンダーの誕生日は消せなかったので、会社から素敵な誕生日ケーキで祝ってもらった。
+同僚のみなさん、ありがとうございました！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GHOST (CVE-2015-0235)</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-28-ghost-cve-2015-0235/</link>
+      <pubDate>Wed, 28 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-28-ghost-cve-2015-0235/</guid>
+      <description>
+
+&lt;p&gt;クラウドセキュリティ企業Qualysの研究者が、Linux GNU Cライブラリ（glibc）に深刻なセキュリティホールである「GHOST」（CVE-2015-0235）を発見したらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.openwall.com/lists/oss-security/2015/01/27/9&#34;&gt;http://www.openwall.com/lists/oss-security/2015/01/27/9&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;このセキュリティホールは、glibc-2.2（2000年11月10日にリリース）を使用してビルドされたすべてのLinuxシステムに存在する。Qualysによれば、このバグは実際には、2013年5月21日にリリースされた、glibc-2.17とglibc-2.18の間のバグフィックスで修正されている。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ポイントはglibcのバージョンで判断するのではなく、パッチを当てたかどうか。&lt;/p&gt;
+
+&lt;h3 id=&#34;対応前:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応前&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/lib/libc.so.6&lt;/li&gt;
+&lt;li&gt;/lib64/libc.so.6&lt;/li&gt;
+&lt;li&gt;/lib/i386-linux-gnu/libc.so.6&lt;/li&gt;
+&lt;li&gt;/lib/x86_64-linux-gnu/libc.so.6&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ /lib64/libc.so.6
+GNU C Library stable release version 2.12, by Roland McGrath et al.
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.4.7 20120313 (Red Hat 4.4.7-4).
+Compiled on a Linux 2.6.32 system on 2014-08-29.
+Available extensions:
+The C stubs add-on version 2.1.2.
+crypt add-on version 2.1 by Michael Glad and others
+GNU Libidn by Simon Josefsson
+Native POSIX Threads Library by Ulrich Drepper et al
+BIND-8.2.3-T5B
+RT using linux kernel aio
+libc ABIs: UNIQUE IFUNC
+For bug reporting instructions, please see:
+&amp;lt;http://www.gnu.org/software/libc/bugs.html&amp;gt;.
+
+$
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;対応:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo yum clean all
+
+$ sudo yum update glibc
+or
+$ sudo yum update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;対応後:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応後&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ /lib64/libc.so.6
+GNU C Library stable release version 2.12, by Roland McGrath et al.
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.4.7 20120313 (Red Hat 4.4.7-11).
+Compiled on a Linux 2.6.32 system on 2015-01-27.
+Available extensions:
+The C stubs add-on version 2.1.2.
+crypt add-on version 2.1 by Michael Glad and others
+GNU Libidn by Simon Josefsson
+Native POSIX Threads Library by Ulrich Drepper et al
+BIND-8.2.3-T5B
+RT using linux kernel aio
+libc ABIs: UNIQUE IFUNC
+For bug reporting instructions, please see:
+&amp;lt;http://www.gnu.org/software/libc/bugs.html&amp;gt;.
+
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;何が変わった:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;何が変わった？&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Compiled on a Linux 2.6.32 system on 2015-01-27.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;サーバー再起動:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;サーバー再起動&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;CentOS 6.5 x64 (digitalocean) での作業でした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Carthage</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</link>
+      <pubDate>Thu, 15 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</guid>
+      <description>
+
+&lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
+
+&lt;h3 id=&#34;carthageってなんなの:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;「カルタゴ」と読んで、Swift対応したライブラリ管理ツールです。&lt;/p&gt;
+
+&lt;p&gt;インストール、使い方はgithubページ見ればわかると思います。&lt;/p&gt;
+
+&lt;p&gt;基本的な使い方は Cartfile 作成して使いたいgithubのライブラリをリストで書いてから
+「carthage update」するとCarthage/Buildの下に ******.framework ファイルが出来上がるので
+それをプロジェクトにドラッグアンドドロップして入れる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Cartfile
+github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
+
+$ carthage update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;既存のライブラリcarthage対応:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7583/15666092073_76b41b17b1.jpg&#34; alt=&#34;Scheme Shared&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;既存ライブラリを新しいTargetに移す&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Swift Compiler設定&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8598/16098635750_0c10d33669.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Compile Sourcesに必要なSwiftファイル追加&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8561/16100158557_400084b6c6.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Schemeを新しいtargetにしてビルドする。（iOS Deviceにして）
+エラーになったら自己解決&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;carthage buildしてみる。githubに上げる前に、ローカルでビルとして、正常に ******.framework が出来上がるのを確認。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ carthage build --no-skip-current
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;githubに上げる。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git tag v0.1.0
+$ git push origin v0.1.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上でcarthage対応完了。&lt;/p&gt;
+
+&lt;p&gt;対応したプロジェクトがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/OAuthSwift&#34;&gt;https://github.com/dongri/OAuthSwift&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migrating to Cedar-14 Stack</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</link>
+      <pubDate>Sat, 10 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
+      <description>&lt;p&gt;bamboo-mri-1.9.2 stack 下岗了。&lt;/p&gt;
+
+&lt;p&gt;Migrating to the Celadon Cedar-14 Stack&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku stack:set cedar-14
+stack set, next release on production-app will use cedar-14
+Run `git push heroku master` to create a new release on cedar-14
+
+$ git commit --allow-empty -m &amp;quot;Upgrading to Cedar-14&amp;quot;
+[master 973c3f7] Upgrading to Cedar-14
+
+$ git push heroku master
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Revel on Heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</link>
+      <pubDate>Thu, 11 Dec 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</guid>
+      <description>
+
+&lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;事前確認:8262f9878270e0993d374e4a15849ed6&#34;&gt;事前確認&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo $GOPATH
+/Users/dongri/go
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;revelプロジェクト作成:8262f9878270e0993d374e4a15849ed6&#34;&gt;Revelプロジェクト作成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ revel new team
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;↑で $GOPATH/src/にteamフォルダが出来上がる&lt;/p&gt;
+
+&lt;h3 id=&#34;ローカルで実行してみる:8262f9878270e0993d374e4a15849ed6&#34;&gt;ローカルで実行してみる&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ revel run team
+
+$ open http://localhost:9000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;herokuにbuildpackでデプロイ:8262f9878270e0993d374e4a15849ed6&#34;&gt;herokuにbuildpackでデプロイ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku create -b https://github.com/robfig/heroku-buildpack-go-revel.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;heroku画面でアプリの名前を変更する:8262f9878270e0993d374e4a15849ed6&#34;&gt;heroku画面でアプリの名前を変更する。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git remote -v
+$ git retemo rm origin
+$ git remote add origin git@heroku.com:[app].git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;godirファイル作成:8262f9878270e0993d374e4a15849ed6&#34;&gt;.godirファイル作成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pwd
+/Users/dongri/go/src/team
+$ echo &amp;quot;team&amp;quot; &amp;gt; .godir
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;デプロイ:8262f9878270e0993d374e4a15849ed6&#34;&gt;デプロイ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git add .
+$ git commit -m &amp;quot;hoge&amp;quot;
+$ git push origin master
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上で完了&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Commands</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-29-docker-commands/</link>
+      <pubDate>Sat, 29 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-29-docker-commands/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Installing Docker on Mac OS X&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/installation/mac/&#34;&gt;https://docs.docker.com/installation/mac/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;boot2ocker start&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ boot2docker start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;attach&lt;/strong&gt; ( Attach to a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+adead7a08f15        ubuntu:14.04        /bin/bash           About an hour ago   Up 27 minutes                           myubuntu            
+
+$ docker attach myubuntu
+root@adead7a08f15:/#
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; ( Build an image from a Dockerfile )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Dockerfile
+FROM centos:centos6
+MAINTAINER Dongri Jin
+
+RUN yum update -y &amp;amp;&amp;amp; \
+    rpm --import http://nginx.org/keys/nginx_signing.key &amp;amp;&amp;amp; \
+    yum install -y http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm &amp;amp;&amp;amp; \
+    yum install -y nginx
+
+EXPOSE 80
+ENTRYPOINT [&amp;quot;/usr/sbin/nginx&amp;quot;, &amp;quot;-g&amp;quot;, &amp;quot;daemon off;&amp;quot;]
+
+$ docker build -t ngix .
+
+$ docker images
+
+$ docker run -d -p 80:80 nginx
+
+$ VBoxManage controlvm &amp;quot;boot2docker-vm&amp;quot; natpf1 &amp;quot;nginx,tcp,127.0.0.1,8080,,80&amp;quot;
+
+$ open http://localhost:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;commit&lt;/strong&gt; ( Create a new image from a container&amp;rsquo;s changes )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -i -t -d nginx                       
+ea21748dddd379d8959373cd366b1eb10f4193a68c530c3539fe110b0531bd22
+
+$ docker  docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+ea21748dddd3        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 3 seconds        80/tcp              tender_fermi        
+
+$ docker commit ea21748dddd3 my-nginx
+69f023fe647655f984afd0617dd1e65d8b9a2e5e551bac32af5e6436bfe3ac70
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+my-nginx            latest              69f023fe6476        About an hour ago   267.8 MB
+nginx               latest              9bc094d3c806        About an hour ago   267.8 MB
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;cp&lt;/strong&gt; ( Copy files/folders from a container&amp;rsquo;s filesystem to the host path )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d nginx
+69e4211b565349631845e984a5914688a250671764c98c959236fb53d059a709
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 1 seconds        80/tcp              distracted_curie    
+
+$ docker cp 69e4211b5653:/usr/share/nginx/html/index.html ./
+
+$ ls -l
+total 16
+-rw-r--r--  1 dongri  staff  332 Nov 29 17:41 Dockerfile
+-rw-r--r--  1 dongri  staff  612 Sep 16 22:57 index.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;diff&lt;/strong&gt; ( Inspect changes on a container&amp;rsquo;s filesystem )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 3 minutes        80/tcp              distracted_curie    
+
+$ docker diff 69e4211b5653
+C /var
+C /var/cache
+C /var/cache/nginx
+A /var/cache/nginx/client_temp
+A /var/cache/nginx/fastcgi_temp
+A /var/cache/nginx/proxy_temp
+A /var/cache/nginx/scgi_temp
+A /var/cache/nginx/uwsgi_temp
+C /var/run
+A /var/run/nginx.pid
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;events&lt;/strong&gt; ( Get real time events from the server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker events
+[2014-11-29 17:09:17 +0900 JST] d9860be76a657a: (from my-nginx:latest) create
+[2014-11-29 17:09:17 +0900 JST] d9860be76a657a: (from my-nginx:latest) start
+[2014-11-29 17:09:17 +0900 JST] d9860be76a657a: (from my-nginx:latest) die
+[2014-11-29 17:09:42 +0900 JST] 94d8ff9c9b006b: (from nginx:latest) create
+[2014-11-29 17:09:42 +0900 JST] 94d8ff9c9b006b: (from nginx:latest) start
+[2014-11-29 17:10:19 +0900 JST] 94d8ff9c9b006b: (from nginx:latest) die
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;export&lt;/strong&gt; ( Stream the contents of a container as a tar archive)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 9 minutes        80/tcp              distracted_curie    
+
+$ docker export 69e4211b5653 &amp;gt; nginx.tar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;history&lt;/strong&gt; ( Show the history of an image )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker history nginx
+IMAGE               CREATED             CREATED BY                                      SIZE
+9bc094d3c806        About an hour ago   /bin/sh -c #(nop) ENTRYPOINT [/usr/sbin/nginx   0 B
+bc8b862f52f2        About an hour ago   /bin/sh -c #(nop) EXPOSE map[80/tcp:{}]         0 B
+6a7c1a5d6e92        About an hour ago   /bin/sh -c yum update -y &amp;amp;&amp;amp;     rpm --import    52.02 MB
+7becd8731a8d        About an hour ago   /bin/sh -c #(nop) MAINTAINER Dongri Jin         0 B
+70441cac1ed5        3 weeks ago         /bin/sh -c #(nop) ADD file:87e3d5074ec1720805   215.8 MB
+5b12ef8fd570        8 weeks ago         /bin/sh -c #(nop) MAINTAINER The CentOS Proje   0 B
+511136ea3c5a        17 months ago                                                       0 B
+
+$  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;images&lt;/strong&gt; ( List images )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+my-nginx            latest              69f023fe6476        About an hour ago   267.8 MB
+nginx               latest              9bc094d3c806        About an hour ago   267.8 MB
+centos              centos6             70441cac1ed5        3 weeks ago         215.8 MB
+ubuntu              14.04               c4ff7513909d        3 months ago        225.4 MB
+ubuntu              latest              c4ff7513909d        3 months ago        225.4 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;import&lt;/strong&gt; ( Create a new filesystem image from the contents of a tarball )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat nginx.tar | docker import - nginx:import                                                                                                                                                    254714ba37221092c47f22a886c7f7497ed65da53d42cf24a4f44e0054305af4
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+my-nginx            latest              69f023fe6476        About an hour ago   267.8 MB
+nginx               latest              9bc094d3c806        About an hour ago   267.8 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;info&lt;/strong&gt; ( Display system-wide information )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker info
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;inspect&lt;/strong&gt; ( Return low-level information on a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker inspect 69e4211b5653
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;kill&lt;/strong&gt; ( Kill a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps                        
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 23 minutes       80/tcp              distracted_curie    
+
+$ docker kill 69e4211b5653
+69e4211b5653
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;load&lt;/strong&gt; ( Load an image from a tar archive )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker load &amp;lt; nginx.tar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;login&lt;/strong&gt; ( Register or log in to the Docker registry server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker login
+Username: dongri
+Password: ***
+Email: ***@gmail.com
+Login Succeeded
+
+$ docker pull ubuntu
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;logs&lt;/strong&gt; ( Fetch the logs of a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker logs 108233ba9a1d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;port&lt;/strong&gt; ( Lookup the public-facing port that is NAT-ed to PRIVATE_PORT )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d -p 80:80 nginx
+108233ba9a1df0aa199a8392d052f3c0cd8e7929bdeff6d5fa52ac47a75aa603
+
+$ docker port 108233ba9a1d 80
+0.0.0.0:80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pause&lt;/strong&gt; ( Pause all processes within a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker pause 108233ba9a1d
+108233ba9a1d
+
+$ open http://localhost:8080
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt; ( List containers )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+
+$ docker ps -a
+
+$ docker ps -a -q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pull&lt;/strong&gt; ( Pull an image or a repository from a Docker registry server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker pull golang:1.4rc1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;push&lt;/strong&gt; ( Push an image or a repository to a Docker registry server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -i -t -d golang
+921dc8b1555af7507f8669883724047b4cc114be0681a07f86def
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up 4 seconds                                  focused_newton      
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 15 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker commit 16f79ec35b99 dongri/golang
+da5a0042ad9ac478c38fc743c8f981f292a9aefd41ac54276a6617c319719ad1
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+my-nginx            latest              69f023fe6476        2 hours ago         267.8 MB
+nginx               latest              9bc094d3c806        2 hours ago         267.8 MB
+golang              1.4rc1              a9e27473d0f8        2 days ago          467.7 MB
+golang              latest              ebd3fd90ae2e        2 days ago          448 MB
+
+$ docker push dongri/golang
+The push refers to a repository [dongri/golang] (len: 1)
+Sending image list
+Pushing repository dongri/golang (1 tags)
+511136ea3c5a: Image already pushed, skipping
+36fd425d7d8a: Image already pushed, skipping
+aaabd2b41e22: Image already pushed, skipping
+cd9d7733886c: Image already pushed, skipp
+da5a0042ad9a: Image successfully pushed
+Pushing tag for rev [da5a0042ad9a] on {https://cdn-registry-1.docker.io/v1/repositories/dongri/golang/tags/latest}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;restart&lt;/strong&gt; ( Restart a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up 3 minutes                                  focused_newton      
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 18 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker restart 16f79ec35b99
+16f79ec35b99
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt; ( Remove one or more containers )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up 55 seconds
+714a086c9e4d        golang:latest       /bin/bash              About an hour ago   Exited (1) 4 minutes ago
+
+$ docker rm 714a086c9e4d
+714a086c9e4d
+
+$ docker ps -a          
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up About a minute
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;rmi&lt;/strong&gt; ( Remove one or more images )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+my-nginx            latest              69f023fe6476        2 hours ago         267.8 MB
+
+$ docker rmi 69f023fe6476
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;run&lt;/strong&gt; ( Run a command in a new container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d nginx
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;save&lt;/strong&gt; ( Save an image to a tar archive )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+
+$ docker save nginx &amp;gt; mynginx.tar
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;search&lt;/strong&gt; ( Search for an image on the Docker Hub )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker search dongri
+NAME            DESCRIPTION   STARS     OFFICIAL   AUTOMATED
+dongri/coreos                 2                    
+dongri/node                   1                    
+dongri/nginx                  0                    
+dongri/redis                  0                    
+dongri/golang                 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;start&lt;/strong&gt; ( Start a stopped container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                           PORTS
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 27 minutes (Paused)           0.0.0.0:80-&amp;gt;80/tcp
+269367b4bd87        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Exited (-1) 28 minutes ago
+
+$ docker start 269367b4bd87
+269367b4bd87
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 27 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+269367b4bd87        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 2 seconds             80/tcp               kickass_perlman     
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;stop&lt;/strong&gt; ( Stop a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 27 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+269367b4bd87        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 2 seconds             80/tcp               kickass_perlman     
+
+$ docker stop 269367b4bd87
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;tag&lt;/strong&gt; ( Tag an image into a repository )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+
+$ docker tag 254714ba3722 nginx:export
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+nginx               export              254714ba3722        About an hour ago   242.8 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;top&lt;/strong&gt; ( Lookup the running processes of a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        9bc094d3c806        /usr/sbin/nginx -g &#39;   About an hour ago   Up 38 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker top 108233ba9a1d
+PID                 USER                COMMAND
+1658                root                nginx: master process /usr/sbin/nginx -g daemon off;
+1668                499                 nginx: worker process
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;unpause&lt;/strong&gt; ( Unpause a paused container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        9bc094d3c806        /usr/sbin/nginx -g &#39;   About an hour ago   Up 38 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker unpause 108233ba9a1d
+108233ba9a1d
+
+$ open http://localhost:8080
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;version&lt;/strong&gt; ( Show the Docker version information )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker version
+Client version: 1.1.1
+Client API version: 1.13
+Go version (client): go1.2.1
+Git commit (client): bd609d2
+Server version: 1.1.2
+Server API version: 1.13
+Go version (server): go1.2.1
+Git commit (server): d84a070
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;wait&lt;/strong&gt; ( Block until a container stops, then print its exit code )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker wait 108233ba9a1d
+
+$ docker stop 108233ba9a1d
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>github multiple accounts</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-18-github-multiple-accounts/</link>
+      <pubDate>Tue, 18 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-18-github-multiple-accounts/</guid>
+      <description>
+
+&lt;p&gt;ある事情により、githubに公開アカウントと秘密アカウントが必要になって、複数のアカウントを扱うようになりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;まず-新しいsshキーの生成:c3453167f960f54141c44c8bf9a660ee&#34;&gt;まず、新しいSSHキーの生成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;yoda@gmail.com&amp;quot; -f id_rsa_secret
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ssh-config-設定:c3453167f960f54141c44c8bf9a660ee&#34;&gt;~/.ssh/config 設定&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim ~/.ssh/config
+
+############ Github ###############
+Host github-secret
+  User git
+  Port 22
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa_secret
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;git-clone:c3453167f960f54141c44c8bf9a660ee&#34;&gt;git clone&lt;/h3&gt;
+
+&lt;p&gt;SSH clone URL: git@github.com:user/project.git の場合&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git clone git@github-secret:user/project.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;git-config:c3453167f960f54141c44c8bf9a660ee&#34;&gt;git config&lt;/h3&gt;
+
+&lt;p&gt;確認してみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name
+$ git config --global user.email
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SSHキー違ってもこのままだと複数プロジェクトのauthor, committerがglobal設定になるので、変更する。&lt;/p&gt;
+
+&lt;p&gt;git clone したあとのプロジェクトに入って&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --local user.name &amp;quot;Yoda&amp;quot;
+$ git config --local user.email &amp;quot;yoda@gmail.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上です、複数のgithubを扱えるようになりました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;user.name設定忘れるとご迷惑掛けする場合がございますので、忘れずに。。。&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

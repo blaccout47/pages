@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oauth on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/oauth/</link>
+    <description>Recent content in Oauth on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Feb 2015 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Google OAuth2</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-16-google-oauth2/</link>
+      <pubDate>Mon, 16 Feb 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-16-google-oauth2/</guid>
+      <description>
+
+&lt;p&gt;Google OAuth2のトークンを手動で取得メモ。通常はWebアプリはブラウザで取得してトークンとか保存すればいいのだが、
+hubot scriptでcalendar情報とか取得したい場合は、そうはいかない。&lt;/p&gt;
+
+&lt;h2 id=&#34;クライアントid作成:ba9710434c30615632bec5302bcb66de&#34;&gt;クライアントID作成&lt;/h2&gt;
+
+&lt;p&gt;予めGoogle Developer Console画面で、クライアントIDを作成
+&lt;a href=&#34;https://console.developers.google.com/project&#34;&gt;https://console.developers.google.com/project&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;code-取得:ba9710434c30615632bec5302bcb66de&#34;&gt;code 取得&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;https://accounts.google.com/o/oauth2/auth
+?client_id={client_id}
+&amp;amp;redirect_uri={callback_url}
+&amp;amp;scope={scope}
+&amp;amp;response_type=code
+&amp;amp;approval_prompt=force
+&amp;amp;access_type=offline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;scopeは &lt;a href=&#34;https://www.googleapis.com/auth/calendar.readonly&#34;&gt;https://www.googleapis.com/auth/calendar.readonly&lt;/a&gt; など&lt;/p&gt;
+
+&lt;p&gt;GETで上のURLを叩く。認証画面が開き、承認すると、指定したcallback_urlにcodeが返ってくる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;{callback_url}?code=4/W30HqfsDKmamqdW*****************
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;access-token-refresh-token-取得:ba9710434c30615632bec5302bcb66de&#34;&gt;access_token, refresh_token 取得&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl
+-d client_id={client_id}
+-d client_secret={client_secret}
+-d redirect_uri={callback_url}
+-d grant_type=authorization_code
+-d code={code} https://accounts.google.com/o/oauth2/token
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以下のJSON結果が返ってくる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;access_token&amp;quot; : &amp;quot;{access_token}&amp;quot;,
+  &amp;quot;token_type&amp;quot; : &amp;quot;Bearer&amp;quot;,
+  &amp;quot;expires_in&amp;quot; : 3600,
+  &amp;quot;refresh_token&amp;quot; : &amp;quot;{refresh_token}&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;access_tokenの情報を確認してみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={access_token}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アクセスする度にexpires_inが減って行くのがわかる。0になると、access_tokenは失効されるので、使えない。&lt;/p&gt;
+
+&lt;h2 id=&#34;新しいaccess-tokenを取得:ba9710434c30615632bec5302bcb66de&#34;&gt;新しいaccess_tokenを取得&lt;/h2&gt;
+
+&lt;p&gt;expires_inで有効期限切れるまえに以下のPOSTで新しいaccess_tokenを取得&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl
+-d client_id={client_id}
+-d client_secret={client_secret}
+-d refresh_token={refresh_token}
+-d grant_type=refresh_token https://accounts.google.com/o/oauth2/token
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上の結果、新しいexpires_inが3600の新しいaccess_tokenが返ってくる。&lt;/p&gt;
+
+&lt;p&gt;3600秒以内にaccess_tokenを更新して使えばOK!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Carthage</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</link>
+      <pubDate>Thu, 15 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</guid>
+      <description>
+
+&lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
+
+&lt;h3 id=&#34;carthageってなんなの:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;「カルタゴ」と読んで、Swift対応したライブラリ管理ツールです。&lt;/p&gt;
+
+&lt;p&gt;インストール、使い方はgithubページ見ればわかると思います。&lt;/p&gt;
+
+&lt;p&gt;基本的な使い方は Cartfile 作成して使いたいgithubのライブラリをリストで書いてから
+「carthage update」するとCarthage/Buildの下に ******.framework ファイルが出来上がるので
+それをプロジェクトにドラッグアンドドロップして入れる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Cartfile
+github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
+
+$ carthage update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;既存のライブラリcarthage対応:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7583/15666092073_76b41b17b1.jpg&#34; alt=&#34;Scheme Shared&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;既存ライブラリを新しいTargetに移す&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Swift Compiler設定&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8598/16098635750_0c10d33669.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Compile Sourcesに必要なSwiftファイル追加&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8561/16100158557_400084b6c6.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Schemeを新しいtargetにしてビルドする。（iOS Deviceにして）
+エラーになったら自己解決&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;carthage buildしてみる。githubに上げる前に、ローカルでビルとして、正常に ******.framework が出来上がるのを確認。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ carthage build --no-skip-current
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;githubに上げる。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git tag v0.1.0
+$ git push origin v0.1.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上でcarthage対応完了。&lt;/p&gt;
+
+&lt;p&gt;対応したプロジェクトがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/OAuthSwift&#34;&gt;https://github.com/dongri/OAuthSwift&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OAuthSwift</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-06-29-oauthswift/</link>
+      <pubDate>Sun, 29 Jun 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-06-29-oauthswift/</guid>
+      <description>
+
+&lt;p&gt;先日社内SwiftハッカソンでFlickrのPrivate写真を見せるアプリを作ろうとしたところ、
+FlickrのOAuth認証で半日ハマって結局Private写真はだめで、キーワード検索アプリを作った。
+その後Githubで検索しても、ちょっと汎用的なiOSのOAuthライブラリがなくて、
+Swiftの勉強も含めてOAuthライブラリを書いてみた。(OAuth1.0, OAuth2.0両方対応したつもりであるが)&lt;/p&gt;
+
+&lt;p&gt;Github : &lt;a href=&#34;https://github.com/dongri/OAuthSwift&#34; title=&#34;OAuthSwift&#34;&gt;https://github.com/dongri/OAuthSwift&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;// OAuth1.0
+let oauthswift = OAuth1Swift(
+    consumerKey:    &amp;quot;********&amp;quot;,
+    consumerSecret: &amp;quot;********&amp;quot;,
+    requestTokenUrl: &amp;quot;https://api.twitter.com/oauth/request_token&amp;quot;,
+    authorizeUrl:    &amp;quot;https://api.twitter.com/oauth/authorize&amp;quot;,
+    accessTokenUrl:  &amp;quot;https://api.twitter.com/oauth/access_token&amp;quot;
+)
+oauthswift.authorizeWithCallbackURL( NSURL(string: &amp;quot;oauth-swift://oauth-callback/twitter&amp;quot;), success: {
+    credential, response in
+    println(credential.oauth_token)
+    println(credential.oauth_token_secret)
+}, failure: failureHandler)
+
+// OAuth2.0
+let oauthswift = OAuth2Swift(
+    consumerKey:    &amp;quot;********&amp;quot;,
+    consumerSecret: &amp;quot;********&amp;quot;,
+    authorizeUrl:   &amp;quot;https://api.instagram.com/oauth/authorize&amp;quot;,
+    responseType:   &amp;quot;token&amp;quot;
+)
+oauthswift.authorizeWithCallbackURL( NSURL(string: &amp;quot;oauth-swift://oauth-callback/instagram&amp;quot;), scope: &amp;quot;likes+comments&amp;quot;, state:&amp;quot;INSTAGRAM&amp;quot;, success: {
+    credential, response in
+    println(credential.oauth_token)
+}, failure: failureHandler)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;各サービスoauth関連ページ:b3b9560f925092fab7ad073d1ada7340&#34;&gt;各サービスOAuth関連ページ&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Twitter:&lt;br /&gt;
+[&lt;a href=&#34;https://dev.twitter.com/docs/auth/oauth](&#34;&gt;https://dev.twitter.com/docs/auth/oauth](&lt;/a&gt; &amp;ldquo;oauth&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Flickr:&lt;br /&gt;
+[&lt;a href=&#34;https://www.flickr.com/services/api/auth.oauth.html](&#34;&gt;https://www.flickr.com/services/api/auth.oauth.html](&lt;/a&gt; &amp;ldquo;oauth&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Github:&lt;br /&gt;
+[&lt;a href=&#34;https://developer.github.com/v3/oauth/](&#34;&gt;https://developer.github.com/v3/oauth/](&lt;/a&gt; &amp;ldquo;oauth&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Instagram:&lt;br /&gt;
+[&lt;a href=&#34;http://instagram.com/developer/authentication/](&#34;&gt;http://instagram.com/developer/authentication/](&lt;/a&gt; &amp;ldquo;oauth&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Foursquare:&lt;br /&gt;
+[&lt;a href=&#34;https://developer.foursquare.com/overview/auth](&#34;&gt;https://developer.foursquare.com/overview/auth](&lt;/a&gt; &amp;ldquo;oauth&amp;rdquo;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

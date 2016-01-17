@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/linux/</link>
+    <description>Recent content in Linux on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Jan 2015 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GHOST (CVE-2015-0235)</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-28-ghost-cve-2015-0235/</link>
+      <pubDate>Wed, 28 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-28-ghost-cve-2015-0235/</guid>
+      <description>
+
+&lt;p&gt;クラウドセキュリティ企業Qualysの研究者が、Linux GNU Cライブラリ（glibc）に深刻なセキュリティホールである「GHOST」（CVE-2015-0235）を発見したらしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.openwall.com/lists/oss-security/2015/01/27/9&#34;&gt;http://www.openwall.com/lists/oss-security/2015/01/27/9&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;このセキュリティホールは、glibc-2.2（2000年11月10日にリリース）を使用してビルドされたすべてのLinuxシステムに存在する。Qualysによれば、このバグは実際には、2013年5月21日にリリースされた、glibc-2.17とglibc-2.18の間のバグフィックスで修正されている。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ポイントはglibcのバージョンで判断するのではなく、パッチを当てたかどうか。&lt;/p&gt;
+
+&lt;h3 id=&#34;対応前:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応前&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/lib/libc.so.6&lt;/li&gt;
+&lt;li&gt;/lib64/libc.so.6&lt;/li&gt;
+&lt;li&gt;/lib/i386-linux-gnu/libc.so.6&lt;/li&gt;
+&lt;li&gt;/lib/x86_64-linux-gnu/libc.so.6&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ /lib64/libc.so.6
+GNU C Library stable release version 2.12, by Roland McGrath et al.
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.4.7 20120313 (Red Hat 4.4.7-4).
+Compiled on a Linux 2.6.32 system on 2014-08-29.
+Available extensions:
+The C stubs add-on version 2.1.2.
+crypt add-on version 2.1 by Michael Glad and others
+GNU Libidn by Simon Josefsson
+Native POSIX Threads Library by Ulrich Drepper et al
+BIND-8.2.3-T5B
+RT using linux kernel aio
+libc ABIs: UNIQUE IFUNC
+For bug reporting instructions, please see:
+&amp;lt;http://www.gnu.org/software/libc/bugs.html&amp;gt;.
+
+$
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;対応:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo yum clean all
+
+$ sudo yum update glibc
+or
+$ sudo yum update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;対応後:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応後&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ /lib64/libc.so.6
+GNU C Library stable release version 2.12, by Roland McGrath et al.
+Copyright (C) 2010 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.4.7 20120313 (Red Hat 4.4.7-11).
+Compiled on a Linux 2.6.32 system on 2015-01-27.
+Available extensions:
+The C stubs add-on version 2.1.2.
+crypt add-on version 2.1 by Michael Glad and others
+GNU Libidn by Simon Josefsson
+Native POSIX Threads Library by Ulrich Drepper et al
+BIND-8.2.3-T5B
+RT using linux kernel aio
+libc ABIs: UNIQUE IFUNC
+For bug reporting instructions, please see:
+&amp;lt;http://www.gnu.org/software/libc/bugs.html&amp;gt;.
+
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;何が変わった:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;何が変わった？&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Compiled on a Linux 2.6.32 system on 2015-01-27.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;サーバー再起動:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;サーバー再起動&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;CentOS 6.5 x64 (digitalocean) での作業でした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cron debug</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-10-cron-debug/</link>
+      <pubDate>Mon, 10 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-10-cron-debug/</guid>
+      <description>&lt;p&gt;毎回ハマるのでメモしとく。&lt;/p&gt;
+
+&lt;p&gt;コンソールでは正しく動くけど、crontabに記述すると動かない。&lt;/p&gt;
+
+&lt;p&gt;調べてみる順番&lt;/p&gt;
+
+&lt;p&gt;1.crondが動くか確認&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ps aux | grep crond
+root     25500  0.0  0.0 119380  1256 ?        Ss   Sep10   2:29 crond
+
+$ /etc/init.d/crond status
+crond (pid  25500) is running...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.実行権限あるか確認してみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -l /var/cron/hoge.sh
+-rwxr-xr-x  1 root   root     90 Nov 10 08:54 hoge.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.ログを仕込んでみる&lt;/p&gt;
+
+&lt;p&gt;標準出力は 1&lt;br /&gt;
+標準エラー出力は 2&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0 5 * * * echo  &amp;quot;cron test&amp;quot; &amp;gt;&amp;gt; /home/dongri/cron-success.log 2&amp;gt;&amp;gt; /home/dongri/cron-error.log | mail -s &amp;quot;Cron Result&amp;quot; dongri@gmail.com
+
+0 5 * * * /var/cron/hoge.sh &amp;gt;&amp;gt; /home/dongri/cron-success.log 2&amp;gt;&amp;gt; /home/dongri/cron-error.log | mail -s &amp;quot;Cron Result&amp;quot; dongri@gmail.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※ 「2&amp;gt;&amp;amp;1」の意味は2の出力先を、1の出力先と同じようにする&lt;/p&gt;
+
+&lt;p&gt;4.cronログ見てみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo tail -f /var/log/cron
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5.メール確認してみる&lt;/p&gt;
+
+&lt;p&gt;こういう系メールは大体スパム扱いにされるので、Gmailのスパムフォルダを覗いてみる&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ShellShock</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-09-28-shellshock/</link>
+      <pubDate>Sun, 28 Sep 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-09-28-shellshock/</guid>
+      <description>
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;bash 脆弱性 ｷﾀ━(ﾟ∀ﾟ)━! &lt;a href=&#34;http://t.co/a4anqJxILC&#34;&gt;pic.twitter.com/a4anqJxILC&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dongri Jin (@dongriat) &lt;a href=&#34;https://twitter.com/dongriat/status/514962923010019328&#34;&gt;September 25, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;3日ほど経ちましたが、あのshellshockについて見かけた記事ををまとめてみた。&lt;/p&gt;
+
+&lt;p&gt;当日は社内で二人で「楽しく」対応したが、ある意味面白かった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;BASHの脆弱性でCGIスクリプトにアレさせてみました&lt;br /&gt;
+&lt;a href=&#34;http://www.walbrix.com/jp/blog/2014-09-bash-code-injection.html&#34;&gt;http://www.walbrix.com/jp/blog/2014-09-bash-code-injection.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;先程から騒ぎになっているbashの脆弱性について&lt;br /&gt;
+&lt;a href=&#34;http://blog.ueda.asia/?p=3967&#34;&gt;http://blog.ueda.asia/?p=3967&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bashの脆弱性(CVE-2014-6271) #ShellShock の関連リンクをまとめてみた&lt;br /&gt;
+&lt;a href=&#34;http://d.hatena.ne.jp/Kango/20140925/1411612246&#34;&gt;http://d.hatena.ne.jp/Kango/20140925/1411612246&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bashの脆弱性がヤバすぎる件&lt;br /&gt;
+&lt;a href=&#34;https://x86-64.jp/blog/CVE-2014-6271&#34;&gt;https://x86-64.jp/blog/CVE-2014-6271&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bash脆弱性への対応&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/tomohisaota/items/8a8049eea11ece3781b3&#34;&gt;http://qiita.com/tomohisaota/items/8a8049eea11ece3781b3&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2014/09/24に発表されたBash脆弱性と解決法(RedHat系)&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/richmikan@github/items/5f54114a46e64178133d﻿&#34;&gt;http://qiita.com/richmikan@github/items/5f54114a46e64178133d﻿&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;AWS Elastic Beanstalk bash脆弱性への対応&lt;br /&gt;
+&lt;a href=&#34;http://qiita.com/dongri/items/5a1fd49e091438ef37d7&#34;&gt;http://qiita.com/dongri/items/5a1fd49e091438ef37d7&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この後もいろんな記事出たが、省略&lt;/p&gt;
+
+&lt;h3 id=&#34;対応内容:b61ad0598e71cce336437a16c0963cc8&#34;&gt;対応内容&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo bash test&#39;
+vulnerable
+bash test
+
+$ sudo yum clean all
+
+$ sudo yum update bash
+
+$ env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo bash test&#39;
+bash test
+$
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

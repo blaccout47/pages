@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/docker/</link>
+    <description>Recent content in Docker on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Nov 2014 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker Commands</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-29-docker-commands/</link>
+      <pubDate>Sat, 29 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-29-docker-commands/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Installing Docker on Mac OS X&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/installation/mac/&#34;&gt;https://docs.docker.com/installation/mac/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;boot2ocker start&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ boot2docker start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;attach&lt;/strong&gt; ( Attach to a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+adead7a08f15        ubuntu:14.04        /bin/bash           About an hour ago   Up 27 minutes                           myubuntu            
+
+$ docker attach myubuntu
+root@adead7a08f15:/#
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;build&lt;/strong&gt; ( Build an image from a Dockerfile )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Dockerfile
+FROM centos:centos6
+MAINTAINER Dongri Jin
+
+RUN yum update -y &amp;amp;&amp;amp; \
+    rpm --import http://nginx.org/keys/nginx_signing.key &amp;amp;&amp;amp; \
+    yum install -y http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm &amp;amp;&amp;amp; \
+    yum install -y nginx
+
+EXPOSE 80
+ENTRYPOINT [&amp;quot;/usr/sbin/nginx&amp;quot;, &amp;quot;-g&amp;quot;, &amp;quot;daemon off;&amp;quot;]
+
+$ docker build -t ngix .
+
+$ docker images
+
+$ docker run -d -p 80:80 nginx
+
+$ VBoxManage controlvm &amp;quot;boot2docker-vm&amp;quot; natpf1 &amp;quot;nginx,tcp,127.0.0.1,8080,,80&amp;quot;
+
+$ open http://localhost:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;commit&lt;/strong&gt; ( Create a new image from a container&amp;rsquo;s changes )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -i -t -d nginx                       
+ea21748dddd379d8959373cd366b1eb10f4193a68c530c3539fe110b0531bd22
+
+$ docker  docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+ea21748dddd3        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 3 seconds        80/tcp              tender_fermi        
+
+$ docker commit ea21748dddd3 my-nginx
+69f023fe647655f984afd0617dd1e65d8b9a2e5e551bac32af5e6436bfe3ac70
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+my-nginx            latest              69f023fe6476        About an hour ago   267.8 MB
+nginx               latest              9bc094d3c806        About an hour ago   267.8 MB
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;cp&lt;/strong&gt; ( Copy files/folders from a container&amp;rsquo;s filesystem to the host path )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d nginx
+69e4211b565349631845e984a5914688a250671764c98c959236fb53d059a709
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 1 seconds        80/tcp              distracted_curie    
+
+$ docker cp 69e4211b5653:/usr/share/nginx/html/index.html ./
+
+$ ls -l
+total 16
+-rw-r--r--  1 dongri  staff  332 Nov 29 17:41 Dockerfile
+-rw-r--r--  1 dongri  staff  612 Sep 16 22:57 index.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;diff&lt;/strong&gt; ( Inspect changes on a container&amp;rsquo;s filesystem )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 3 minutes        80/tcp              distracted_curie    
+
+$ docker diff 69e4211b5653
+C /var
+C /var/cache
+C /var/cache/nginx
+A /var/cache/nginx/client_temp
+A /var/cache/nginx/fastcgi_temp
+A /var/cache/nginx/proxy_temp
+A /var/cache/nginx/scgi_temp
+A /var/cache/nginx/uwsgi_temp
+C /var/run
+A /var/run/nginx.pid
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;events&lt;/strong&gt; ( Get real time events from the server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker events
+[2014-11-29 17:09:17 +0900 JST] d9860be76a657a: (from my-nginx:latest) create
+[2014-11-29 17:09:17 +0900 JST] d9860be76a657a: (from my-nginx:latest) start
+[2014-11-29 17:09:17 +0900 JST] d9860be76a657a: (from my-nginx:latest) die
+[2014-11-29 17:09:42 +0900 JST] 94d8ff9c9b006b: (from nginx:latest) create
+[2014-11-29 17:09:42 +0900 JST] 94d8ff9c9b006b: (from nginx:latest) start
+[2014-11-29 17:10:19 +0900 JST] 94d8ff9c9b006b: (from nginx:latest) die
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;export&lt;/strong&gt; ( Stream the contents of a container as a tar archive)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 9 minutes        80/tcp              distracted_curie    
+
+$ docker export 69e4211b5653 &amp;gt; nginx.tar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;history&lt;/strong&gt; ( Show the history of an image )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker history nginx
+IMAGE               CREATED             CREATED BY                                      SIZE
+9bc094d3c806        About an hour ago   /bin/sh -c #(nop) ENTRYPOINT [/usr/sbin/nginx   0 B
+bc8b862f52f2        About an hour ago   /bin/sh -c #(nop) EXPOSE map[80/tcp:{}]         0 B
+6a7c1a5d6e92        About an hour ago   /bin/sh -c yum update -y &amp;amp;&amp;amp;     rpm --import    52.02 MB
+7becd8731a8d        About an hour ago   /bin/sh -c #(nop) MAINTAINER Dongri Jin         0 B
+70441cac1ed5        3 weeks ago         /bin/sh -c #(nop) ADD file:87e3d5074ec1720805   215.8 MB
+5b12ef8fd570        8 weeks ago         /bin/sh -c #(nop) MAINTAINER The CentOS Proje   0 B
+511136ea3c5a        17 months ago                                                       0 B
+
+$  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;images&lt;/strong&gt; ( List images )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+my-nginx            latest              69f023fe6476        About an hour ago   267.8 MB
+nginx               latest              9bc094d3c806        About an hour ago   267.8 MB
+centos              centos6             70441cac1ed5        3 weeks ago         215.8 MB
+ubuntu              14.04               c4ff7513909d        3 months ago        225.4 MB
+ubuntu              latest              c4ff7513909d        3 months ago        225.4 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;import&lt;/strong&gt; ( Create a new filesystem image from the contents of a tarball )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat nginx.tar | docker import - nginx:import                                                                                                                                                    254714ba37221092c47f22a886c7f7497ed65da53d42cf24a4f44e0054305af4
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+my-nginx            latest              69f023fe6476        About an hour ago   267.8 MB
+nginx               latest              9bc094d3c806        About an hour ago   267.8 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;info&lt;/strong&gt; ( Display system-wide information )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker info
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;inspect&lt;/strong&gt; ( Return low-level information on a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker inspect 69e4211b5653
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;kill&lt;/strong&gt; ( Kill a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps                        
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
+69e4211b5653        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 23 minutes       80/tcp              distracted_curie    
+
+$ docker kill 69e4211b5653
+69e4211b5653
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;load&lt;/strong&gt; ( Load an image from a tar archive )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker load &amp;lt; nginx.tar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;login&lt;/strong&gt; ( Register or log in to the Docker registry server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker login
+Username: dongri
+Password: ***
+Email: ***@gmail.com
+Login Succeeded
+
+$ docker pull ubuntu
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;logs&lt;/strong&gt; ( Fetch the logs of a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker logs 108233ba9a1d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;port&lt;/strong&gt; ( Lookup the public-facing port that is NAT-ed to PRIVATE_PORT )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d -p 80:80 nginx
+108233ba9a1df0aa199a8392d052f3c0cd8e7929bdeff6d5fa52ac47a75aa603
+
+$ docker port 108233ba9a1d 80
+0.0.0.0:80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pause&lt;/strong&gt; ( Pause all processes within a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker pause 108233ba9a1d
+108233ba9a1d
+
+$ open http://localhost:8080
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ps&lt;/strong&gt; ( List containers )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+
+$ docker ps -a
+
+$ docker ps -a -q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pull&lt;/strong&gt; ( Pull an image or a repository from a Docker registry server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker pull golang:1.4rc1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;push&lt;/strong&gt; ( Push an image or a repository to a Docker registry server )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -i -t -d golang
+921dc8b1555af7507f8669883724047b4cc114be0681a07f86def
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up 4 seconds                                  focused_newton      
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 15 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker commit 16f79ec35b99 dongri/golang
+da5a0042ad9ac478c38fc743c8f981f292a9aefd41ac54276a6617c319719ad1
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+my-nginx            latest              69f023fe6476        2 hours ago         267.8 MB
+nginx               latest              9bc094d3c806        2 hours ago         267.8 MB
+golang              1.4rc1              a9e27473d0f8        2 days ago          467.7 MB
+golang              latest              ebd3fd90ae2e        2 days ago          448 MB
+
+$ docker push dongri/golang
+The push refers to a repository [dongri/golang] (len: 1)
+Sending image list
+Pushing repository dongri/golang (1 tags)
+511136ea3c5a: Image already pushed, skipping
+36fd425d7d8a: Image already pushed, skipping
+aaabd2b41e22: Image already pushed, skipping
+cd9d7733886c: Image already pushed, skipp
+da5a0042ad9a: Image successfully pushed
+Pushing tag for rev [da5a0042ad9a] on {https://cdn-registry-1.docker.io/v1/repositories/dongri/golang/tags/latest}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;restart&lt;/strong&gt; ( Restart a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up 3 minutes                                  focused_newton      
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 18 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker restart 16f79ec35b99
+16f79ec35b99
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt; ( Remove one or more containers )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up 55 seconds
+714a086c9e4d        golang:latest       /bin/bash              About an hour ago   Exited (1) 4 minutes ago
+
+$ docker rm 714a086c9e4d
+714a086c9e4d
+
+$ docker ps -a          
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS
+16f79ec35b99        golang:latest       /bin/bash              About an hour ago   Up About a minute
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;rmi&lt;/strong&gt; ( Remove one or more images )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+my-nginx            latest              69f023fe6476        2 hours ago         267.8 MB
+
+$ docker rmi 69f023fe6476
+
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;run&lt;/strong&gt; ( Run a command in a new container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d nginx
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;save&lt;/strong&gt; ( Save an image to a tar archive )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+
+$ docker save nginx &amp;gt; mynginx.tar
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;search&lt;/strong&gt; ( Search for an image on the Docker Hub )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker search dongri
+NAME            DESCRIPTION   STARS     OFFICIAL   AUTOMATED
+dongri/coreos                 2                    
+dongri/node                   1                    
+dongri/nginx                  0                    
+dongri/redis                  0                    
+dongri/golang                 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;start&lt;/strong&gt; ( Start a stopped container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                           PORTS
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 27 minutes (Paused)           0.0.0.0:80-&amp;gt;80/tcp
+269367b4bd87        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Exited (-1) 28 minutes ago
+
+$ docker start 269367b4bd87
+269367b4bd87
+
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 27 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+269367b4bd87        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 2 seconds             80/tcp               kickass_perlman     
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;stop&lt;/strong&gt; ( Stop a running container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 27 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+269367b4bd87        nginx:latest        /usr/sbin/nginx -g &#39;   About an hour ago   Up 2 seconds             80/tcp               kickass_perlman     
+
+$ docker stop 269367b4bd87
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;tag&lt;/strong&gt; ( Tag an image into a repository )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+
+$ docker tag 254714ba3722 nginx:export
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dongri/golang       latest              da5a0042ad9a        About an hour ago   448 MB
+nginx               import              254714ba3722        About an hour ago   242.8 MB
+nginx               export              254714ba3722        About an hour ago   242.8 MB
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;top&lt;/strong&gt; ( Lookup the running processes of a container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        9bc094d3c806        /usr/sbin/nginx -g &#39;   About an hour ago   Up 38 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker top 108233ba9a1d
+PID                 USER                COMMAND
+1658                root                nginx: master process /usr/sbin/nginx -g daemon off;
+1668                499                 nginx: worker process
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;unpause&lt;/strong&gt; ( Unpause a paused container )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                   PORTS                NAMES
+108233ba9a1d        9bc094d3c806        /usr/sbin/nginx -g &#39;   About an hour ago   Up 38 minutes (Paused)   0.0.0.0:80-&amp;gt;80/tcp   nostalgic_almeida   
+
+$ docker unpause 108233ba9a1d
+108233ba9a1d
+
+$ open http://localhost:8080
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;version&lt;/strong&gt; ( Show the Docker version information )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker version
+Client version: 1.1.1
+Client API version: 1.13
+Go version (client): go1.2.1
+Git commit (client): bd609d2
+Server version: 1.1.2
+Server API version: 1.13
+Go version (server): go1.2.1
+Git commit (server): d84a070
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;wait&lt;/strong&gt; ( Block until a container stops, then print its exit code )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker wait 108233ba9a1d
+
+$ docker stop 108233ba9a1d
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Install</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-install/</link>
+      <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-install/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/installation/mac/&#34; title=&#34;docker install&#34;&gt;https://docs.docker.com/installation/mac/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;youtube動画通りにダウンロードしてインストールする。&lt;/p&gt;
+
+&lt;p&gt;applicationsに入ったappアイコンをクリックするとboot2dockerがinit, start, DOCKER_HOSTまで設定してくれるので、作業はそのまま進められる。&lt;/p&gt;
+
+&lt;p&gt;もしくはboot2dockerコマンドで一から作りなおしてもいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;➜  ~  boot2docker init
+➜  ~  boot2docker start
+➜  ~  export DOCKER_HOST=tcp://:2375
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;exportの部分は.zshrcとかに入れとけば毎回設定する必要なくなる。
+DOCKER_HOST正しく設定されないと以下のエラーが出る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2014/06/17 22:07:38 Cannot connect to the Docker daemon. Is &#39;docker -d&#39; running on this host?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;dockerコマンドを確認してみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;➜  ~  docker version
+Client version: 1.0.0
+Client API version: 1.12
+Go version (client): go1.2.1
+Git commit (client): 63fe64c
+Server version: 1.0.0
+Server API version: 1.12
+Go version (server): go1.2.1
+Git commit (server): 63fe64c
+➜  ~  docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+centos               centos6             0c752394b855        7 days ago          124.1 MB
+centos               latest              0c752394b855        7 days ago          124.1 MB
+➜  ~  
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Nginx</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-nginx/</link>
+      <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-nginx/</guid>
+      <description>
+
+&lt;p&gt;インストール終わったので、nginxを構築してみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;dockerfileを作成する:445d9f6b711503b689a226be291983fb&#34;&gt;Dockerfileを作成する。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Dockerfile
+FROM centos
+MAINTAINER Dongri Jin
+
+RUN yum update -y &amp;amp;&amp;amp; \
+    rpm --import http://nginx.org/keys/nginx_signing.key &amp;amp;&amp;amp; \
+    yum install -y http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm &amp;amp;&amp;amp; \
+    yum install -y nginx
+
+ADD conf.d/default.conf /etc/nginx/conf.d/default.conf
+
+ADD html /var/app/nginx/html
+
+EXPOSE 80
+ENTRYPOINT [&amp;quot;/usr/sbin/nginx&amp;quot;, &amp;quot;-g&amp;quot;, &amp;quot;daemon off;&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dockerfileは以下の流れになる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;centos imageをダウンロード&lt;/li&gt;
+&lt;li&gt;yumでnginxをインストール&lt;/li&gt;
+&lt;li&gt;host(osx)のconfファイルをnginx containerのconfに置き換え&lt;/li&gt;
+&lt;li&gt;host(osx)のhtmlフィルダをnginx containerのhtmlソースフォルダにコピー&lt;/li&gt;
+&lt;li&gt;80番portを開放&lt;/li&gt;
+&lt;li&gt;作成されたコンテナ起動(nginx)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ビルド:445d9f6b711503b689a226be291983fb&#34;&gt;ビルド&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker build -t dongri/nginx .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;container名を[username]/[imagename]にしたのはdocker hubに公開するため。&lt;/p&gt;
+
+&lt;h3 id=&#34;起動:445d9f6b711503b689a226be291983fb&#34;&gt;起動&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -p 80:80 -d dongri/nginx
+6358e578f3072e4e32d057647b5dbe63b34d0dfc07e46a497241498f27cf3e88
+$ curl 192.168.59.103
+hello World!&amp;lt;br/&amp;gt;
+path: /var/app/nginx/html/index.html
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;-p は host port : container port&lt;/li&gt;
+&lt;li&gt;-d バックグラウンドで起動&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ここでdockerのipを指定したが、localhostも可能。ただし、port forwardingが必要。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ VBoxManage controlvm &amp;quot;boot2docker-vm&amp;quot; natpf1 &amp;quot;nginx,tcp,127.0.0.1,8080,,80&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上の用にすることで、&lt;a href=&#34;http://localhost:8080でアクセス可能。&#34;&gt;http://localhost:8080でアクセス可能。&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ポートフォワーディングは OSX 8080 &amp;mdash;&amp;gt; VirtualBox 80 &amp;mdash;&amp;gt; nginx 80&lt;/p&gt;
+
+&lt;h3 id=&#34;docker-hubにアップする:445d9f6b711503b689a226be291983fb&#34;&gt;docker hubにアップする&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker ps
+6358e578f307        dongri/nginx:latest         /usr/sbin/nginx -g &#39;   2 hours ago         Up 6 minutes        0.0.0.0:80-&amp;gt;80/tcp                                                                       distracted_wilson   
+$ docker commit 6358e578f307 dongri/nginx
+$ docker push dongri/nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;事前に &lt;a href=&#34;https://hub.docker.com/&#34;&gt;https://hub.docker.com/&lt;/a&gt; にユーザー登録必要あり。&lt;/p&gt;
+
+&lt;h3 id=&#34;ポイント:445d9f6b711503b689a226be291983fb&#34;&gt;ポイント&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;imageになるのはcommit時の状態のcontainerである。nginxが起動されてない状態のcontainerをcommitしてもhubからpullして来ても外部コマンド使わないで起動できない。&lt;/li&gt;
+&lt;li&gt;bashでnginxの中身を見たい場合は、ENTRYPOINTをオーバーライドして見る&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -i -t --entrypoint=&#39;/bin/bash&#39; dongri/nginx
+bash-4.1#
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上のDockerfileとconf, htmlはgithubから参照可能。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/Dockerfiles/tree/master/nginx&#34;&gt;https://github.com/dongri/Dockerfiles/tree/master/nginx&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;以上で、nginx&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Sharing</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-sharing/</link>
+      <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-sharing/</guid>
+      <description>
+
+&lt;p&gt;dockerインストールしてみた、docker触ってみたい、dockerでnginx立ててみた、
+dockerでwordpressやってみた、とかとか。結局、日常開発でどう使えばいいんだっけ？の質問の答えに
+なってない。&lt;/p&gt;
+
+&lt;p&gt;開発環境がLinux、Ubuntuでvim派だと docker run 時に -v オプション付けてhostとcontainerの
+リソースを共有できるが、開発環境がMacだと間にVMが挟んでるのでややこしくなる。&lt;/p&gt;
+
+&lt;p&gt;Vagrant使ったことある方は、vm.synced_folder 一発で解決できるんじゃないと思うかも知りませんが、
+boot2dockerではカスタムvagrant boxを使わないとできないみたい。&lt;/p&gt;
+
+&lt;p&gt;boot2dockerが推奨してるのは、sambaサーバー経由でフォルダ共有ということなので、設定してみた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -v /var/app/ --name app busybox
+$ docker run --name app-samba --rm -v /usr/local/bin/docker:/docker -v /var/run/docker.sock:/docker.sock svendowideit/samba app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここまでやると、finderから cifs://192.168.59.103, smb://192.168.59.103 にアクセスして、Guestユーザーで/var/appに入れる。&lt;/p&gt;
+
+&lt;p&gt;docker-nginx, docker-nodeで、ソースフォルダを /var/app/nginx/html, /var/app/nodejs にした理由もここにある。&lt;/p&gt;
+
+&lt;p&gt;nginx、nodeをsambaサーバーのVolumesを使って起動する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;### nodeの例：
+$ docker run -p 3000:3000 --volumes-from samba-server -i -t dongri/node bash
+bash-4.1# cd /var/app/nodejs/
+bash-4.1# npm install
+bash-4.1# nodemon index.js
+17 Jun 08:12:18 - [nodemon] v1.2.0
+17 Jun 08:12:18 - [nodemon] to restart at any time, enter `rs`
+17 Jun 08:12:18 - [nodemon] watching: *.*
+17 Jun 08:12:18 - [nodemon] starting `node index.js`
+Express server listening on port 3000
+
+### nginxの例：
+$ docker run -p 80:80 --volumes-from samba-server -i -t dongri/nginx
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここまでやったら、macから/var/appにソースを入れて好きなように開発できる。&lt;/p&gt;
+
+&lt;h3 id=&#34;課題:cbf00e4e713730d8bdaf2be1d3d79fec&#34;&gt;課題&lt;/h3&gt;
+
+&lt;p&gt;ソースはgitで管理してるので、いちいちsambaにコピーするのが面倒。。。&lt;/p&gt;
+
+&lt;p&gt;どなたかよい解決方法あればお願いします！&lt;/p&gt;
+
+&lt;h3 id=&#34;追記-2014-06-18:cbf00e4e713730d8bdaf2be1d3d79fec&#34;&gt;追記(2014.06.18)&lt;/h3&gt;
+
+&lt;p&gt;@yungsang がvagrant書いてくれたので、そちらも&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/yungsang/items/98dead73d54d580d4b78&#34;&gt;Re: Dongri&amp;rsquo;s Blog - docker-sharing&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Vagrantfile
+VAGRANTFILE_API_VERSION = &amp;quot;2&amp;quot;
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.define &amp;quot;boot2docker&amp;quot;
+
+  config.vm.box = &amp;quot;yungsang/boot2docker&amp;quot;
+
+  config.vm.network :forwarded_port, guest: 2375, host: 4243, disabled: true
+
+  config.vm.network :private_network, ip: &amp;quot;192.168.33.10&amp;quot;
+
+  config.vm.synced_folder &amp;quot;.&amp;quot;, &amp;quot;/var/app&amp;quot;, type: &amp;quot;nfs&amp;quot;
+
+  # Fix busybox/udhcpc issue
+  config.vm.provision :shell do |s|
+    s.inline = &amp;lt;&amp;lt;-EOT
+      if ! grep -qs ^nameserver /etc/resolv.conf; then
+        sudo /sbin/udhcpc
+      fi
+      cat /etc/resolv.conf
+    EOT
+  end
+
+  # Adjust datetime after suspend and resume
+  config.vm.provision :shell do |s|
+    s.inline = &amp;lt;&amp;lt;-EOT
+      sudo /usr/local/bin/ntpclient -s -h pool.ntp.org
+      date
+    EOT
+  end
+
+  config.vm.provision :shell do |s|
+    s.inline = &amp;lt;&amp;lt;-EOT
+      docker rm -f nodejs || true
+    EOT
+  end
+
+  config.vm.provision :docker do |d|
+    d.build_image &amp;quot;/var/app/node/&amp;quot;, args: &amp;quot;-t dongri/node&amp;quot;
+    d.run &amp;quot;nodejs&amp;quot;, image: &amp;quot;dongri/node&amp;quot;, args: &amp;quot;-p 3000:3000&amp;quot;
+  end
+
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git clone git@github.com:dongri/Dockerfiles.git
+$ cd Dockerfiles
+$ edit Vagrantfile
+$ vagrant up
+$ open http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ありがとうございます！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker node</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-node/</link>
+      <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-06-17-docker-node/</guid>
+      <description>
+
+&lt;p&gt;続いてnodejsをやってみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;dockerfileを作成する:115f8968df69417699d1f448270803b9&#34;&gt;Dockerfileを作成する。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Dockerfile
+FROM centos:6.4                                                                                                                                                                                                                               
+MAINTAINER Dongri Jin
+
+RUN yum update -y
+RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+RUN yum install -y npm
+
+ADD nodejs /var/app/nodejs
+
+RUN npm install -g nodemon
+RUN cd /var/app/nodejs; npm install
+
+EXPOSE 3000
+CMD [&amp;quot;node&amp;quot;, &amp;quot;/var/app/nodejs/index.js&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;node環境構築する:115f8968df69417699d1f448270803b9&#34;&gt;node環境構築する。&lt;/h3&gt;
+
+&lt;p&gt;nodejsディレクトリの下に、package.jsonとindex.jsを作成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim nodejs/package.json
+{
+  &amp;quot;name&amp;quot;: &amp;quot;docker-node&amp;quot;,
+  &amp;quot;private&amp;quot;: true,
+  &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;,
+  &amp;quot;description&amp;quot;: &amp;quot;Node.js on Docker&amp;quot;,
+  &amp;quot;author&amp;quot;: &amp;quot;Dongri Jin &amp;lt;dongriab@gmail.com&amp;gt;&amp;quot;,
+  &amp;quot;dependencies&amp;quot;: {
+    &amp;quot;express&amp;quot;: &amp;quot;4.4.3&amp;quot;
+  }
+}
+
+$ vim nodejs/index.js
+var express = require(&#39;express&#39;);
+
+var PORT = 3000;
+
+var app = express();
+app.get(&#39;/&#39;, function (req, res) {
+  res.send(&#39;Hello Node.js\n&#39;);
+});
+
+app.listen(PORT);
+console.log(&#39;Express server listening on port &#39; + PORT);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ビルド-サーバー起動:115f8968df69417699d1f448270803b9&#34;&gt;ビルド &amp;amp; サーバー起動&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker build -t dongri/node .
+$ docker run -p 3000:3000 -i -t dongri/node
+Express server listening on port 3000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ブラウザから &lt;a href=&#34;http://192.168.59.103:3000&#34;&gt;http://192.168.59.103:3000&lt;/a&gt; アクセスしてみる。&lt;/p&gt;
+
+&lt;p&gt;Hello Node.js&lt;/p&gt;
+
+&lt;p&gt;以上で、nodejs&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

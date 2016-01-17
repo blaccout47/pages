@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/github/</link>
+    <description>Recent content in Github on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Jan 2015 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Carthage</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</link>
+      <pubDate>Thu, 15 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-15-carthage/</guid>
+      <description>
+
+&lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
+
+&lt;h3 id=&#34;carthageってなんなの:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;「カルタゴ」と読んで、Swift対応したライブラリ管理ツールです。&lt;/p&gt;
+
+&lt;p&gt;インストール、使い方はgithubページ見ればわかると思います。&lt;/p&gt;
+
+&lt;p&gt;基本的な使い方は Cartfile 作成して使いたいgithubのライブラリをリストで書いてから
+「carthage update」するとCarthage/Buildの下に ******.framework ファイルが出来上がるので
+それをプロジェクトにドラッグアンドドロップして入れる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Cartfile
+github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
+
+$ carthage update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;既存のライブラリcarthage対応:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7583/15666092073_76b41b17b1.jpg&#34; alt=&#34;Scheme Shared&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;既存ライブラリを新しいTargetに移す&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Swift Compiler設定&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8598/16098635750_0c10d33669.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Compile Sourcesに必要なSwiftファイル追加&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8561/16100158557_400084b6c6.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Schemeを新しいtargetにしてビルドする。（iOS Deviceにして）
+エラーになったら自己解決&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;carthage buildしてみる。githubに上げる前に、ローカルでビルとして、正常に ******.framework が出来上がるのを確認。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ carthage build --no-skip-current
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;githubに上げる。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git tag v0.1.0
+$ git push origin v0.1.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上でcarthage対応完了。&lt;/p&gt;
+
+&lt;p&gt;対応したプロジェクトがこれ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/OAuthSwift&#34;&gt;https://github.com/dongri/OAuthSwift&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>github multiple accounts</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-18-github-multiple-accounts/</link>
+      <pubDate>Tue, 18 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-18-github-multiple-accounts/</guid>
+      <description>
+
+&lt;p&gt;ある事情により、githubに公開アカウントと秘密アカウントが必要になって、複数のアカウントを扱うようになりました。&lt;/p&gt;
+
+&lt;h3 id=&#34;まず-新しいsshキーの生成:c3453167f960f54141c44c8bf9a660ee&#34;&gt;まず、新しいSSHキーの生成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;yoda@gmail.com&amp;quot; -f id_rsa_secret
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ssh-config-設定:c3453167f960f54141c44c8bf9a660ee&#34;&gt;~/.ssh/config 設定&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim ~/.ssh/config
+
+############ Github ###############
+Host github-secret
+  User git
+  Port 22
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa_secret
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;git-clone:c3453167f960f54141c44c8bf9a660ee&#34;&gt;git clone&lt;/h3&gt;
+
+&lt;p&gt;SSH clone URL: git@github.com:user/project.git の場合&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git clone git@github-secret:user/project.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;git-config:c3453167f960f54141c44c8bf9a660ee&#34;&gt;git config&lt;/h3&gt;
+
+&lt;p&gt;確認してみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name
+$ git config --global user.email
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SSHキー違ってもこのままだと複数プロジェクトのauthor, committerがglobal設定になるので、変更する。&lt;/p&gt;
+
+&lt;p&gt;git clone したあとのプロジェクトに入って&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git config --local user.name &amp;quot;Yoda&amp;quot;
+$ git config --local user.email &amp;quot;yoda@gmail.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上です、複数のgithubを扱えるようになりました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;user.name設定忘れるとご迷惑掛けする場合がございますので、忘れずに。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

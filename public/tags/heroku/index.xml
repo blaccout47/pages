@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heroku on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/heroku/</link>
+    <description>Recent content in Heroku on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 May 2015 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Goodbye Heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</link>
+      <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-05-11-goodbye-heroku/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;
+
+&lt;p&gt;その後gitが流行り始めgit pushでデプロイできるようになりましたね。heroku buttonも出てOne Clickでデプロイできるようになったり。&lt;/p&gt;
+
+&lt;p&gt;2007年から今まで使ってて、Privateのプロジェクトも一時には会社のプロジェクトにも使いました。&lt;/p&gt;
+
+&lt;p&gt;初めはRubyだけだったのが、今はjava, scala, php, python, nodejs, goまでサポートしてます。最近はdockerもサポートするので、言語問わなくデプロイできちゃいますね。&lt;/p&gt;
+
+&lt;p&gt;herokuの特徴と言えばとりあえず動かせるを場を提供する。そのかわりファイルアップロードできない、一定時間でスリープ、などいろいろ制限されるけど、sandboxとしては十分で便利なプラットフォームです。&lt;/p&gt;
+
+&lt;p&gt;自分のリポジトリ数えてみたらびっくりしました。50個近くのアプリがデプロイされてました。(ほとんどがゴミ w w w)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta&#34;&gt;https://blog.heroku.com/archives/2015/5/7/new-dyno-types-public-beta&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;こんなので自分の遊びがなくなりました。$7 払えないわけではない。しかし昔みたいにとりあえずherokuみたいな感じにはなれない。&lt;/p&gt;
+
+&lt;p&gt;herokuの代わりのものを Google Cloud, AWS も検討してみましたが、結局は DigitalOceanでサーバー立てて、&lt;a href=&#34;https://github.com/progrium/dokku&#34;&gt;dokku&lt;/a&gt; 入れて自分専用の遊び場を作ることにしました。&lt;/p&gt;
+
+&lt;p&gt;今のところ4GBでnode, rails, goなど10個のcontainer立ち上げても問題なさそうです。&lt;/p&gt;
+
+&lt;p&gt;heroku長い間お世話になりました！&lt;/p&gt;
+
+&lt;p&gt;Goodbye! Heroku!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ghost On Heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</link>
+      <pubDate>Tue, 17 Feb 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-02-17-ghost-on-heroku/</guid>
+      <description>
+
+&lt;p&gt;Ghostをherokuにデプロイしてみた。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;以下はあくまでの自分の環境で、nodeとpostgresなど一通りの開発環境は整った環境です。&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ghostをローカルで動かしてみる:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Ghostをローカルで動かしてみる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /path/to/ghost/folder/
+$ npm install --production
+
+$ npm start
+$ open http://localhost:2368
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;herokuにpg-addon追加:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;herokuにpg addon追加&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku addons:add heroku-postgresql:dev
+
+$ heroku config
+DATABASE_URL:                 postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
+HEROKU_POSTGRESQL_PURPLE_URL: postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;package-json-修正:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;package.json 修正&lt;/h2&gt;
+
+&lt;p&gt;package.jsonのdependenciesにpg追加。バージョンは固定にしたほうがいいかも。。。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;dependencies&amp;quot;: {
+  ....,
+  &amp;quot;pg&amp;quot;: &amp;quot;4.2.0&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;config-js-修正:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;config.js 修正&lt;/h2&gt;
+
+&lt;p&gt;以下の部分をproductionのところに設定する。databaseの部分は上のDATABASE_URLのところ参照&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;database: {
+  client: &#39;postgres&#39;,
+  connection: {
+        host: &#39;ec2-***.compute-1.amazonaws.com&#39;,
+        user: &#39;{username}&#39;,
+        password: &#39;{password}&#39;,
+        database: &#39;{database}&#39;,
+        port: &#39;5432&#39;
+  }
+},
+
+server: {
+    host: &#39;0.0.0.0&#39;,
+    port: process.env.PORT
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;procfileファイル追加:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Procfileファイル追加&lt;/h2&gt;
+
+&lt;p&gt;herokuにnodejsアプリをデプロイした人にはわかると思うがProfileを作成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim Procfile
+web: node index.js --production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-remote-push:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;git remote, push&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git init
+$ git remote add origin git@heroku.com:{app}.git
+$ git add .
+$ git commit -m &amp;quot;Ghost&amp;quot;
+$ git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;debug:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Debug&lt;/h2&gt;
+
+&lt;p&gt;heroku上でApplication Error!&lt;/p&gt;
+
+&lt;p&gt;log見てみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku logs --tail
+
+Ghost is running in development...
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;developmentで実行されたようだ。&lt;/p&gt;
+
+&lt;p&gt;NODE_ENVをproductionに設定&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku config:set NODE_ENV=production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上のコマンドでenv設定とrebootするので、tailで完了確認できたら、もう一度アクセスしてみる。&lt;/p&gt;
+
+&lt;p&gt;うまく表示されたようだ&lt;/p&gt;
+
+&lt;h2 id=&#34;ghost設定:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;Ghost設定&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ open http://{app}.herokuapp.com/ghost/setup/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;所感:66291b592f1fb4bcc9bbfc2850270841&#34;&gt;所感&lt;/h2&gt;
+
+&lt;p&gt;設定して自分が欲しかったmarkdownで書けるようになったけど、意識高い系に似合うデザインのせいか
+メモ、コードを書くにはいまいち。。。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migrating to Cedar-14 Stack</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</link>
+      <pubDate>Sat, 10 Jan 2015 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
+      <description>&lt;p&gt;bamboo-mri-1.9.2 stack 下岗了。&lt;/p&gt;
+
+&lt;p&gt;Migrating to the Celadon Cedar-14 Stack&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku stack:set cedar-14
+stack set, next release on production-app will use cedar-14
+Run `git push heroku master` to create a new release on cedar-14
+
+$ git commit --allow-empty -m &amp;quot;Upgrading to Cedar-14&amp;quot;
+[master 973c3f7] Upgrading to Cedar-14
+
+$ git push heroku master
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Revel on Heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</link>
+      <pubDate>Thu, 11 Dec 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-12-11-revel-on-heroku/</guid>
+      <description>
+
+&lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
+
+&lt;h3 id=&#34;事前確認:8262f9878270e0993d374e4a15849ed6&#34;&gt;事前確認&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo $GOPATH
+/Users/dongri/go
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;revelプロジェクト作成:8262f9878270e0993d374e4a15849ed6&#34;&gt;Revelプロジェクト作成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ revel new team
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;↑で $GOPATH/src/にteamフォルダが出来上がる&lt;/p&gt;
+
+&lt;h3 id=&#34;ローカルで実行してみる:8262f9878270e0993d374e4a15849ed6&#34;&gt;ローカルで実行してみる&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ revel run team
+
+$ open http://localhost:9000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;herokuにbuildpackでデプロイ:8262f9878270e0993d374e4a15849ed6&#34;&gt;herokuにbuildpackでデプロイ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku create -b https://github.com/robfig/heroku-buildpack-go-revel.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;heroku画面でアプリの名前を変更する:8262f9878270e0993d374e4a15849ed6&#34;&gt;heroku画面でアプリの名前を変更する。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git remote -v
+$ git retemo rm origin
+$ git remote add origin git@heroku.com:[app].git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;godirファイル作成:8262f9878270e0993d374e4a15849ed6&#34;&gt;.godirファイル作成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pwd
+/Users/dongri/go/src/team
+$ echo &amp;quot;team&amp;quot; &amp;gt; .godir
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;デプロイ:8262f9878270e0993d374e4a15849ed6&#34;&gt;デプロイ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git add .
+$ git commit -m &amp;quot;hoge&amp;quot;
+$ git push origin master
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上で完了&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Golang on heroku</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-10-11-golang-on-heroku/</link>
+      <pubDate>Sat, 11 Oct 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-10-11-golang-on-heroku/</guid>
+      <description>
+
+&lt;p&gt;今までGolangプロジェクトはGoogle App Engineにデプロイしたが、管理画面がいまだに
+使い慣れてないのとAppEngine特有の癖があるので、やめてherokuにデプロイしてみた。
+herokuも公式にはGolang対応してなくて、buildpackを使わないとダメ。&lt;/p&gt;
+
+&lt;p&gt;herokuサポート言語&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://devcenter.heroku.com/categories/language-support&#34;&gt;https://devcenter.heroku.com/categories/language-support&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;buildpackはこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/kr/heroku-buildpack-go&#34;&gt;https://github.com/kr/heroku-buildpack-go&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;まずローカルでgoプロジェクトを作成して確認みる:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;まずローカルでGoプロジェクトを作成して確認みる。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd $GOPATH/src
+
+$ mkdir osakago
+$ cd osakago
+$ vim server.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;net/http&amp;quot;
+	&amp;quot;os&amp;quot;
+)
+
+func main() {
+	http.HandleFunc(&amp;quot;/&amp;quot;, hello)
+	fmt.Printf(&amp;quot;Server listening on port %v ...\n&amp;quot;, os.Getenv(&amp;quot;PORT&amp;quot;))
+	err := http.ListenAndServe(&amp;quot;:&amp;quot;+os.Getenv(&amp;quot;PORT&amp;quot;), nil)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func hello(res http.ResponseWriter, req *http.Request) {
+	fmt.Fprintln(res, &amp;quot;hello, world&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ PORT=8080 go run server.go
+Server listening on port 8080 ...
+
+$ curl -i localhost:8080
+HTTP/1.1 200 OK
+Date: Sat, 11 Oct 2014 05:04:01 GMT
+Content-Length: 13
+Content-Type: text/plain; charset=utf-8
+
+hello, world
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;バイナリ作成-サーバー起動して確認:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;バイナリ作成、サーバー起動して確認&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go get
+$ which osakago
+/Users/you/go/bin/osakago
+$ PORT=8080 osakago
+$ curl -i localhost:8080
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;heroku側設定:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Heroku側設定&lt;/h3&gt;
+
+&lt;p&gt;メールアドレスとか変わった場合とか認証がうまくいかない場合があるので、念の為loginしておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku login
+Enter your Heroku credentials.
+Email: you@hoge.com
+Password:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;procfileファイル作成:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Procfileファイル作成&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo &#39;web: osakago&#39; &amp;gt; Procfile
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;godepインストール:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Godepインストール&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ go get github.com/kr/godep
+$ godep save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Godepsフォルダ生成される。&lt;/p&gt;
+
+&lt;h3 id=&#34;herokuにデプロイ:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Herokuにデプロイ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku create osakago -b https://github.com/kr/heroku-buildpack-go.git
+Creating osakago... done, stack is cedar
+BUILDPACK_URL=https://github.com/kr/heroku-buildpack-go.git
+http://osakago.herokuapp.com/ | git@heroku.com:osakago.git
+
+$ git add .
+$ git commit -m &amp;quot;Hi&amp;quot;
+$ git push heroku master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;( これからはherokuだな、さようなら～ AppEngine )&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

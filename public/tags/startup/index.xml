@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Startup on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/startup/</link>
+    <description>Recent content in Startup on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Nov 2014 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/startup/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Startup Recruiting</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-02-startup-recruiting/</link>
+      <pubDate>Sun, 02 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-02-startup-recruiting/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://itokenv.com/archives/1147&#34;&gt;成長するスタートアップに必要なこと&lt;/a&gt; から抜粋。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;自分たちのカルチャーとの整合性が大事で、つまりカルチャーに合わない人というのは他の社員とも合わない。&lt;br /&gt;
+先日gitHubの創業者と話す機会があり、驚いたのが彼らは創業以来採用した人が1人も辞めていないということ。&lt;br /&gt;
+自分で辞めた人もいなければ、クビにした人もいないということで、どうやってそれを実現しているか？というと、とにかく優秀な人であることが大前提として、ビアテストというものをやっていて一緒に飲みに行ってまた次も飲みたくなるかどうか？というのを基準にしていると。&lt;br /&gt;
+一緒に飲みに行くのが嫌な人とは長く続けられないということだ。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;参考になるわ。飲むこと。あー、楽しかった。その人ともっと喋りたい、もっと飲もたい。延長線で一緒に働きたい。なるほど！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

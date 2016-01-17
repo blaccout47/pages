@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nexus on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/nexus/</link>
+    <description>Recent content in Nexus on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Nov 2014 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/nexus/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Nexus5 Lollipop</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-13-nexus5-lollipop/</link>
+      <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-13-nexus5-lollipop/</guid>
+      <description>&lt;p&gt;数ヶ月間ずっとAndroid L Preview版入れて使ってたけど、今日やっとGoogleのデベロッパーサイトにNexus5のLollipop Factory Imageが現れたので、手動で入れてみた。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;Factory Images for Nexus Devices&lt;/a&gt;
+アクセスして、Nexus5用のimageファイルダウンロード。&lt;a href=&#34;https://dl.google.com/dl/android/aosp/hammerhead-lrx21o-factory-01315e08.tgz&#34;&gt;5.0 (LRX21O)&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar -zxvf hammerhead-lrx21o-factory-01315e08.tgz
+$ cd hammerhead-lrx21o
+$ adb reboot bootloader
+$ fastboot oem unlock
+$ ./flash-all.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pull APK</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-11-13-pull-apk/</link>
+      <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-11-13-pull-apk/</guid>
+      <description>&lt;p&gt;Androidにあるapkファイルを取り出す方法紹介。&lt;/p&gt;
+
+&lt;p&gt;PlayStoreに「apk 抽出」アプリたくさんあるけど、あえてadb shellで取り出す。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb shell pm list packages -f | grep
+package:/data/app/jp.naver.line.android-1/base.apk=jp.naver.line.android
+package:/data/app/jp.linecorp.LINEMAPS-1/base.apk=jp.linecorp.LINEMAPS
+
+$ adb pull /data/app/jp.naver.line.android-1/base.apk ~/Desktop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;取り出したapkファイルをインストールしてみる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb install base.apk
+7522 KB/s (22969465 bytes in 2.981s)
+        pkg: /data/local/tmp/base.apk
+Success
+$ adb shell pm list packages -f | grep line
+package:/data/app/jp.naver.line.android-1/base.apk=jp.naver.line.android
+package:/data/app/jp.linecorp.LINEMAPS-1/base.apk=jp.linecorp.LINEMAPS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;※ Lollipopからはroot化が困難になった模様&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

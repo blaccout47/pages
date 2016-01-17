@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mongodb on D</title>
+    <link>http://replace-this-with-your-hugo-site.com/tags/mongodb/</link>
+    <description>Recent content in Mongodb on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 May 2014 11:28:57 +0900</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>mongri</title>
+      <link>http://replace-this-with-your-hugo-site.com/post/2014-05-18-mongri/</link>
+      <pubDate>Sun, 18 May 2014 11:28:57 +0900</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/post/2014-05-18-mongri/</guid>
+      <description>&lt;p&gt;mongohqのweb consoleに慣れてから、自前でmongodb構築した場合に一番困ったのがadmin toolでした。&lt;br /&gt;
+一応公式ページ &lt;a href=&#34;http://docs.mongodb.org/ecosystem/tools/administration-interfaces/&#34; title=&#34;Admin UIs&#34;&gt;Admin UIs&lt;/a&gt; にいろいろ載ってるけど、
+どれも使い物にならない。Mac AppはRetina対応してないし、PHPで作れてるし、正規表現で検索でないし、開発止まってるし。。。&lt;br /&gt;
+ということで自分で作ることにしました。言語、フレームワークとか考えたらmongodbならnodeと相性がいいので、nodejs + express + mongooseで作りました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Github : &lt;a href=&#34;https://github.com/dongri/mongri&#34; title=&#34;mongri&#34;&gt;mongri&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Demo   : &lt;a href=&#34;http://mongri.heroku.com&#34; title=&#34;mongri on heroku&#34;&gt;mongri on heroku&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git clone git@github.com:dongri/mongri.git
+$ cd mongri
+$ npm install
+$ node app.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TODO: collection作成、collection削除、db status監視&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
