@@ -64,6 +64,32 @@ hogehoge
 
 &lt;pre&gt;&lt;code&gt;$ hugo server -w
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;github pagesにデプロイ&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;deploy.sh&lt;/code&gt; を作成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+echo -e &amp;quot;Deploying updates to GitHub...&amp;quot;
+
+# Build the project.
+hugo
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&amp;quot;rebuilding site `date`&amp;quot;
+if [ $# -eq 1 ]
+  then msg=&amp;quot;$1&amp;quot;
+fi
+git commit -m &amp;quot;$msg&amp;quot;
+
+# Push source and build repos.
+git push origin master
+git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git master
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -58,7 +58,7 @@
         },
         "datePublished": "2016-01-17",
         "description": "",
-        "wordCount":  63 
+        "wordCount":  122 
     }
     </script>
     
@@ -152,6 +152,32 @@ hogehoge
 <pre><code>$ hugo server -w
 </code></pre>
 
+<p>github pagesにデプロイ</p>
+
+<p><code>deploy.sh</code> を作成</p>
+
+<pre><code>#!/bin/bash
+
+echo -e &quot;Deploying updates to GitHub...&quot;
+
+# Build the project.
+hugo
+
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git master
+</code></pre>
+
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
@@ -185,7 +211,7 @@ hogehoge
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://dongri.github.io/post/2016-01-17-hugo/&amp;title=Hugo&amp;summary=mac%e3%82%af%e3%83%aa%e3%83%bc%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e5%be%8c%e3%80%81middleman%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%a7gem%e3%81%ab%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%a8%e3%81%8b%e3%81%a7%e3%81%84%e3%82%8d%e3%81%84%e3%82%8d%e5%bc%95%e3%81%a3%e3%81%8b%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e3%80%81hugo%e3%81%ab%e5%bc%95%e3%81%a3%e8%b6%8a%e3%81%97%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%9f%e3%80%82%20%e3%82%82%e3%81%a8%e3%82%82%e3%81%a8%e3%83%93%e3%83%ab%e3%83%89%e3%81%8c%e9%81%85%e3%81%84middleman%e3%81%9d%e3%82%93%e3%81%aa%e3%81%ab%e5%a5%bd%e3%81%8d%e3%81%a7%e3%81%af%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%97%e3%80%81%e3%81%84%e3%81%84%e3%81%8d%e3%81%a3%e3%81%8b%e3%81%91%e3%81%9f%e3%81%a8%e6%80%9d%e3%81%a3%e3%81%a6%e5%bc%95%e8%b6%8a%e3%81%97%e3%81%97%e3%81%9f%e3%80%82%e3%81%84%e3%81%84%e6%84%9f%e3%81%98%e3%80%82%20hg%e3%81%8c%e5%bf%85%e8%a6%81%e3%81%aa%e3%81%ae%e3%81%a7hg%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b%20%24%20brew%20install%20hg%20hugo%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%20%24%20go%20get%20-v%20github.com%2fspf13%2fhugo%20site%e4%bd%9c%e6%88%90%20%24%20hugo%20new%20site%20dongri.github.io%20%e3%83%86%e3%83%bc%e3%83%9e%e3%82%92%e5%8f%96%e5%be%97%20%24%20cd%20dongri.github.io%20%24%20git%20clone%20--recursive%20https%3a%2f%2fgithub.com%2fspf13%2fhugoThemes%20themes%20%e3%83%86%e3%83%bc%e3%83%9e%e8%a8%ad%e5%ae%9a%20%24%20vim%20config.toml%20...%20theme%20%3d%20%26quot%3bboro%26quot%3b%20...%20post%e4%bd%9c%e6%88%90%20%24%20hugo%20new%20post%2f2016-01-17-hugo.md%20%24%20vim%20post%2f2016-01-17-hugo.md%20%2b%2b%2b%20date%20%3d%20%26quot%3b2016-01-17T15%3a20%3a15%2b09%3a00%26quot%3b%20title%20%3d%20%26quot%3bHugo%26quot%3b%20tags%20%3d%20%5b%26quot%3bblog%26quot%3b%5d%20%2b%2b%2b%20hogehoge%20%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e8%b5%b7%e5%8b%95%e3%81%97%e3%81%a6%e7%a2%ba%e8%aa%8d%20%24%20hugo%20server%20-w..." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://dongri.github.io/post/2016-01-17-hugo/&amp;title=Hugo&amp;summary=mac%e3%82%af%e3%83%aa%e3%83%bc%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%97%e3%81%9f%e5%be%8c%e3%80%81middleman%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%a7gem%e3%81%ab%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%a8%e3%81%8b%e3%81%a7%e3%81%84%e3%82%8d%e3%81%84%e3%82%8d%e5%bc%95%e3%81%a3%e3%81%8b%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e3%80%81hugo%e3%81%ab%e5%bc%95%e3%81%a3%e8%b6%8a%e3%81%97%e3%81%99%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%97%e3%81%9f%e3%80%82%20%e3%82%82%e3%81%a8%e3%82%82%e3%81%a8%e3%83%93%e3%83%ab%e3%83%89%e3%81%8c%e9%81%85%e3%81%84middleman%e3%81%9d%e3%82%93%e3%81%aa%e3%81%ab%e5%a5%bd%e3%81%8d%e3%81%a7%e3%81%af%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%81%97%e3%80%81%e3%81%84%e3%81%84%e3%81%8d%e3%81%a3%e3%81%8b%e3%81%91%e3%81%9f%e3%81%a8%e6%80%9d%e3%81%a3%e3%81%a6%e5%bc%95%e8%b6%8a%e3%81%97%e3%81%97%e3%81%9f%e3%80%82%e3%81%84%e3%81%84%e6%84%9f%e3%81%98%e3%80%82%20hg%e3%81%8c%e5%bf%85%e8%a6%81%e3%81%aa%e3%81%ae%e3%81%a7hg%e3%82%92%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%99%e3%82%8b%20%24%20brew%20install%20hg%20hugo%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%20%24%20go%20get%20-v%20github.com%2fspf13%2fhugo%20site%e4%bd%9c%e6%88%90%20%24%20hugo%20new%20site%20dongri.github.io%20%e3%83%86%e3%83%bc%e3%83%9e%e3%82%92%e5%8f%96%e5%be%97%20%24%20cd%20dongri.github.io%20%24%20git%20clone%20--recursive%20https%3a%2f%2fgithub.com%2fspf13%2fhugoThemes%20themes%20%e3%83%86%e3%83%bc%e3%83%9e%e8%a8%ad%e5%ae%9a%20%24%20vim%20config.toml%20...%20theme%20%3d%20%26quot%3bboro%26quot%3b%20...%20post%e4%bd%9c%e6%88%90%20%24%20hugo%20new%20post%2f2016-01-17-hugo.md%20%24%20vim%20post%2f2016-01-17-hugo.md%20%2b%2b%2b%20date%20%3d%20%26quot%3b2016-01-17T15%3a20%3a15%2b09%3a00%26quot%3b%20title%20%3d%20%26quot%3bHugo%26quot%3b%20tags%20%3d%20%5b%26quot%3bblog%26quot%3b%5d%20%2b%2b%2b%20hogehoge%20%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e8%b5%b7%e5%8b%95%e3%81%97%e3%81%a6%e7%a2%ba%e8%aa%8d%20%24%20hugo%20server%20-w%20github%20pages%e3%81%ab%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4%20deploy.sh%20%e3%82%92%e4%bd%9c%e6%88%90%20%23%21%2fbin%2fbash%20echo%20-e%20%26quot%3bDeploying%20updates%20to%20GitHub...%26quot%3b%20%23%20Build%20the%20project...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
