@@ -1,4 +1,4 @@
-baseurl = "http://dongri.github.io/"
+baseurl = "https://dongri.github.io/"
 languageCode = "en-us"
 title = "D"
 # theme = "crisp"

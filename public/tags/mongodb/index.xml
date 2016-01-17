@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mongodb on D</title>
-    <link>http://dongri.github.io/tags/mongodb/</link>
+    <link>https://dongri.github.io/tags/mongodb/</link>
     <description>Recent content in Mongodb on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 May 2014 11:28:57 +0900</lastBuildDate>
-    <atom:link href="http://dongri.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dongri.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>mongri</title>
-      <link>http://dongri.github.io/post/2014-05-18-mongri/</link>
+      <link>https://dongri.github.io/post/2014-05-18-mongri/</link>
       <pubDate>Sun, 18 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://dongri.github.io/post/2014-05-18-mongri/</guid>
+      <guid>https://dongri.github.io/post/2014-05-18-mongri/</guid>
       <description>&lt;p&gt;mongohqのweb consoleに慣れてから、自前でmongodb構築した場合に一番困ったのがadmin toolでした。&lt;br /&gt;
 一応公式ページ &lt;a href=&#34;http://docs.mongodb.org/ecosystem/tools/administration-interfaces/&#34; title=&#34;Admin UIs&#34;&gt;Admin UIs&lt;/a&gt; にいろいろ載ってるけど、
 どれも使い物にならない。Mac AppはRetina対応してないし、PHPで作れてるし、正規表現で検索でないし、開発止まってるし。。。&lt;br /&gt;

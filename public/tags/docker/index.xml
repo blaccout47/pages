@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on D</title>
-    <link>http://dongri.github.io/tags/docker/</link>
+    <link>https://dongri.github.io/tags/docker/</link>
     <description>Recent content in Docker on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Nov 2014 11:28:57 +0900</lastBuildDate>
-    <atom:link href="http://dongri.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dongri.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Docker Commands</title>
-      <link>http://dongri.github.io/post/2014-11-29-docker-commands/</link>
+      <link>https://dongri.github.io/post/2014-11-29-docker-commands/</link>
       <pubDate>Sat, 29 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://dongri.github.io/post/2014-11-29-docker-commands/</guid>
+      <guid>https://dongri.github.io/post/2014-11-29-docker-commands/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Installing Docker on Mac OS X&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -520,10 +520,10 @@ $ docker stop 108233ba9a1d
     
     <item>
       <title>Docker Install</title>
-      <link>http://dongri.github.io/post/2014-06-17-docker-install/</link>
+      <link>https://dongri.github.io/post/2014-06-17-docker-install/</link>
       <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://dongri.github.io/post/2014-06-17-docker-install/</guid>
+      <guid>https://dongri.github.io/post/2014-06-17-docker-install/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/installation/mac/&#34; title=&#34;docker install&#34;&gt;https://docs.docker.com/installation/mac/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;youtube動画通りにダウンロードしてインストールする。&lt;/p&gt;
@@ -565,10 +565,10 @@ centos               latest              0c752394b855        7 days ago         
     
     <item>
       <title>Docker Nginx</title>
-      <link>http://dongri.github.io/post/2014-06-17-docker-nginx/</link>
+      <link>https://dongri.github.io/post/2014-06-17-docker-nginx/</link>
       <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://dongri.github.io/post/2014-06-17-docker-nginx/</guid>
+      <guid>https://dongri.github.io/post/2014-06-17-docker-nginx/</guid>
       <description>
 
 &lt;p&gt;インストール終わったので、nginxを構築してみる。&lt;/p&gt;
@@ -665,10 +665,10 @@ bash-4.1#
     
     <item>
       <title>Docker Sharing</title>
-      <link>http://dongri.github.io/post/2014-06-17-docker-sharing/</link>
+      <link>https://dongri.github.io/post/2014-06-17-docker-sharing/</link>
       <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://dongri.github.io/post/2014-06-17-docker-sharing/</guid>
+      <guid>https://dongri.github.io/post/2014-06-17-docker-sharing/</guid>
       <description>
 
 &lt;p&gt;dockerインストールしてみた、docker触ってみたい、dockerでnginx立ててみた、
@@ -783,10 +783,10 @@ $ open http://localhost:3000
     
     <item>
       <title>Docker node</title>
-      <link>http://dongri.github.io/post/2014-06-17-docker-node/</link>
+      <link>https://dongri.github.io/post/2014-06-17-docker-node/</link>
       <pubDate>Tue, 17 Jun 2014 11:28:57 +0900</pubDate>
       
-      <guid>http://dongri.github.io/post/2014-06-17-docker-node/</guid>
+      <guid>https://dongri.github.io/post/2014-06-17-docker-node/</guid>
       <description>
 
 &lt;p&gt;続いてnodejsをやってみる。&lt;/p&gt;
