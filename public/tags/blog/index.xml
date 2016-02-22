@@ -6,8 +6,118 @@
     <description>Recent content in Blog on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jan 2016 15:20:15 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Feb 2016 00:05:42 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>エンジニア軽蔑チェーン</title>
+      <link>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy/</link>
+      <pubDate>Tue, 23 Feb 2016 00:05:42 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy/</guid>
+      <description>
+
+&lt;h2 id=&#34;言語編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;言語編&lt;/h2&gt;
+
+&lt;p&gt;Functional Programmingをわかるエンジニアはよくデザインパターンを口にするエンジニアを軽蔑する。
+よくデザインパターンを口にするエンジニアは「そのように書くとオブジェクト指向ではない」と言うエンジニアを軽蔑する。
+「そのように書くとオブジェクト指向ではない」と言うエンジニアは「重複するコードをfunctionにまとめばいいじゃ」と言ってるエンジニアを軽蔑する。
+コードをコピしてあっちこっちに貼り付けるエンジニアはPMを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;アセンブラ書くエンジニアはC言語書くエンジニアを軽蔑する。
+C言語書くエンジニアはC++書くを軽蔑する。
+C++書くエンジニアはC#書くエンジニアを軽蔑する。
+C#書くエンジニアはHTMLを一種のプログラミング言語と思ってるデザイナーを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;Python3エンジニアはPython2エンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;iOSエンジニアはAndroidエンジニアを軽蔑する。
+AndroidエンジニアはWindows Phoneエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;一年のSwift経験あるエンジニアは5年のObjective-C経験持つエンジニアを軽蔑する。
+Objective-C書くエンジニアはPhoneGap書くエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;React.js書くエンジニアはAngularJS書くエンジニアを軽蔑する。
+AngularJS書くエンジニアはjQuery書くエンジニアを軽蔑する。
+jQuery書くエンジニアはVanilla JSを書くエンジニアを軽蔑する。
+Vanilla JS書くエンジニアはIE使用者を軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;debuggerを使えるエンジニアはassertを使ってるエンジニアを軽蔑する。
+assertを使えるエンジニアはprint()しか書けないエンジニアを軽蔑する。
+console.logでdebugするエンジニアはalertでdebugするエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;Ruby on Railsエンジニアはその他すべての言語のエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;すべてのエンジニアはPHPエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;h2 id=&#34;ツール編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;ツール編&lt;/h2&gt;
+
+&lt;p&gt;text editorを使ってるエンジニアはIDEを使ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;Vim使ってるエンジニアはEmacs使ってるエンジニアを軽蔑する、Emacs使ってるエンジニアはVimを使ってるエンジニアを軽蔑する。
+VimとEmacs使ってるエンジニアはほかすべてのtext editorを使ってるエンジニアを軽蔑する。例えば：atom, sublime, windows editor&lt;/p&gt;
+
+&lt;p&gt;Android Studioを使ってるか、IntelliJ IDEAを使ってるエンジニアはEclipse使ってるエンジニアを軽蔑する。
+Eclipse使ってるエンジニアはNetBeans使ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;GitかMercurialを使ってるエンジニアはSubversionを使ってるエンジニアを軽蔑する。
+Subversionを使ってるエンジニアはDropboxでバージョン管理してるエンジニアを軽蔑する。
+Dropboxでバージョン管理してるエンジニアはバージョン管理しないエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;Zsh使ってるエンジニアはBashを使ってるエンジニアを軽蔑する。
+Bashを使ってるエンジニアはCygwinを使ってるエンジニアを軽蔑する。
+Cygwinを使ってるエンジニアはGUIツール使ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;IRCを使ってるエンジニアはHipChatを使ってるエンジニアを軽蔑する。
+HipChatを使ってるエンジニアはSlackを使ってるデザイナーを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;reStructuredTextで文章作成するエンジニアはMarkdownで文章作成するエンジニアを軽蔑する。
+Markdownで文章作成するエンジニアはHTMLで文章作成するエンジニアを軽蔑する。
+HTMLで文章作成するエンジニアは文章書かないエンジニアを軽蔑する。
+LaTeX使って文章作成するエンジニアはすべてのエンジニアを軽蔑する&lt;/p&gt;
+
+&lt;p&gt;Dockerでサーバー構築するエンジニアはAnsible、Puppetでサーバー構築するエンジニアを軽蔑する。
+Ansible、Puppetでサーバー構築するエンジニアはFabricでサーバー構築するエンジニアを軽蔑する。
+Fabricでサーバー構築するエンジニアは手動SSHするエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;h2 id=&#34;os編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;OS編&lt;/h2&gt;
+
+&lt;p&gt;Mac OS X使ってるエンジニアはLinux使ってるエンジニアを軽蔑する。
+Linux使ってるエンジニアはWindows使ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;Debian使ってるエンジニアはUbuntu使ってるエンジニアを軽蔑する。
+Ubuntu使ってるエンジニアは非LTS版Ubuntuを使ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;h2 id=&#34;ハードウエア編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;ハードウエア編&lt;/h2&gt;
+
+&lt;p&gt;MacBook Pro Retina使ってるエンジニアはMacBook Air使ってるエンジニアを軽蔑する。
+MacBook Air使ってるエンジニアはThinkPad使ってるエンジニアを軽蔑する。
+そして、Raspberry Piを使ってるエンジニアはMacBook Pro Retinaを使ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;h2 id=&#34;職場編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;職場編&lt;/h2&gt;
+
+&lt;p&gt;ハードウェアエンジニアはソフトウェアエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;OSを書くエンジニアはWebエンジニアを軽蔑する。
+WebエンジニアはDesktop Applicationを書くエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;バックエンドエンジニアはフロントエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;エンジニアとデザイナーはお互いに軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;Test-Drivenエンジニアは先にコードを書いて後でtestを書くエンジニアを軽蔑する。
+先にコード書いて後でtest書くエンジニアはtest書かないエンジニアを軽蔑する。
+test書かないエンジニアは頻繁に仕様変更するPMを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;資格持ってエンジニアは資格をたくさん持ってるエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;p&gt;私服で出社するエンジニアはスーツ来て出社するエンジニアを軽蔑する。&lt;/p&gt;
+
+&lt;h2 id=&#34;終わり:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;終わり&lt;/h2&gt;
+
+&lt;p&gt;wechat moments流れてた記事が面白くで日本語にしました。これ10年後に見ると面白いかも知らないですね。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hugo</title>
