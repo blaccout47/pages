@@ -106,7 +106,7 @@
 
 <p>続いてnodejsをやってみる。</p>
 
-<h3 id="dockerfileを作成する:115f8968df69417699d1f448270803b9">Dockerfileを作成する。</h3>
+<h3 id="dockerfileを作成する">Dockerfileを作成する。</h3>
 
 <pre><code>$ vim Dockerfile
 FROM centos:6.4                                                                                                                                                                                                                               
@@ -125,7 +125,7 @@ EXPOSE 3000
 CMD [&quot;node&quot;, &quot;/var/app/nodejs/index.js&quot;]
 </code></pre>
 
-<h3 id="node環境構築する:115f8968df69417699d1f448270803b9">node環境構築する。</h3>
+<h3 id="node環境構築する">node環境構築する。</h3>
 
 <p>nodejsディレクトリの下に、package.jsonとindex.jsを作成</p>
 
@@ -155,7 +155,7 @@ app.listen(PORT);
 console.log('Express server listening on port ' + PORT);
 </code></pre>
 
-<h3 id="ビルド-サーバー起動:115f8968df69417699d1f448270803b9">ビルド &amp; サーバー起動</h3>
+<h3 id="ビルド-サーバー起動">ビルド &amp; サーバー起動</h3>
 
 <pre><code>$ docker build -t dongri/node .
 $ docker run -p 3000:3000 -i -t dongri/node

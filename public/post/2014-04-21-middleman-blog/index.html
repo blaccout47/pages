@@ -109,25 +109,25 @@
 
 <p>Octopress, Jekyll, Cabin いろいろあるみたいけど、Middlemanを使ってみようかと思って設置してみた。</p>
 
-<h2 id="middleman-middleman-blogインストール:310bf9e2aead1e6516e9f2c98152f4d9">middleman, middleman-blogインストール</h2>
+<h2 id="middleman-middleman-blogインストール">middleman, middleman-blogインストール</h2>
 
 <pre><code>$ gem install middleman
 $ gem install middleman-blog
 </code></pre>
 
-<h2 id="middleman-プロジェクト作成:310bf9e2aead1e6516e9f2c98152f4d9">middleman プロジェクト作成</h2>
+<h2 id="middleman-プロジェクト作成">middleman プロジェクト作成</h2>
 
 <pre><code>$ middleman init dongri.github.io --template=blog
 </code></pre>
 
-<h2 id="レポジトリ設定:310bf9e2aead1e6516e9f2c98152f4d9">レポジトリ設定</h2>
+<h2 id="レポジトリ設定">レポジトリ設定</h2>
 
 <pre><code>$ cd dongri.github.io
 $ git init
 $ git remote add origin git@github.com:dongri/dongri.github.io.git
 </code></pre>
 
-<h2 id="gemfile-を修正:310bf9e2aead1e6516e9f2c98152f4d9">Gemfile を修正</h2>
+<h2 id="gemfile-を修正">Gemfile を修正</h2>
 
 <pre><code class="language-ruby">gem &quot;middleman-deploy&quot;
 gem &quot;middleman-livereload&quot;
@@ -138,7 +138,7 @@ gem &quot;nokogiri&quot;
 
 <p><code>bundle install</code> する。</p>
 
-<h2 id="config-rb-を設定:310bf9e2aead1e6516e9f2c98152f4d9">config.rb を設定</h2>
+<h2 id="config-rb-を設定">config.rb を設定</h2>
 
 <pre><code class="language-ruby">Time.zone = &quot;Tokyo&quot;
 
@@ -166,19 +166,19 @@ activate :deploy do |deploy|
 end
 </code></pre>
 
-<h2 id="server起動:310bf9e2aead1e6516e9f2c98152f4d9">server起動</h2>
+<h2 id="server起動">server起動</h2>
 
 <pre><code>$ middleman server
 </code></pre>
 
-<h2 id="new-post:310bf9e2aead1e6516e9f2c98152f4d9">New Post</h2>
+<h2 id="new-post">New Post</h2>
 
 <pre><code>$ middleman article new-post
       create  source/2014-04-21-new-post.html.markdown
 $
 </code></pre>
 
-<h2 id="source-2014-04-21-new-post-html-markdown-編集:310bf9e2aead1e6516e9f2c98152f4d9">source/2014-04-21-new-post.html.markdown 編集</h2>
+<h2 id="source-2014-04-21-new-post-html-markdown-編集">source/2014-04-21-new-post.html.markdown 編集</h2>
 
 <pre><code>---
 layout: post
@@ -193,13 +193,13 @@ tags: middleman, blog
 
 </code></pre>
 
-<h2 id="build-deploy:310bf9e2aead1e6516e9f2c98152f4d9">build &amp; deploy</h2>
+<h2 id="build-deploy">build &amp; deploy</h2>
 
 <pre><code>$ middleman build
 $ middleman deploy
 </code></pre>
 
-<h2 id="template-css:310bf9e2aead1e6516e9f2c98152f4d9">template &amp; css</h2>
+<h2 id="template-css">template &amp; css</h2>
 
 <p>theme, templateなどググっても出てこない。<br />
 しょうがなく自分デザイン?してcss組んでこんなページが生まれた。</p>

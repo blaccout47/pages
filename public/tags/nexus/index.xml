@@ -6,8 +6,98 @@
     <description>Recent content in Nexus on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Nov 2014 11:28:57 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 May 2016 01:36:00 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/nexus/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Nexus 5X クリーンインストール &amp; Root化</title>
+      <link>https://dongri.github.io/post/2016-05-03-nexus-root/</link>
+      <pubDate>Tue, 03 May 2016 01:36:00 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-05-03-nexus-root/</guid>
+      <description>
+
+&lt;h2 id=&#34;factory-image&#34;&gt;Factory Image&lt;/h2&gt;
+
+&lt;p&gt;Googleが公開しているNexus端末向けの初期ROMデータのことを言います。
+Factory Imageには、「system・boot（Kernel）・recovery・bootloader・radio・userdata・cache」などの各領域のイメージが含まれており、
+それらを端末に書き込むことで領域を完全に初期化することが出来ます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;https://developers.google.com/android/nexus/images&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;nexus5xのところの最新のものをダウンロードして解凍する&lt;/p&gt;
+
+&lt;h2 id=&#34;oemロック解除&#34;&gt;OEMロック解除&lt;/h2&gt;
+
+&lt;p&gt;開発者向けオプションで「OEMロック解除を有効にする」にチェックを入れる&lt;/p&gt;
+
+&lt;h2 id=&#34;ブートローダーをアンロック&#34;&gt;ブートローダーをアンロック&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader // もしくは、電源ボタンとボリュームダウンボタンを同時に長押し
+$ fastboot oem unlock
+...
+OKAY [ 20.966s]
+finished. total time: 20.966s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでbootloaderがunlockの状態になる&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DEVICE STATE - locked&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;↓&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;DEVICE STATE - unlocked&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;flash-all&#34;&gt;flash-all&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd bullhead-mhc19q
+$ ./flash-all.sh
+...
+OKAY [  0.214s]
+writing &#39;cache&#39;...
+OKAY [  0.061s]
+rebooting...
+
+finished. total time: 86.174s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;カスタムリカバリの導入&#34;&gt;カスタムリカバリの導入&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twrp.me/devices/lgnexus5x.html&#34;&gt;https://twrp.me/devices/lgnexus5x.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Download Links で 最新のimgファイルダウンロードする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ fastboot flash recovery twrp-3.0.2-0-bullhead.img
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ブートローダー画面から「Recovery mode」を選択すると導入したTWRPを起動できるようなりました。&lt;/p&gt;
+
+&lt;h2 id=&#34;root化&#34;&gt;Root化&lt;/h2&gt;
+
+&lt;p&gt;SuperSUの最新版を見つけて入れる。バージョンが違うとAndroid自体が起動できなかったりするのでご注意を&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://download.chainfire.eu/932/SuperSU/BETA-SuperSU-v2.71-20160331103524.zip&#34;&gt;https://download.chainfire.eu/932/SuperSU/BETA-SuperSU-v2.71-20160331103524.zip&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;BETA-SuperSU-v2.71-20160331103524.zipを端末に転送して、install&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb push BETA-SuperSU-v2.71-20160331103524.zip /sdcard/
+4103 KB/s (4015219 bytes in 0.955s)
+$ adb reboot bootloader
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Recovery modeを選択して決定、「Install」より先ほどダウンロードしたSuperSUを選択して書き込む。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://g.co/ABH&#34;&gt;http://g.co/ABH&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;警告でるが、電源ボタンを２回押して続ける。&lt;/p&gt;
+
+&lt;p&gt;再起動されるが、めっちゃ遅い&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;これでroot取れた。&lt;/p&gt;
+
+&lt;p&gt;やり放題。ubuntu入れて、webサーバー立てる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Nexus5 Lollipop</title>

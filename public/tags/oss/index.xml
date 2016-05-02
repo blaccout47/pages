@@ -19,7 +19,7 @@
 
 &lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
 
-&lt;h3 id=&#34;carthageってなんなの:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
+&lt;h3 id=&#34;carthageってなんなの&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
 
@@ -37,7 +37,7 @@ github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
 $ carthage update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;既存のライブラリcarthage対応:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
+&lt;h3 id=&#34;既存のライブラリcarthage対応&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
@@ -130,7 +130,7 @@ oauthswift.authorizeWithCallbackURL( NSURL(string: &amp;quot;oauth-swift://oauth
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;各サービスoauth関連ページ:b3b9560f925092fab7ad073d1ada7340&#34;&gt;各サービスOAuth関連ページ&lt;/h3&gt;
+&lt;h3 id=&#34;各サービスoauth関連ページ&#34;&gt;各サービスOAuth関連ページ&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Twitter:&lt;br /&gt;

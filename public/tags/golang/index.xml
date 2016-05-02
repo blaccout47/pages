@@ -17,7 +17,7 @@
       <guid>https://dongri.github.io/post/2015-02-09-new-vs-make/</guid>
       <description>
 
-&lt;h2 id=&#34;new:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;new&lt;/h2&gt;
+&lt;h2 id=&#34;new&#34;&gt;new&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://golang.org/pkg/builtin/#new&#34;&gt;http://golang.org/pkg/builtin/#new&lt;/a&gt;&lt;/p&gt;
 
@@ -28,7 +28,7 @@
 &lt;li&gt;組み込み関数 new はメモリの割り当て、第一引数は型であり、値ではない。戻り値はポインタである。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;make:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;make&lt;/h2&gt;
+&lt;h2 id=&#34;make&#34;&gt;make&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://golang.org/pkg/builtin/#make&#34;&gt;http://golang.org/pkg/builtin/#make&lt;/a&gt;&lt;/p&gt;
 
@@ -40,7 +40,7 @@
 &lt;li&gt;new と似ている、第一に引数は型であり、値ではない。new との違いは、make の戻り値はポインタではなく、値である。第一引数の型による。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;まとめ:1c5b01150e8ff6dd5cd2e263909af39d&#34;&gt;まとめ&lt;/h3&gt;
+&lt;h3 id=&#34;まとめ&#34;&gt;まとめ&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;new の役割はポインタの処理機か(*T)。make の役割は slice, map, chan 初期化かつ引用を戻す(T)。&lt;/li&gt;
@@ -87,47 +87,47 @@ func main() {
 
 &lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
 
-&lt;h3 id=&#34;事前確認:8262f9878270e0993d374e4a15849ed6&#34;&gt;事前確認&lt;/h3&gt;
+&lt;h3 id=&#34;事前確認&#34;&gt;事前確認&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ echo $GOPATH
 /Users/dongri/go
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;revelプロジェクト作成:8262f9878270e0993d374e4a15849ed6&#34;&gt;Revelプロジェクト作成&lt;/h3&gt;
+&lt;h3 id=&#34;revelプロジェクト作成&#34;&gt;Revelプロジェクト作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ revel new team
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;↑で $GOPATH/src/にteamフォルダが出来上がる&lt;/p&gt;
 
-&lt;h3 id=&#34;ローカルで実行してみる:8262f9878270e0993d374e4a15849ed6&#34;&gt;ローカルで実行してみる&lt;/h3&gt;
+&lt;h3 id=&#34;ローカルで実行してみる&#34;&gt;ローカルで実行してみる&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ revel run team
 
 $ open http://localhost:9000
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;herokuにbuildpackでデプロイ:8262f9878270e0993d374e4a15849ed6&#34;&gt;herokuにbuildpackでデプロイ&lt;/h3&gt;
+&lt;h3 id=&#34;herokuにbuildpackでデプロイ&#34;&gt;herokuにbuildpackでデプロイ&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ heroku create -b https://github.com/robfig/heroku-buildpack-go-revel.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;heroku画面でアプリの名前を変更する:8262f9878270e0993d374e4a15849ed6&#34;&gt;heroku画面でアプリの名前を変更する。&lt;/h3&gt;
+&lt;h3 id=&#34;heroku画面でアプリの名前を変更する&#34;&gt;heroku画面でアプリの名前を変更する。&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git remote -v
 $ git retemo rm origin
 $ git remote add origin git@heroku.com:[app].git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;godirファイル作成:8262f9878270e0993d374e4a15849ed6&#34;&gt;.godirファイル作成&lt;/h3&gt;
+&lt;h3 id=&#34;godirファイル作成&#34;&gt;.godirファイル作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ pwd
 /Users/dongri/go/src/team
 $ echo &amp;quot;team&amp;quot; &amp;gt; .godir
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;デプロイ:8262f9878270e0993d374e4a15849ed6&#34;&gt;デプロイ&lt;/h3&gt;
+&lt;h3 id=&#34;デプロイ&#34;&gt;デプロイ&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git add .
 $ git commit -m &amp;quot;hoge&amp;quot;
@@ -159,7 +159,7 @@ herokuも公式にはGolang対応してなくて、buildpackを使わないと�
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/kr/heroku-buildpack-go&#34;&gt;https://github.com/kr/heroku-buildpack-go&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;まずローカルでgoプロジェクトを作成して確認みる:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;まずローカルでGoプロジェクトを作成して確認みる。&lt;/h3&gt;
+&lt;h3 id=&#34;まずローカルでgoプロジェクトを作成して確認みる&#34;&gt;まずローカルでGoプロジェクトを作成して確認みる。&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cd $GOPATH/src
 
@@ -203,7 +203,7 @@ hello, world
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;バイナリ作成-サーバー起動して確認:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;バイナリ作成、サーバー起動して確認&lt;/h3&gt;
+&lt;h3 id=&#34;バイナリ作成-サーバー起動して確認&#34;&gt;バイナリ作成、サーバー起動して確認&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ go get
 $ which osakago
@@ -212,7 +212,7 @@ $ PORT=8080 osakago
 $ curl -i localhost:8080
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;heroku側設定:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Heroku側設定&lt;/h3&gt;
+&lt;h3 id=&#34;heroku側設定&#34;&gt;Heroku側設定&lt;/h3&gt;
 
 &lt;p&gt;メールアドレスとか変わった場合とか認証がうまくいかない場合があるので、念の為loginしておく。&lt;/p&gt;
 
@@ -222,12 +222,12 @@ Email: you@hoge.com
 Password:
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;procfileファイル作成:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Procfileファイル作成&lt;/h3&gt;
+&lt;h3 id=&#34;procfileファイル作成&#34;&gt;Procfileファイル作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ echo &#39;web: osakago&#39; &amp;gt; Procfile
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;godepインストール:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Godepインストール&lt;/h3&gt;
+&lt;h3 id=&#34;godepインストール&#34;&gt;Godepインストール&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ go get github.com/kr/godep
 $ godep save
@@ -235,7 +235,7 @@ $ godep save
 
 &lt;p&gt;Godepsフォルダ生成される。&lt;/p&gt;
 
-&lt;h3 id=&#34;herokuにデプロイ:ffd1f55ca3ce303c9d76ae31529c3f0d&#34;&gt;Herokuにデプロイ&lt;/h3&gt;
+&lt;h3 id=&#34;herokuにデプロイ&#34;&gt;Herokuにデプロイ&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ heroku create osakago -b https://github.com/kr/heroku-buildpack-go.git
 Creating osakago... done, stack is cedar

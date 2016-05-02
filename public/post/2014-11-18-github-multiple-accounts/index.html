@@ -106,12 +106,12 @@
 
 <p>ある事情により、githubに公開アカウントと秘密アカウントが必要になって、複数のアカウントを扱うようになりました。</p>
 
-<h3 id="まず-新しいsshキーの生成:c3453167f960f54141c44c8bf9a660ee">まず、新しいSSHキーの生成</h3>
+<h3 id="まず-新しいsshキーの生成">まず、新しいSSHキーの生成</h3>
 
 <pre><code>$ ssh-keygen -t rsa -C &quot;yoda@gmail.com&quot; -f id_rsa_secret
 </code></pre>
 
-<h3 id="ssh-config-設定:c3453167f960f54141c44c8bf9a660ee">~/.ssh/config 設定</h3>
+<h3 id="ssh-config-設定">~/.ssh/config 設定</h3>
 
 <pre><code>$ vim ~/.ssh/config
 
@@ -125,14 +125,14 @@ Host github-secret
   IdentitiesOnly yes
 </code></pre>
 
-<h3 id="git-clone:c3453167f960f54141c44c8bf9a660ee">git clone</h3>
+<h3 id="git-clone">git clone</h3>
 
 <p>SSH clone URL: git@github.com:user/project.git の場合</p>
 
 <pre><code>$ git clone git@github-secret:user/project.git
 </code></pre>
 
-<h3 id="git-config:c3453167f960f54141c44c8bf9a660ee">git config</h3>
+<h3 id="git-config">git config</h3>
 
 <p>確認してみる。</p>
 

@@ -111,7 +111,7 @@
 
 <p><em>以下はあくまでの自分の環境で、nodeとpostgresなど一通りの開発環境は整った環境です。</em></p>
 
-<h2 id="ghostをローカルで動かしてみる:66291b592f1fb4bcc9bbfc2850270841">Ghostをローカルで動かしてみる</h2>
+<h2 id="ghostをローカルで動かしてみる">Ghostをローカルで動かしてみる</h2>
 
 <pre><code>$ cd /path/to/ghost/folder/
 $ npm install --production
@@ -120,7 +120,7 @@ $ npm start
 $ open http://localhost:2368
 </code></pre>
 
-<h2 id="herokuにpg-addon追加:66291b592f1fb4bcc9bbfc2850270841">herokuにpg addon追加</h2>
+<h2 id="herokuにpg-addon追加">herokuにpg addon追加</h2>
 
 <pre><code>$ heroku addons:add heroku-postgresql:dev
 
@@ -129,7 +129,7 @@ DATABASE_URL:                 postgres://{username}:{password}@ec2-***.compute-1
 HEROKU_POSTGRESQL_PURPLE_URL: postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
 </code></pre>
 
-<h2 id="package-json-修正:66291b592f1fb4bcc9bbfc2850270841">package.json 修正</h2>
+<h2 id="package-json-修正">package.json 修正</h2>
 
 <p>package.jsonのdependenciesにpg追加。バージョンは固定にしたほうがいいかも。。。</p>
 
@@ -139,7 +139,7 @@ HEROKU_POSTGRESQL_PURPLE_URL: postgres://{username}:{password}@ec2-***.compute-1
 }
 </code></pre>
 
-<h2 id="config-js-修正:66291b592f1fb4bcc9bbfc2850270841">config.js 修正</h2>
+<h2 id="config-js-修正">config.js 修正</h2>
 
 <p>以下の部分をproductionのところに設定する。databaseの部分は上のDATABASE_URLのところ参照</p>
 
@@ -160,7 +160,7 @@ server: {
 }
 </code></pre>
 
-<h2 id="procfileファイル追加:66291b592f1fb4bcc9bbfc2850270841">Procfileファイル追加</h2>
+<h2 id="procfileファイル追加">Procfileファイル追加</h2>
 
 <p>herokuにnodejsアプリをデプロイした人にはわかると思うがProfileを作成</p>
 
@@ -168,7 +168,7 @@ server: {
 web: node index.js --production
 </code></pre>
 
-<h2 id="git-remote-push:66291b592f1fb4bcc9bbfc2850270841">git remote, push</h2>
+<h2 id="git-remote-push">git remote, push</h2>
 
 <pre><code>$ git init
 $ git remote add origin git@heroku.com:{app}.git
@@ -177,7 +177,7 @@ $ git commit -m &quot;Ghost&quot;
 $ git push origin master
 </code></pre>
 
-<h2 id="debug:66291b592f1fb4bcc9bbfc2850270841">Debug</h2>
+<h2 id="debug">Debug</h2>
 
 <p>heroku上でApplication Error!</p>
 
@@ -200,12 +200,12 @@ Ghost is running in development...
 
 <p>うまく表示されたようだ</p>
 
-<h2 id="ghost設定:66291b592f1fb4bcc9bbfc2850270841">Ghost設定</h2>
+<h2 id="ghost設定">Ghost設定</h2>
 
 <pre><code>$ open http://{app}.herokuapp.com/ghost/setup/
 </code></pre>
 
-<h2 id="所感:66291b592f1fb4bcc9bbfc2850270841">所感</h2>
+<h2 id="所感">所感</h2>
 
 <p>設定して自分が欲しかったmarkdownで書けるようになったけど、意識高い系に似合うデザインのせいか
 メモ、コードを書くにはいまいち。。。</p>

@@ -20,12 +20,12 @@
 &lt;p&gt;Google OAuth2のトークンを手動で取得メモ。通常はWebアプリはブラウザで取得してトークンとか保存すればいいのだが、
 hubot scriptでcalendar情報とか取得したい場合は、そうはいかない。&lt;/p&gt;
 
-&lt;h2 id=&#34;クライアントid作成:ba9710434c30615632bec5302bcb66de&#34;&gt;クライアントID作成&lt;/h2&gt;
+&lt;h2 id=&#34;クライアントid作成&#34;&gt;クライアントID作成&lt;/h2&gt;
 
 &lt;p&gt;予めGoogle Developer Console画面で、クライアントIDを作成
 &lt;a href=&#34;https://console.developers.google.com/project&#34;&gt;https://console.developers.google.com/project&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;code-取得:ba9710434c30615632bec5302bcb66de&#34;&gt;code 取得&lt;/h2&gt;
+&lt;h2 id=&#34;code-取得&#34;&gt;code 取得&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;https://accounts.google.com/o/oauth2/auth
 ?client_id={client_id}
@@ -43,7 +43,7 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;{callback_url}?code=4/W30HqfsDKmamqdW*****************
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;access-token-refresh-token-取得:ba9710434c30615632bec5302bcb66de&#34;&gt;access_token, refresh_token 取得&lt;/h2&gt;
+&lt;h2 id=&#34;access-token-refresh-token-取得&#34;&gt;access_token, refresh_token 取得&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ curl
 -d client_id={client_id}
@@ -70,7 +70,7 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
 
 &lt;p&gt;アクセスする度にexpires_inが減って行くのがわかる。0になると、access_tokenは失効されるので、使えない。&lt;/p&gt;
 
-&lt;h2 id=&#34;新しいaccess-tokenを取得:ba9710434c30615632bec5302bcb66de&#34;&gt;新しいaccess_tokenを取得&lt;/h2&gt;
+&lt;h2 id=&#34;新しいaccess-tokenを取得&#34;&gt;新しいaccess_tokenを取得&lt;/h2&gt;
 
 &lt;p&gt;expires_inで有効期限切れるまえに以下のPOSTで新しいaccess_tokenを取得&lt;/p&gt;
 
@@ -97,7 +97,7 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
 
 &lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
 
-&lt;h3 id=&#34;carthageってなんなの:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
+&lt;h3 id=&#34;carthageってなんなの&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
 
@@ -115,7 +115,7 @@ github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
 $ carthage update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;既存のライブラリcarthage対応:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
+&lt;h3 id=&#34;既存のライブラリcarthage対応&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
@@ -208,7 +208,7 @@ oauthswift.authorizeWithCallbackURL( NSURL(string: &amp;quot;oauth-swift://oauth
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;各サービスoauth関連ページ:b3b9560f925092fab7ad073d1ada7340&#34;&gt;各サービスOAuth関連ページ&lt;/h3&gt;
+&lt;h3 id=&#34;各サービスoauth関連ページ&#34;&gt;各サービスOAuth関連ページ&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Twitter:&lt;br /&gt;

@@ -109,47 +109,47 @@
 
 <p>RevelをHerokuにデプロイしてみる。</p>
 
-<h3 id="事前確認:8262f9878270e0993d374e4a15849ed6">事前確認</h3>
+<h3 id="事前確認">事前確認</h3>
 
 <pre><code>$ echo $GOPATH
 /Users/dongri/go
 
 </code></pre>
 
-<h3 id="revelプロジェクト作成:8262f9878270e0993d374e4a15849ed6">Revelプロジェクト作成</h3>
+<h3 id="revelプロジェクト作成">Revelプロジェクト作成</h3>
 
 <pre><code>$ revel new team
 </code></pre>
 
 <p>↑で $GOPATH/src/にteamフォルダが出来上がる</p>
 
-<h3 id="ローカルで実行してみる:8262f9878270e0993d374e4a15849ed6">ローカルで実行してみる</h3>
+<h3 id="ローカルで実行してみる">ローカルで実行してみる</h3>
 
 <pre><code>$ revel run team
 
 $ open http://localhost:9000
 </code></pre>
 
-<h3 id="herokuにbuildpackでデプロイ:8262f9878270e0993d374e4a15849ed6">herokuにbuildpackでデプロイ</h3>
+<h3 id="herokuにbuildpackでデプロイ">herokuにbuildpackでデプロイ</h3>
 
 <pre><code>$ heroku create -b https://github.com/robfig/heroku-buildpack-go-revel.git
 </code></pre>
 
-<h3 id="heroku画面でアプリの名前を変更する:8262f9878270e0993d374e4a15849ed6">heroku画面でアプリの名前を変更する。</h3>
+<h3 id="heroku画面でアプリの名前を変更する">heroku画面でアプリの名前を変更する。</h3>
 
 <pre><code>$ git remote -v
 $ git retemo rm origin
 $ git remote add origin git@heroku.com:[app].git
 </code></pre>
 
-<h3 id="godirファイル作成:8262f9878270e0993d374e4a15849ed6">.godirファイル作成</h3>
+<h3 id="godirファイル作成">.godirファイル作成</h3>
 
 <pre><code>$ pwd
 /Users/dongri/go/src/team
 $ echo &quot;team&quot; &gt; .godir
 </code></pre>
 
-<h3 id="デプロイ:8262f9878270e0993d374e4a15849ed6">デプロイ</h3>
+<h3 id="デプロイ">デプロイ</h3>
 
 <pre><code>$ git add .
 $ git commit -m &quot;hoge&quot;

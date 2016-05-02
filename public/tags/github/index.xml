@@ -19,7 +19,7 @@
 
 &lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
 
-&lt;h3 id=&#34;carthageってなんなの:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
+&lt;h3 id=&#34;carthageってなんなの&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
 
@@ -37,7 +37,7 @@ github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
 $ carthage update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;既存のライブラリcarthage対応:08ad86ac111d3cf0dfa4b25481835fda&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
+&lt;h3 id=&#34;既存のライブラリcarthage対応&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
@@ -95,12 +95,12 @@ $ git push origin v0.1.0
 
 &lt;p&gt;ある事情により、githubに公開アカウントと秘密アカウントが必要になって、複数のアカウントを扱うようになりました。&lt;/p&gt;
 
-&lt;h3 id=&#34;まず-新しいsshキーの生成:c3453167f960f54141c44c8bf9a660ee&#34;&gt;まず、新しいSSHキーの生成&lt;/h3&gt;
+&lt;h3 id=&#34;まず-新しいsshキーの生成&#34;&gt;まず、新しいSSHキーの生成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;yoda@gmail.com&amp;quot; -f id_rsa_secret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;ssh-config-設定:c3453167f960f54141c44c8bf9a660ee&#34;&gt;~/.ssh/config 設定&lt;/h3&gt;
+&lt;h3 id=&#34;ssh-config-設定&#34;&gt;~/.ssh/config 設定&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vim ~/.ssh/config
 
@@ -114,14 +114,14 @@ Host github-secret
   IdentitiesOnly yes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;git-clone:c3453167f960f54141c44c8bf9a660ee&#34;&gt;git clone&lt;/h3&gt;
+&lt;h3 id=&#34;git-clone&#34;&gt;git clone&lt;/h3&gt;
 
 &lt;p&gt;SSH clone URL: git@github.com:user/project.git の場合&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git clone git@github-secret:user/project.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;git-config:c3453167f960f54141c44c8bf9a660ee&#34;&gt;git config&lt;/h3&gt;
+&lt;h3 id=&#34;git-config&#34;&gt;git config&lt;/h3&gt;
 
 &lt;p&gt;確認してみる。&lt;/p&gt;
 

@@ -107,28 +107,28 @@
 <p>macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
 もともとビルドが遅いmiddlemanそんなに好きではなかったし、いいきっかけたと思って引越しした。いい感じ。</p>
 
-<h3 id="hgが必要なのでhgをインストールする:c4f9d42d3ecf0c9c6bb616629d59a5d1">hgが必要なのでhgをインストールする</h3>
+<h3 id="hgが必要なのでhgをインストールする">hgが必要なのでhgをインストールする</h3>
 
 <pre><code>$ brew install hg
 </code></pre>
 
-<h3 id="hugoインストール:c4f9d42d3ecf0c9c6bb616629d59a5d1">hugoインストール</h3>
+<h3 id="hugoインストール">hugoインストール</h3>
 
 <pre><code>$ go get -v github.com/spf13/hugo
 </code></pre>
 
-<h3 id="site作成:c4f9d42d3ecf0c9c6bb616629d59a5d1">site作成</h3>
+<h3 id="site作成">site作成</h3>
 
 <pre><code>$ hugo new site dongri.github.io
 </code></pre>
 
-<h3 id="テーマを取得:c4f9d42d3ecf0c9c6bb616629d59a5d1">テーマを取得</h3>
+<h3 id="テーマを取得">テーマを取得</h3>
 
 <pre><code>$ cd dongri.github.io
 $ git clone --recursive https://github.com/spf13/hugoThemes themes
 </code></pre>
 
-<h3 id="テーマ設定:c4f9d42d3ecf0c9c6bb616629d59a5d1">テーマ設定</h3>
+<h3 id="テーマ設定">テーマ設定</h3>
 
 <pre><code>$ vim config.toml
 ...
@@ -136,7 +136,7 @@ theme = &quot;boro&quot;
 ...
 </code></pre>
 
-<h3 id="post作成:c4f9d42d3ecf0c9c6bb616629d59a5d1">post作成</h3>
+<h3 id="post作成">post作成</h3>
 
 <pre><code>$ hugo new post/2016-01-17-hugo.md
 $ vim post/2016-01-17-hugo.md
@@ -149,12 +149,12 @@ tags = [&quot;blog&quot;]
 hogehoge
 </code></pre>
 
-<h3 id="サーバー起動して確認:c4f9d42d3ecf0c9c6bb616629d59a5d1">サーバー起動して確認</h3>
+<h3 id="サーバー起動して確認">サーバー起動して確認</h3>
 
 <pre><code>$ hugo server -w
 </code></pre>
 
-<h3 id="github-pagesにデプロイ:c4f9d42d3ecf0c9c6bb616629d59a5d1">github pagesにデプロイ</h3>
+<h3 id="github-pagesにデプロイ">github pagesにデプロイ</h3>
 
 <p>hugo siteをrepoAにして、publicをsubtreeで username.github.io にして毎回pushする。</p>
 

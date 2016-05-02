@@ -107,12 +107,12 @@
 <p>Google OAuth2のトークンを手動で取得メモ。通常はWebアプリはブラウザで取得してトークンとか保存すればいいのだが、
 hubot scriptでcalendar情報とか取得したい場合は、そうはいかない。</p>
 
-<h2 id="クライアントid作成:ba9710434c30615632bec5302bcb66de">クライアントID作成</h2>
+<h2 id="クライアントid作成">クライアントID作成</h2>
 
 <p>予めGoogle Developer Console画面で、クライアントIDを作成
 <a href="https://console.developers.google.com/project">https://console.developers.google.com/project</a></p>
 
-<h2 id="code-取得:ba9710434c30615632bec5302bcb66de">code 取得</h2>
+<h2 id="code-取得">code 取得</h2>
 
 <pre><code>https://accounts.google.com/o/oauth2/auth
 ?client_id={client_id}
@@ -130,7 +130,7 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
 <pre><code class="language-bash">{callback_url}?code=4/W30HqfsDKmamqdW*****************
 </code></pre>
 
-<h2 id="access-token-refresh-token-取得:ba9710434c30615632bec5302bcb66de">access_token, refresh_token 取得</h2>
+<h2 id="access-token-refresh-token-取得">access_token, refresh_token 取得</h2>
 
 <pre><code>$ curl
 -d client_id={client_id}
@@ -157,7 +157,7 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
 
 <p>アクセスする度にexpires_inが減って行くのがわかる。0になると、access_tokenは失効されるので、使えない。</p>
 
-<h2 id="新しいaccess-tokenを取得:ba9710434c30615632bec5302bcb66de">新しいaccess_tokenを取得</h2>
+<h2 id="新しいaccess-tokenを取得">新しいaccess_tokenを取得</h2>
 
 <p>expires_inで有効期限切れるまえに以下のPOSTで新しいaccess_tokenを取得</p>
 

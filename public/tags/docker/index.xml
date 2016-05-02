@@ -573,7 +573,7 @@ centos               latest              0c752394b855        7 days ago         
 
 &lt;p&gt;インストール終わったので、nginxを構築してみる。&lt;/p&gt;
 
-&lt;h3 id=&#34;dockerfileを作成する:445d9f6b711503b689a226be291983fb&#34;&gt;Dockerfileを作成する。&lt;/h3&gt;
+&lt;h3 id=&#34;dockerfileを作成する&#34;&gt;Dockerfileを作成する。&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vim Dockerfile
 FROM centos
@@ -603,14 +603,14 @@ ENTRYPOINT [&amp;quot;/usr/sbin/nginx&amp;quot;, &amp;quot;-g&amp;quot;, &amp;qu
 &lt;li&gt;作成されたコンテナ起動(nginx)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;ビルド:445d9f6b711503b689a226be291983fb&#34;&gt;ビルド&lt;/h3&gt;
+&lt;h3 id=&#34;ビルド&#34;&gt;ビルド&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ docker build -t dongri/nginx .
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;container名を[username]/[imagename]にしたのはdocker hubに公開するため。&lt;/p&gt;
 
-&lt;h3 id=&#34;起動:445d9f6b711503b689a226be291983fb&#34;&gt;起動&lt;/h3&gt;
+&lt;h3 id=&#34;起動&#34;&gt;起動&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ docker run -p 80:80 -d dongri/nginx
 6358e578f3072e4e32d057647b5dbe63b34d0dfc07e46a497241498f27cf3e88
@@ -634,7 +634,7 @@ $
 
 &lt;p&gt;ポートフォワーディングは OSX 8080 &amp;mdash;&amp;gt; VirtualBox 80 &amp;mdash;&amp;gt; nginx 80&lt;/p&gt;
 
-&lt;h3 id=&#34;docker-hubにアップする:445d9f6b711503b689a226be291983fb&#34;&gt;docker hubにアップする&lt;/h3&gt;
+&lt;h3 id=&#34;docker-hubにアップする&#34;&gt;docker hubにアップする&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ docker ps
 6358e578f307        dongri/nginx:latest         /usr/sbin/nginx -g &#39;   2 hours ago         Up 6 minutes        0.0.0.0:80-&amp;gt;80/tcp                                                                       distracted_wilson   
@@ -644,7 +644,7 @@ $ docker push dongri/nginx
 
 &lt;p&gt;事前に &lt;a href=&#34;https://hub.docker.com/&#34;&gt;https://hub.docker.com/&lt;/a&gt; にユーザー登録必要あり。&lt;/p&gt;
 
-&lt;h3 id=&#34;ポイント:445d9f6b711503b689a226be291983fb&#34;&gt;ポイント&lt;/h3&gt;
+&lt;h3 id=&#34;ポイント&#34;&gt;ポイント&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;imageになるのはcommit時の状態のcontainerである。nginxが起動されてない状態のcontainerをcommitしてもhubからpullして来ても外部コマンド使わないで起動できない。&lt;/li&gt;
@@ -711,13 +711,13 @@ $ docker run -p 80:80 --volumes-from samba-server -i -t dongri/nginx
 
 &lt;p&gt;ここまでやったら、macから/var/appにソースを入れて好きなように開発できる。&lt;/p&gt;
 
-&lt;h3 id=&#34;課題:cbf00e4e713730d8bdaf2be1d3d79fec&#34;&gt;課題&lt;/h3&gt;
+&lt;h3 id=&#34;課題&#34;&gt;課題&lt;/h3&gt;
 
 &lt;p&gt;ソースはgitで管理してるので、いちいちsambaにコピーするのが面倒。。。&lt;/p&gt;
 
 &lt;p&gt;どなたかよい解決方法あればお願いします！&lt;/p&gt;
 
-&lt;h3 id=&#34;追記-2014-06-18:cbf00e4e713730d8bdaf2be1d3d79fec&#34;&gt;追記(2014.06.18)&lt;/h3&gt;
+&lt;h3 id=&#34;追記-2014-06-18&#34;&gt;追記(2014.06.18)&lt;/h3&gt;
 
 &lt;p&gt;@yungsang がvagrant書いてくれたので、そちらも&lt;/p&gt;
 
@@ -791,7 +791,7 @@ $ open http://localhost:3000
 
 &lt;p&gt;続いてnodejsをやってみる。&lt;/p&gt;
 
-&lt;h3 id=&#34;dockerfileを作成する:115f8968df69417699d1f448270803b9&#34;&gt;Dockerfileを作成する。&lt;/h3&gt;
+&lt;h3 id=&#34;dockerfileを作成する&#34;&gt;Dockerfileを作成する。&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vim Dockerfile
 FROM centos:6.4                                                                                                                                                                                                                               
@@ -810,7 +810,7 @@ EXPOSE 3000
 CMD [&amp;quot;node&amp;quot;, &amp;quot;/var/app/nodejs/index.js&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;node環境構築する:115f8968df69417699d1f448270803b9&#34;&gt;node環境構築する。&lt;/h3&gt;
+&lt;h3 id=&#34;node環境構築する&#34;&gt;node環境構築する。&lt;/h3&gt;
 
 &lt;p&gt;nodejsディレクトリの下に、package.jsonとindex.jsを作成&lt;/p&gt;
 
@@ -840,7 +840,7 @@ app.listen(PORT);
 console.log(&#39;Express server listening on port &#39; + PORT);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;ビルド-サーバー起動:115f8968df69417699d1f448270803b9&#34;&gt;ビルド &amp;amp; サーバー起動&lt;/h3&gt;
+&lt;h3 id=&#34;ビルド-サーバー起動&#34;&gt;ビルド &amp;amp; サーバー起動&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ docker build -t dongri/node .
 $ docker run -p 3000:3000 -i -t dongri/node

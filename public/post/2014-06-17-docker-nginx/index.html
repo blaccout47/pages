@@ -106,7 +106,7 @@
 
 <p>インストール終わったので、nginxを構築してみる。</p>
 
-<h3 id="dockerfileを作成する:445d9f6b711503b689a226be291983fb">Dockerfileを作成する。</h3>
+<h3 id="dockerfileを作成する">Dockerfileを作成する。</h3>
 
 <pre><code>$ vim Dockerfile
 FROM centos
@@ -136,14 +136,14 @@ ENTRYPOINT [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;
 <li>作成されたコンテナ起動(nginx)</li>
 </ul>
 
-<h3 id="ビルド:445d9f6b711503b689a226be291983fb">ビルド</h3>
+<h3 id="ビルド">ビルド</h3>
 
 <pre><code>$ docker build -t dongri/nginx .
 </code></pre>
 
 <p>container名を[username]/[imagename]にしたのはdocker hubに公開するため。</p>
 
-<h3 id="起動:445d9f6b711503b689a226be291983fb">起動</h3>
+<h3 id="起動">起動</h3>
 
 <pre><code>$ docker run -p 80:80 -d dongri/nginx
 6358e578f3072e4e32d057647b5dbe63b34d0dfc07e46a497241498f27cf3e88
@@ -167,7 +167,7 @@ $
 
 <p>ポートフォワーディングは OSX 8080 &mdash;&gt; VirtualBox 80 &mdash;&gt; nginx 80</p>
 
-<h3 id="docker-hubにアップする:445d9f6b711503b689a226be291983fb">docker hubにアップする</h3>
+<h3 id="docker-hubにアップする">docker hubにアップする</h3>
 
 <pre><code>$ docker ps
 6358e578f307        dongri/nginx:latest         /usr/sbin/nginx -g '   2 hours ago         Up 6 minutes        0.0.0.0:80-&gt;80/tcp                                                                       distracted_wilson   
@@ -177,7 +177,7 @@ $ docker push dongri/nginx
 
 <p>事前に <a href="https://hub.docker.com/">https://hub.docker.com/</a> にユーザー登録必要あり。</p>
 
-<h3 id="ポイント:445d9f6b711503b689a226be291983fb">ポイント</h3>
+<h3 id="ポイント">ポイント</h3>
 
 <ul>
 <li>imageになるのはcommit時の状態のcontainerである。nginxが起動されてない状態のcontainerをcommitしてもhubからpullして来ても外部コマンド使わないで起動できない。</li>

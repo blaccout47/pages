@@ -19,25 +19,25 @@
 
 &lt;p&gt;Octopress, Jekyll, Cabin いろいろあるみたいけど、Middlemanを使ってみようかと思って設置してみた。&lt;/p&gt;
 
-&lt;h2 id=&#34;middleman-middleman-blogインストール:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;middleman, middleman-blogインストール&lt;/h2&gt;
+&lt;h2 id=&#34;middleman-middleman-blogインストール&#34;&gt;middleman, middleman-blogインストール&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ gem install middleman
 $ gem install middleman-blog
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;middleman-プロジェクト作成:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;middleman プロジェクト作成&lt;/h2&gt;
+&lt;h2 id=&#34;middleman-プロジェクト作成&#34;&gt;middleman プロジェクト作成&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman init dongri.github.io --template=blog
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;レポジトリ設定:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;レポジトリ設定&lt;/h2&gt;
+&lt;h2 id=&#34;レポジトリ設定&#34;&gt;レポジトリ設定&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cd dongri.github.io
 $ git init
 $ git remote add origin git@github.com:dongri/dongri.github.io.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;gemfile-を修正:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;Gemfile を修正&lt;/h2&gt;
+&lt;h2 id=&#34;gemfile-を修正&#34;&gt;Gemfile を修正&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;gem &amp;quot;middleman-deploy&amp;quot;
 gem &amp;quot;middleman-livereload&amp;quot;
@@ -48,7 +48,7 @@ gem &amp;quot;nokogiri&amp;quot;
 
 &lt;p&gt;&lt;code&gt;bundle install&lt;/code&gt; する。&lt;/p&gt;
 
-&lt;h2 id=&#34;config-rb-を設定:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;config.rb を設定&lt;/h2&gt;
+&lt;h2 id=&#34;config-rb-を設定&#34;&gt;config.rb を設定&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Time.zone = &amp;quot;Tokyo&amp;quot;
 
@@ -76,19 +76,19 @@ activate :deploy do |deploy|
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;server起動:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;server起動&lt;/h2&gt;
+&lt;h2 id=&#34;server起動&#34;&gt;server起動&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman server
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;new-post:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;New Post&lt;/h2&gt;
+&lt;h2 id=&#34;new-post&#34;&gt;New Post&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman article new-post
       create  source/2014-04-21-new-post.html.markdown
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;source-2014-04-21-new-post-html-markdown-編集:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;source/2014-04-21-new-post.html.markdown 編集&lt;/h2&gt;
+&lt;h2 id=&#34;source-2014-04-21-new-post-html-markdown-編集&#34;&gt;source/2014-04-21-new-post.html.markdown 編集&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;---
 layout: post
@@ -103,13 +103,13 @@ tags: middleman, blog
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;build-deploy:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;build &amp;amp; deploy&lt;/h2&gt;
+&lt;h2 id=&#34;build-deploy&#34;&gt;build &amp;amp; deploy&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman build
 $ middleman deploy
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;template-css:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;template &amp;amp; css&lt;/h2&gt;
+&lt;h2 id=&#34;template-css&#34;&gt;template &amp;amp; css&lt;/h2&gt;
 
 &lt;p&gt;theme, templateなどググっても出てこない。&lt;br /&gt;
 しょうがなく自分デザイン?してcss組んでこんなページが生まれた。&lt;/p&gt;

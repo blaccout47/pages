@@ -7,26 +7,26 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" GHOST (CVE-2015-0235) &middot;  D" />
+        <meta property="og:title" content=" Nexus 5X クリーンインストール &amp; Root化 &middot;  D" />
         <meta property="og:site_name" content="D" />
-        <meta property="og:url" content="https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/" />
+        <meta property="og:url" content="https://dongri.github.io/post/2016-05-03-nexus-root/" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2015-01-28T11:28:57&#43;09:00" />
-        <meta property="og:article:tag" content="security" />
-        <meta property="og:article:tag" content="linux" />
+        <meta property="og:article:published_time" content="2016-05-03T01:36:00&#43;09:00" />
+        <meta property="og:article:tag" content="android" />
+        <meta property="og:article:tag" content="nexus" />
         
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="GHOST (CVE-2015-0235)" />
+        <meta name="twitter:title" content="Nexus 5X クリーンインストール &amp; Root化" />
         <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/" />
+        <meta name="twitter:url" content="https://dongri.github.io/post/2016-05-03-nexus-root/" />
     
 
-        <title> GHOST (CVE-2015-0235) &middot;  D</title>
+        <title> Nexus 5X クリーンインストール &amp; Root化 &middot;  D</title>
 
     
         <meta name="description" content="" />
@@ -45,21 +45,21 @@
     
 
     
-        <link rel="canonical" href="https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/" />
+        <link rel="canonical" href="https://dongri.github.io/post/2016-05-03-nexus-root/" />
 
     
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "GHOST (CVE-2015-0235)",
+        "headline": "Nexus 5X クリーンインストール \x26 Root化",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/?rel=author"
         },
-        "datePublished": "2015-01-28",
+        "datePublished": "2016-05-03",
         "description": "",
-        "wordCount":  270 
+        "wordCount":  98 
     }
     </script>
     
@@ -90,114 +90,107 @@
 
 <article id="" class="post">
     <div class="post-stamp">
-        <time datetime="2015-01-28T11:28:57&#43;09:00">
-            28 Jan 2015
+        <time datetime="2016-05-03T01:36:00&#43;09:00">
+            3 May 2016
         </time>
         <span class="taglist">
         
         &middot;
         
-            <a href="https://dongri.github.io/tags/security/">security</a>
+            <a href="https://dongri.github.io/tags/android/">android</a>
         
-            <a href="https://dongri.github.io/tags/linux/">linux</a>
+            <a href="https://dongri.github.io/tags/nexus/">nexus</a>
         
         
         </span>
     </div>
-    <h1 class="post-title">GHOST (CVE-2015-0235)</h1>
+    <h1 class="post-title">Nexus 5X クリーンインストール &amp; Root化</h1>
     
 
-<p>クラウドセキュリティ企業Qualysの研究者が、Linux GNU Cライブラリ（glibc）に深刻なセキュリティホールである「GHOST」（CVE-2015-0235）を発見したらしい。</p>
+<h2 id="factory-image">Factory Image</h2>
 
-<p><a href="http://www.openwall.com/lists/oss-security/2015/01/27/9">http://www.openwall.com/lists/oss-security/2015/01/27/9</a></p>
+<p>Googleが公開しているNexus端末向けの初期ROMデータのことを言います。
+Factory Imageには、「system・boot（Kernel）・recovery・bootloader・radio・userdata・cache」などの各領域のイメージが含まれており、
+それらを端末に書き込むことで領域を完全に初期化することが出来ます。</p>
 
-<blockquote>
-<p>このセキュリティホールは、glibc-2.2（2000年11月10日にリリース）を使用してビルドされたすべてのLinuxシステムに存在する。Qualysによれば、このバグは実際には、2013年5月21日にリリースされた、glibc-2.17とglibc-2.18の間のバグフィックスで修正されている。</p>
-</blockquote>
+<p><a href="https://developers.google.com/android/nexus/images">https://developers.google.com/android/nexus/images</a></p>
 
-<p>ポイントはglibcのバージョンで判断するのではなく、パッチを当てたかどうか。</p>
+<p>nexus5xのところの最新のものをダウンロードして解凍する</p>
 
-<h3 id="対応前">対応前</h3>
+<h2 id="oemロック解除">OEMロック解除</h2>
 
-<ul>
-<li>/lib/libc.so.6</li>
-<li>/lib64/libc.so.6</li>
-<li>/lib/i386-linux-gnu/libc.so.6</li>
-<li>/lib/x86_64-linux-gnu/libc.so.6</li>
-</ul>
+<p>開発者向けオプションで「OEMロック解除を有効にする」にチェックを入れる</p>
 
-<pre><code>$ /lib64/libc.so.6
-GNU C Library stable release version 2.12, by Roland McGrath et al.
-Copyright (C) 2010 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.
-There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
-Compiled by GNU CC version 4.4.7 20120313 (Red Hat 4.4.7-4).
-Compiled on a Linux 2.6.32 system on 2014-08-29.
-Available extensions:
-The C stubs add-on version 2.1.2.
-crypt add-on version 2.1 by Michael Glad and others
-GNU Libidn by Simon Josefsson
-Native POSIX Threads Library by Ulrich Drepper et al
-BIND-8.2.3-T5B
-RT using linux kernel aio
-libc ABIs: UNIQUE IFUNC
-For bug reporting instructions, please see:
-&lt;http://www.gnu.org/software/libc/bugs.html&gt;.
+<h2 id="ブートローダーをアンロック">ブートローダーをアンロック</h2>
 
-$
-
+<pre><code>$ adb reboot bootloader // もしくは、電源ボタンとボリュームダウンボタンを同時に長押し
+$ fastboot oem unlock
+...
+OKAY [ 20.966s]
+finished. total time: 20.966s
 </code></pre>
 
-<h3 id="対応">対応</h3>
+<p>これでbootloaderがunlockの状態になる</p>
 
-<pre><code>$ sudo yum clean all
+<p><code>DEVICE STATE - locked</code></p>
 
-$ sudo yum update glibc
-or
-$ sudo yum update
+<p>↓</p>
+
+<p><code>DEVICE STATE - unlocked</code></p>
+
+<h2 id="flash-all">flash-all</h2>
+
+<pre><code>$ cd bullhead-mhc19q
+$ ./flash-all.sh
+...
+OKAY [  0.214s]
+writing 'cache'...
+OKAY [  0.061s]
+rebooting...
+
+finished. total time: 86.174s
 </code></pre>
 
-<h3 id="対応後">対応後</h3>
+<h2 id="カスタムリカバリの導入">カスタムリカバリの導入</h2>
 
-<pre><code>$ /lib64/libc.so.6
-GNU C Library stable release version 2.12, by Roland McGrath et al.
-Copyright (C) 2010 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.
-There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
-Compiled by GNU CC version 4.4.7 20120313 (Red Hat 4.4.7-11).
-Compiled on a Linux 2.6.32 system on 2015-01-27.
-Available extensions:
-The C stubs add-on version 2.1.2.
-crypt add-on version 2.1 by Michael Glad and others
-GNU Libidn by Simon Josefsson
-Native POSIX Threads Library by Ulrich Drepper et al
-BIND-8.2.3-T5B
-RT using linux kernel aio
-libc ABIs: UNIQUE IFUNC
-For bug reporting instructions, please see:
-&lt;http://www.gnu.org/software/libc/bugs.html&gt;.
+<p><a href="https://twrp.me/devices/lgnexus5x.html">https://twrp.me/devices/lgnexus5x.html</a></p>
 
-$
+<p>Download Links で 最新のimgファイルダウンロードする。</p>
+
+<pre><code>$ fastboot flash recovery twrp-3.0.2-0-bullhead.img
 </code></pre>
 
-<h3 id="何が変わった">何が変わった？</h3>
+<p>ブートローダー画面から「Recovery mode」を選択すると導入したTWRPを起動できるようなりました。</p>
 
-<pre><code>Compiled on a Linux 2.6.32 system on 2015-01-27.
+<h2 id="root化">Root化</h2>
+
+<p>SuperSUの最新版を見つけて入れる。バージョンが違うとAndroid自体が起動できなかったりするのでご注意を</p>
+
+<p><a href="https://download.chainfire.eu/932/SuperSU/BETA-SuperSU-v2.71-20160331103524.zip">https://download.chainfire.eu/932/SuperSU/BETA-SuperSU-v2.71-20160331103524.zip</a></p>
+
+<p>BETA-SuperSU-v2.71-20160331103524.zipを端末に転送して、install</p>
+
+<pre><code>$ adb push BETA-SuperSU-v2.71-20160331103524.zip /sdcard/
+4103 KB/s (4015219 bytes in 0.955s)
+$ adb reboot bootloader
 </code></pre>
 
-<h3 id="サーバー再起動">サーバー再起動</h3>
+<p>Recovery modeを選択して決定、「Install」より先ほどダウンロードしたSuperSUを選択して書き込む。</p>
 
-<pre><code>$ sudo reboot
-</code></pre>
+<p><a href="http://g.co/ABH">http://g.co/ABH</a></p>
 
-<p>CentOS 6.5 x64 (digitalocean) での作業でした。</p>
+<p>警告でるが、電源ボタンを２回押して続ける。</p>
+
+<p>再起動されるが、めっちゃ遅い&hellip;&hellip;&hellip;&hellip;&hellip;.</p>
+
+<p>これでroot取れた。</p>
+
+<p>やり放題。ubuntu入れて、webサーバー立てる。</p>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=GHOST%20%28CVE-2015-0235%29&amp;body=https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/">
+          <a href="mailto:?subject=Nexus%205X%20%e3%82%af%e3%83%aa%e3%83%bc%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%20%26%20Root%e5%8c%96&amp;body=https://dongri.github.io/post/2016-05-03-nexus-root/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -207,7 +200,7 @@ $
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://dongri.github.io/post/2016-05-03-nexus-root/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -217,7 +210,7 @@ $
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=GHOST%20%28CVE-2015-0235%29%20https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/" class="popup">
+          <a href="http://twitter.com/home?status=Nexus%205X%20%e3%82%af%e3%83%aa%e3%83%bc%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%20%26%20Root%e5%8c%96%20https://dongri.github.io/post/2016-05-03-nexus-root/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -227,7 +220,7 @@ $
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/&amp;title=GHOST%20%28CVE-2015-0235%29&amp;summary=%e3%82%af%e3%83%a9%e3%82%a6%e3%83%89%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e4%bc%81%e6%a5%adQualys%e3%81%ae%e7%a0%94%e7%a9%b6%e8%80%85%e3%81%8c%e3%80%81Linux%20GNU%20C%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa%ef%bc%88glibc%ef%bc%89%e3%81%ab%e6%b7%b1%e5%88%bb%e3%81%aa%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e3%83%9b%e3%83%bc%e3%83%ab%e3%81%a7%e3%81%82%e3%82%8b%e3%80%8cGHOST%e3%80%8d%ef%bc%88CVE-2015-0235%ef%bc%89%e3%82%92%e7%99%ba%e8%a6%8b%e3%81%97%e3%81%9f%e3%82%89%e3%81%97%e3%81%84%e3%80%82%20http%3a%2f%2fwww.openwall.com%2flists%2foss-security%2f2015%2f01%2f27%2f9%20%e3%81%93%e3%81%ae%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e3%83%9b%e3%83%bc%e3%83%ab%e3%81%af%e3%80%81glibc-2.2%ef%bc%882000%e5%b9%b411%e6%9c%8810%e6%97%a5%e3%81%ab%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%ef%bc%89%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%a6%e3%83%93%e3%83%ab%e3%83%89%e3%81%95%e3%82%8c%e3%81%9f%e3%81%99%e3%81%b9%e3%81%a6%e3%81%aeLinux%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e3%81%ab%e5%ad%98%e5%9c%a8%e3%81%99%e3%82%8b%e3%80%82Qualys%e3%81%ab%e3%82%88%e3%82%8c%e3%81%b0%e3%80%81%e3%81%93%e3%81%ae%e3%83%90%e3%82%b0%e3%81%af%e5%ae%9f%e9%9a%9b%e3%81%ab%e3%81%af%e3%80%812013%e5%b9%b45%e6%9c%8821%e6%97%a5%e3%81%ab%e3%83%aa%e3%83%aa%e3%83%bc%e3%82%b9%e3%81%95%e3%82%8c%e3%81%9f%e3%80%81glibc-2.17%e3%81%a8glibc-2.18%e3%81%ae%e9%96%93%e3%81%ae%e3%83%90%e3%82%b0%e3%83%95%e3%82%a3%e3%83%83%e3%82%af%e3%82%b9%e3%81%a7%e4%bf%ae%e6%ad%a3%e3%81%95%e3%82%8c%e3%81%a6%e3%81%84%e3%82%8b%e3%80%82%20%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%88%e3%81%afglibc%e3%81%ae%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%a7%e5%88%a4%e6%96%ad%e3%81%99%e3%82%8b%e3%81%ae%e3%81%a7%e3%81%af%e3%81%aa%e3%81%8f%e3%80%81%e3%83%91%e3%83%83%e3%83%81%e3%82%92%e5%bd%93%e3%81%a6%e3%81%9f%e3%81%8b%e3%81%a9%e3%81%86%e3%81%8b%e3%80%82%20%e5%af%be%e5%bf%9c%e5%89%8d%20%2flib%2flibc.so.6%20%2flib64%2flibc.so.6%20%2flib%2fi386-linux-gnu%2flibc.so.6%20%2flib%2fx86_64-linux-gnu%2flibc.so.6%20%24%20%2flib64%2flibc.so.6%20GNU%20C%20Library%20stable%20release%20version%202.12%2c%20by%20Roland%20McGrath%20et%20al.%20Copyright%20%28C%29%202010%20Free%20Software%20Foundation%2c%20Inc.%20This%20is%20free%20software%3b%20see%20the%20source%20for%20copying%20conditions.%20There%20is%20NO%20warranty%3b%20not%20even%20for%20MERCHANTABILITY%20or%20FITNESS%20FOR%20A%20PARTICULAR%20PURPOSE.%20Compiled%20by%20GNU%20CC%20version%204.4.7%2020120313%20%28Red%20Hat%204.4.7-4%29.%20Compiled%20on%20a%20Linux%202.6.32%20system%20on%202014-08-29...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://dongri.github.io/post/2016-05-03-nexus-root/&amp;title=Nexus%205X%20%e3%82%af%e3%83%aa%e3%83%bc%e3%83%b3%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%20%26%20Root%e5%8c%96&amp;summary=Factory%20Image%20Google%e3%81%8c%e5%85%ac%e9%96%8b%e3%81%97%e3%81%a6%e3%81%84%e3%82%8bNexus%e7%ab%af%e6%9c%ab%e5%90%91%e3%81%91%e3%81%ae%e5%88%9d%e6%9c%9fROM%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e3%81%93%e3%81%a8%e3%82%92%e8%a8%80%e3%81%84%e3%81%be%e3%81%99%e3%80%82%20Factory%20Image%e3%81%ab%e3%81%af%e3%80%81%e3%80%8csystem%e3%83%bbboot%ef%bc%88Kernel%ef%bc%89%e3%83%bbrecovery%e3%83%bbbootloader%e3%83%bbradio%e3%83%bbuserdata%e3%83%bbcache%e3%80%8d%e3%81%aa%e3%81%a9%e3%81%ae%e5%90%84%e9%a0%98%e5%9f%9f%e3%81%ae%e3%82%a4%e3%83%a1%e3%83%bc%e3%82%b8%e3%81%8c%e5%90%ab%e3%81%be%e3%82%8c%e3%81%a6%e3%81%8a%e3%82%8a%e3%80%81%20%e3%81%9d%e3%82%8c%e3%82%89%e3%82%92%e7%ab%af%e6%9c%ab%e3%81%ab%e6%9b%b8%e3%81%8d%e8%be%bc%e3%82%80%e3%81%93%e3%81%a8%e3%81%a7%e9%a0%98%e5%9f%9f%e3%82%92%e5%ae%8c%e5%85%a8%e3%81%ab%e5%88%9d%e6%9c%9f%e5%8c%96%e3%81%99%e3%82%8b%e3%81%93%e3%81%a8%e3%81%8c%e5%87%ba%e6%9d%a5%e3%81%be%e3%81%99%e3%80%82%20https%3a%2f%2fdevelopers.google.com%2fandroid%2fnexus%2fimages%20nexus5x%e3%81%ae%e3%81%a8%e3%81%93%e3%82%8d%e3%81%ae%e6%9c%80%e6%96%b0%e3%81%ae%e3%82%82%e3%81%ae%e3%82%92%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89%e3%81%97%e3%81%a6%e8%a7%a3%e5%87%8d%e3%81%99%e3%82%8b%20OEM%e3%83%ad%e3%83%83%e3%82%af%e8%a7%a3%e9%99%a4%20%e9%96%8b%e7%99%ba%e8%80%85%e5%90%91%e3%81%91%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e3%81%a7%e3%80%8cOEM%e3%83%ad%e3%83%83%e3%82%af%e8%a7%a3%e9%99%a4%e3%82%92%e6%9c%89%e5%8a%b9%e3%81%ab%e3%81%99%e3%82%8b%e3%80%8d%e3%81%ab%e3%83%81%e3%82%a7%e3%83%83%e3%82%af%e3%82%92%e5%85%a5%e3%82%8c%e3%82%8b%20%e3%83%96%e3%83%bc%e3%83%88%e3%83%ad%e3%83%bc%e3%83%80%e3%83%bc%e3%82%92%e3%82%a2%e3%83%b3%e3%83%ad%e3%83%83%e3%82%af%20%24%20adb%20reboot%20bootloader%20%2f%2f%20%e3%82%82%e3%81%97%e3%81%8f%e3%81%af%e3%80%81%e9%9b%bb%e6%ba%90%e3%83%9c%e3%82%bf%e3%83%b3%e3%81%a8%e3%83%9c%e3%83%aa%e3%83%a5%e3%83%bc%e3%83%a0%e3%83%80%e3%82%a6%e3%83%b3%e3%83%9c%e3%82%bf%e3%83%b3%e3%82%92%e5%90%8c%e6%99%82%e3%81%ab%e9%95%b7%e6%8a%bc%e3%81%97%20%24%20fastboot%20oem%20unlock%20...%20OKAY%20%5b%2020.966s%5d%20finished.%20total%20time%3a%2020.966s%20%e3%81%93%e3%82%8c%e3%81%a7bootloader%e3%81%8cunlock%e3%81%ae%e7%8a%b6%e6%85%8b%e3%81%ab%e3%81%aa%e3%82%8b%20DEVICE%20STATE%20-%20locked%20%e2%86%93%20DEVICE%20STATE%20-%20unlocked%20flash-all%20%24%20cd%20bullhead-mhc19q%20%24%20.%2fflash-all.sh%20...%20OKAY%20%5b%200.214s%5d%20writing%20%27cache%27...%20OKAY%20%5b%200.061s%5d%20rebooting...%20finished.%20total%20time%3a%2086.174s%20%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%aa%e3%82%ab%e3%83%90%e3%83%aa%e3%81%ae%e5%b0%8e%e5%85%a5%20https%3a%2f%2ftwrp.me%2fdevices%2flgnexus5x.html%20Download%20Links%20%e3%81%a7%20%e6%9c%80%e6%96%b0%e3%81%aeimg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89%e3%81%99%e3%82%8b%e3%80%82%20%24%20fastboot%20flash%20recovery%20twrp-3.0.2-0-bullhead.img%20%e3%83%96%e3%83%bc%e3%83%88%e3%83%ad%e3%83%bc%e3%83%80%e3%83%bc%e7%94%bb%e9%9d%a2%e3%81%8b%e3%82%89%e3%80%8cRecovery%20mode%e3%80%8d%e3%82%92%e9%81%b8%e6%8a%9e%e3%81%99%e3%82%8b%e3%81%a8%e5%b0%8e%e5%85%a5%e3%81%97%e3%81%9fTWRP%e3%82%92%e8%b5%b7%e5%8b%95%e3%81%a7%e3%81%8d%e3%82%8b%e3%82%88%e3%81%86%e3%81%aa%e3%82%8a%e3%81%be%e3%81%97%e3%81%9f%e3%80%82%20Root%e5%8c%96%20SuperSU%e3%81%ae%e6%9c%80%e6%96%b0%e7%89%88%e3%82%92%e8%a6%8b%e3%81%a4%e3%81%91%e3%81%a6%e5%85%a5%e3%82%8c%e3%82%8b%e3%80%82%e3%83%90%e3%83%bc%e3%82%b8%e3%83%a7%e3%83%b3%e3%81%8c%e9%81%95%e3%81%86%e3%81%a8Android%e8%87%aa%e4%bd%93%e3%81%8c%e8%b5%b7%e5%8b%95%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%8a%e3%81%99%e3%82%8b%e3%81%ae%e3%81%a7%e3%81%94%e6%b3%a8%e6%84%8f%e3%82%92%20https%3a%2f%2fdownload.chainfire.eu%2f932%2fSuperSU%2fBETA-SuperSU-v2.71-20160331103524.zip%20BETA-SuperSU-v2.71-20160331103524.zip%e3%82%92%e7%ab%af%e6%9c%ab%e3%81%ab%e8%bb%a2%e9%80%81%e3%81%97%e3%81%a6%e3%80%81install%20%24%20adb%20push%20BETA-SuperSU-v2.71-20160331103524.zip%20%2fsdcard%2f%204103%20KB%2fs%20%284015219%20bytes%20in%200.955s%29%20%24%20adb%20reboot%20bootloader%20Recovery%20mode%e3%82%92%e9%81%b8%e6%8a%9e%e3%81%97%e3%81%a6%e6%b1%ba%e5%ae%9a%e3%80%81%e3%80%8cInstall%e3%80%8d%e3%82%88%e3%82%8a%e5%85%88%e3%81%bb%e3%81%a9%e3%83%80%e3%82%a6%e3%83%b3%e3%83%ad%e3%83%bc%e3%83%89%e3%81%97%e3%81%9fSuperSU%e3%82%92%e9%81%b8%e6%8a%9e%e3%81%97%e3%81%a6%e6%9b%b8%e3%81%8d%e8%be%bc%e3%82%80%e3%80%82%20http%3a%2f%2fg.co%2fABH%20%e8%ad%a6%e5%91%8a%e3%81%a7%e3%82%8b%e3%81%8c%e3%80%81%e9%9b%bb%e6%ba%90%e3%83%9c%e3%82%bf%e3%83%b3%e3%82%92%ef%bc%92%e5%9b%9e%e6%8a%bc%e3%81%97%e3%81%a6%e7%b6%9a%e3%81%91%e3%82%8b%e3%80%82%20%e5%86%8d%e8%b5%b7%e5%8b%95%e3%81%95%e3%82%8c%e3%82%8b%e3%81%8c%e3%80%81%e3%82%81%e3%81%a3%e3%81%a1%e3%82%83%e9%81%85%e3%81%84%26hellip%3b%26hellip%3b%26hellip%3b%26hellip%3b%26hellip%3b...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -238,7 +231,7 @@ $
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('https:\/\/dongri.github.io\/post\/2015-01-28-ghost-cve-2015-0235\/') + '&amp;t=GHOST (CVE-2015-0235)" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('https:\/\/dongri.github.io\/post\/2016-05-03-nexus-root\/') + '&amp;t=Nexus 5X クリーンインストール \x26 Root化" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -249,7 +242,7 @@ $
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/">
+          <a href="http://www.reddit.com/submit?url=https://dongri.github.io/post/2016-05-03-nexus-root/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -264,7 +257,7 @@ $
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/" class="popup">
+          <a href="https://plus.google.com/share?url=https://dongri.github.io/post/2016-05-03-nexus-root/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -283,7 +276,7 @@ $
 						if (firstimg !== undefined) {
 							imgurl = firstimg.src;
 						}
-						document.write('<a href="http://pinterest.com/pin/create/button/?url=https:\/\/dongri.github.io\/post\/2015-01-28-ghost-cve-2015-0235\/&amp;media=' + imgurl + '&amp;description=GHOST (CVE-2015-0235)" class="popup">');
+						document.write('<a href="http://pinterest.com/pin/create/button/?url=https:\/\/dongri.github.io\/post\/2016-05-03-nexus-root\/&amp;media=' + imgurl + '&amp;description=Nexus 5X クリーンインストール \x26 Root化" class="popup">');
 					</script>
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -294,7 +287,7 @@ $
           <script>document.write('</a>');</script>
       </li>
       <li class="pocket">
-          <a href="https://getpocket.com/save?url=https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/"  class="popup">
+          <a href="https://getpocket.com/save?url=https://dongri.github.io/post/2016-05-03-nexus-root/"  class="popup">
               <span class="icon">
                   <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                       <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>

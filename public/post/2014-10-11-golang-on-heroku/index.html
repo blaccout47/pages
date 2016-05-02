@@ -119,7 +119,7 @@ herokuも公式にはGolang対応してなくて、buildpackを使わないと�
 
 <p><a href="https://github.com/kr/heroku-buildpack-go">https://github.com/kr/heroku-buildpack-go</a></p>
 
-<h3 id="まずローカルでgoプロジェクトを作成して確認みる:ffd1f55ca3ce303c9d76ae31529c3f0d">まずローカルでGoプロジェクトを作成して確認みる。</h3>
+<h3 id="まずローカルでgoプロジェクトを作成して確認みる">まずローカルでGoプロジェクトを作成して確認みる。</h3>
 
 <pre><code>$ cd $GOPATH/src
 
@@ -163,7 +163,7 @@ hello, world
 $
 </code></pre>
 
-<h3 id="バイナリ作成-サーバー起動して確認:ffd1f55ca3ce303c9d76ae31529c3f0d">バイナリ作成、サーバー起動して確認</h3>
+<h3 id="バイナリ作成-サーバー起動して確認">バイナリ作成、サーバー起動して確認</h3>
 
 <pre><code>$ go get
 $ which osakago
@@ -172,7 +172,7 @@ $ PORT=8080 osakago
 $ curl -i localhost:8080
 </code></pre>
 
-<h3 id="heroku側設定:ffd1f55ca3ce303c9d76ae31529c3f0d">Heroku側設定</h3>
+<h3 id="heroku側設定">Heroku側設定</h3>
 
 <p>メールアドレスとか変わった場合とか認証がうまくいかない場合があるので、念の為loginしておく。</p>
 
@@ -182,12 +182,12 @@ Email: you@hoge.com
 Password:
 </code></pre>
 
-<h3 id="procfileファイル作成:ffd1f55ca3ce303c9d76ae31529c3f0d">Procfileファイル作成</h3>
+<h3 id="procfileファイル作成">Procfileファイル作成</h3>
 
 <pre><code>$ echo 'web: osakago' &gt; Procfile
 </code></pre>
 
-<h3 id="godepインストール:ffd1f55ca3ce303c9d76ae31529c3f0d">Godepインストール</h3>
+<h3 id="godepインストール">Godepインストール</h3>
 
 <pre><code>$ go get github.com/kr/godep
 $ godep save
@@ -195,7 +195,7 @@ $ godep save
 
 <p>Godepsフォルダ生成される。</p>
 
-<h3 id="herokuにデプロイ:ffd1f55ca3ce303c9d76ae31529c3f0d">Herokuにデプロイ</h3>
+<h3 id="herokuにデプロイ">Herokuにデプロイ</h3>
 
 <pre><code>$ heroku create osakago -b https://github.com/kr/heroku-buildpack-go.git
 Creating osakago... done, stack is cedar

@@ -21,7 +21,7 @@
 
 &lt;p&gt;自分の環境でちょっと動かなかった、ぶつかった問題をまとめてみた。&lt;/p&gt;
 
-&lt;h3 id=&#34;homebrew:536d2a36bd5220e26f5d90a4fdea75fe&#34;&gt;homebrew&lt;/h3&gt;
+&lt;h3 id=&#34;homebrew&#34;&gt;homebrew&lt;/h3&gt;
 
 &lt;p&gt;まずはこのエラー&lt;/p&gt;
 
@@ -34,7 +34,7 @@
 +++ #!/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/ruby -W0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;brew-update:536d2a36bd5220e26f5d90a4fdea75fe&#34;&gt;brew update&lt;/h3&gt;
+&lt;h3 id=&#34;brew-update&#34;&gt;brew update&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ git add /opt/boxen/homebrew/Library/brew.rb
 $ git commit -am &amp;quot;Fix ruby version&amp;quot;
@@ -46,7 +46,7 @@ $ git commit -am &amp;quot;Fix ruby version&amp;quot;
 $ brew update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;tmux:536d2a36bd5220e26f5d90a4fdea75fe&#34;&gt;tmux&lt;/h3&gt;
+&lt;h3 id=&#34;tmux&#34;&gt;tmux&lt;/h3&gt;
 
 &lt;p&gt;tmuxからatom, gitx起動できない。&lt;/p&gt;
 
@@ -77,11 +77,11 @@ set-option -g default-command &amp;quot;which reattach-to-user-namespace &amp;gt
       <guid>https://dongri.github.io/post/2014-05-27-oh-my-zsh/</guid>
       <description>
 
-&lt;h3 id=&#34;oh-my-zshとは:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;oh-my-zshとは&lt;/h3&gt;
+&lt;h3 id=&#34;oh-my-zshとは&#34;&gt;oh-my-zshとは&lt;/h3&gt;
 
 &lt;p&gt;zsh の設定を管理するフレームワーク&lt;/p&gt;
 
-&lt;h3 id=&#34;oh-my-zshをインストール:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;oh-my-zshをインストール&lt;/h3&gt;
+&lt;h3 id=&#34;oh-my-zshをインストール&#34;&gt;oh-my-zshをインストール&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;% wget http://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
@@ -118,28 +118,28 @@ plugins=(git ruby gem)
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;vimなどの文字化け対応:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;vimなどの文字化け対応&lt;/h4&gt;
+&lt;h4 id=&#34;vimなどの文字化け対応&#34;&gt;vimなどの文字化け対応&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export LANG=en_US.UTF-8
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;~/.zshrcに追加&lt;/p&gt;
 
-&lt;h4 id=&#34;既存パス設定:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;既存パス設定&lt;/h4&gt;
+&lt;h4 id=&#34;既存パス設定&#34;&gt;既存パス設定&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;source ~/.zshrc.pre-oh-my-zsh
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;~/.zshrc の一番後ろに追加&lt;/p&gt;
 
-&lt;h4 id=&#34;tmuxのwindowの名前が勝手に変わる:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;tmuxのwindowの名前が勝手に変わる。&lt;/h4&gt;
+&lt;h4 id=&#34;tmuxのwindowの名前が勝手に変わる&#34;&gt;tmuxのwindowの名前が勝手に変わる。&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;DISABLE_AUTO_TITLE=true
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;~/.zshrc 編集&lt;/p&gt;
 
-&lt;h3 id=&#34;アンインストール:1fe3e030619f768b05fa7e7700dc9554&#34;&gt;アンインストール&lt;/h3&gt;
+&lt;h3 id=&#34;アンインストール&#34;&gt;アンインストール&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;uninstall_oh_my_zsh
 &lt;/code&gt;&lt;/pre&gt;
@@ -160,7 +160,7 @@ plugins=(git ruby gem)
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/Lokaltog/powerline&#34;&gt;https://github.com/Lokaltog/powerline&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;まず-vim-から:15f4daf82502e17d680aea3c3143ecee&#34;&gt;まず vim から&lt;/h3&gt;
+&lt;h3 id=&#34;まず-vim-から&#34;&gt;まず vim から&lt;/h3&gt;
 
 &lt;p&gt;vim プラグイン管理ツールNeoBundle.vimをインストール&lt;/p&gt;
 
@@ -183,7 +183,7 @@ filetype indent on
 syntax on
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;powerlineのインストール:15f4daf82502e17d680aea3c3143ecee&#34;&gt;Powerlineのインストール&lt;/h3&gt;
+&lt;h3 id=&#34;powerlineのインストール&#34;&gt;Powerlineのインストール&lt;/h3&gt;
 
 &lt;p&gt;~/.vimrcに追加&lt;/p&gt;
 
@@ -266,7 +266,7 @@ tmux 1.9a
 2.0.14
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;tmuxinator-インストール-設定:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;tmuxinator インストール &amp;amp; 設定&lt;/h3&gt;
+&lt;h3 id=&#34;tmuxinator-インストール-設定&#34;&gt;tmuxinator インストール &amp;amp; 設定&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;% gem install tmuxinator
 % echo $SHELL
@@ -282,7 +282,7 @@ Checking if $SHELL is set ==&amp;gt; Yes
 %
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;project-作成-設定:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;project 作成 &amp;amp; 設定&lt;/h3&gt;
+&lt;h3 id=&#34;project-作成-設定&#34;&gt;project 作成 &amp;amp; 設定&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;% mux new dongri
 
@@ -367,12 +367,12 @@ windows:
 
 &lt;p&gt;[layout ****] ***の部分を ~/.tmuxinator/dongri.yml のlayoutのところにペスト&lt;/p&gt;
 
-&lt;h3 id=&#34;プロジェクト起動:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;プロジェクト起動&lt;/h3&gt;
+&lt;h3 id=&#34;プロジェクト起動&#34;&gt;プロジェクト起動&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ mux dongri
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;イメージ:bb2be49c0cd79a3ff88692d1de0c9eca&#34;&gt;イメージ&lt;/h3&gt;
+&lt;h3 id=&#34;イメージ&#34;&gt;イメージ&lt;/h3&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://dongri.github.io/images/posts/tmux.png&#34; alt=&#34;Tmux&#34; title=&#34;Tmux&amp;quot; width=&amp;quot;96px&amp;quot; height=&amp;quot;96px&#34; /&gt;&lt;/p&gt;
 </description>

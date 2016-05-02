@@ -25,7 +25,7 @@
 
 &lt;p&gt;&lt;a href=&#34;https://plus.google.com/+CyanogenMod/posts/7iuX21Tz7n8&#34;&gt;CyanogenMod: Recent Stagefright issues&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;zip-fileダウンロードしてインストール:9235ef80d1b45df8fed87cd3994fb28e&#34;&gt;Zip Fileダウンロードしてインストール&lt;/h3&gt;
+&lt;h3 id=&#34;zip-fileダウンロードしてインストール&#34;&gt;Zip Fileダウンロードしてインストール&lt;/h3&gt;
 
 &lt;p&gt;こちらから最新版cm-12.1をダウンロード。&lt;/p&gt;
 
@@ -36,7 +36,7 @@
 
 &lt;p&gt;TWRPでinstallを選択して、cm-12.1-20150728-NIGHTLY-bacon.zipを選択してインストール&lt;/p&gt;
 
-&lt;h3 id=&#34;google-appsインストール:9235ef80d1b45df8fed87cd3994fb28e&#34;&gt;Google Appsインストール&lt;/h3&gt;
+&lt;h3 id=&#34;google-appsインストール&#34;&gt;Google Appsインストール&lt;/h3&gt;
 
 &lt;p&gt;CMではデフォルトでGoogle Apps入ってないので、追加でインストールする。
 こちらからarmバージョンをダウンロードする。&lt;/p&gt;
@@ -68,7 +68,7 @@
 
 &lt;p&gt;ポイントはglibcのバージョンで判断するのではなく、パッチを当てたかどうか。&lt;/p&gt;
 
-&lt;h3 id=&#34;対応前:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応前&lt;/h3&gt;
+&lt;h3 id=&#34;対応前&#34;&gt;対応前&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;/lib/libc.so.6&lt;/li&gt;
@@ -100,7 +100,7 @@ $
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;対応:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応&lt;/h3&gt;
+&lt;h3 id=&#34;対応&#34;&gt;対応&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo yum clean all
 
@@ -109,7 +109,7 @@ or
 $ sudo yum update
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;対応後:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;対応後&lt;/h3&gt;
+&lt;h3 id=&#34;対応後&#34;&gt;対応後&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ /lib64/libc.so.6
 GNU C Library stable release version 2.12, by Roland McGrath et al.
@@ -133,12 +133,12 @@ For bug reporting instructions, please see:
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;何が変わった:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;何が変わった？&lt;/h3&gt;
+&lt;h3 id=&#34;何が変わった&#34;&gt;何が変わった？&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;Compiled on a Linux 2.6.32 system on 2015-01-27.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;サーバー再起動:213bbd3b51260174cd68782c1e2a85e6&#34;&gt;サーバー再起動&lt;/h3&gt;
+&lt;h3 id=&#34;サーバー再起動&#34;&gt;サーバー再起動&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo reboot
 &lt;/code&gt;&lt;/pre&gt;
@@ -187,7 +187,7 @@ $
 
 &lt;p&gt;この後もいろんな記事出たが、省略&lt;/p&gt;
 
-&lt;h3 id=&#34;対応内容:b61ad0598e71cce336437a16c0963cc8&#34;&gt;対応内容&lt;/h3&gt;
+&lt;h3 id=&#34;対応内容&#34;&gt;対応内容&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ env x=&#39;() { :;}; echo vulnerable&#39; bash -c &#39;echo bash test&#39;
 vulnerable

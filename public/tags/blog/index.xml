@@ -17,7 +17,7 @@
       <guid>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy/</guid>
       <description>
 
-&lt;h2 id=&#34;言語編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;言語編&lt;/h2&gt;
+&lt;h2 id=&#34;言語編&#34;&gt;言語編&lt;/h2&gt;
 
 &lt;p&gt;Functional Programmingをわかるエンジニアはよくデザインパターンを口にするエンジニアを軽蔑する。
 よくデザインパターンを口にするエンジニアは「そのように書くとオブジェクト指向ではない」と言うエンジニアを軽蔑する。
@@ -50,7 +50,7 @@ console.logでdebugするエンジニアはalertでdebugするエンジニアを
 
 &lt;p&gt;すべてのエンジニアはPHPエンジニアを軽蔑する。&lt;/p&gt;
 
-&lt;h2 id=&#34;ツール編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;ツール編&lt;/h2&gt;
+&lt;h2 id=&#34;ツール編&#34;&gt;ツール編&lt;/h2&gt;
 
 &lt;p&gt;text editorを使ってるエンジニアはIDEを使ってるエンジニアを軽蔑する。&lt;/p&gt;
 
@@ -86,7 +86,7 @@ Apacheを使ってるエンジニアはIISを使ってるエンジニアを軽�
 Ansible、Puppetでサーバー構築するエンジニアはFabricでサーバー構築するエンジニアを軽蔑する。
 Fabricでサーバー構築するエンジニアは手動SSHするエンジニアを軽蔑する。&lt;/p&gt;
 
-&lt;h2 id=&#34;os編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;OS編&lt;/h2&gt;
+&lt;h2 id=&#34;os編&#34;&gt;OS編&lt;/h2&gt;
 
 &lt;p&gt;Mac OS X使ってるエンジニアはLinux使ってるエンジニアを軽蔑する。
 Linux使ってるエンジニアはWindows使ってるエンジニアを軽蔑する。&lt;/p&gt;
@@ -94,13 +94,13 @@ Linux使ってるエンジニアはWindows使ってるエンジニアを軽蔑�
 &lt;p&gt;Debian使ってるエンジニアはUbuntu使ってるエンジニアを軽蔑する。
 Ubuntu使ってるエンジニアは非LTS版Ubuntuを使ってるエンジニアを軽蔑する。&lt;/p&gt;
 
-&lt;h2 id=&#34;ハードウエア編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;ハードウエア編&lt;/h2&gt;
+&lt;h2 id=&#34;ハードウエア編&#34;&gt;ハードウエア編&lt;/h2&gt;
 
 &lt;p&gt;MacBook Pro Retina使ってるエンジニアはMacBook Air使ってるエンジニアを軽蔑する。
 MacBook Air使ってるエンジニアはThinkPad使ってるエンジニアを軽蔑する。
 そして、Raspberry Piを使ってるエンジニアはMacBook Pro Retinaを使ってるエンジニアを軽蔑する。&lt;/p&gt;
 
-&lt;h2 id=&#34;職場編:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;職場編&lt;/h2&gt;
+&lt;h2 id=&#34;職場編&#34;&gt;職場編&lt;/h2&gt;
 
 &lt;p&gt;ハードウェアエンジニアはソフトウェアエンジニアを軽蔑する。&lt;/p&gt;
 
@@ -119,7 +119,7 @@ test書かないエンジニアは頻繁に仕様変更するPMを軽蔑する�
 
 &lt;p&gt;私服で出社するエンジニアはスーツ着て出社するエンジニアを軽蔑する。&lt;/p&gt;
 
-&lt;h2 id=&#34;終わり:4a6bb5b1e4acdc053cd324d90f68c9d7&#34;&gt;終わり&lt;/h2&gt;
+&lt;h2 id=&#34;終わり&#34;&gt;終わり&lt;/h2&gt;
 
 &lt;p&gt;wechat moments流れてた記事が面白くで日本語にしました。これ10年後に見ると面白いかも知らないですね。&lt;/p&gt;
 </description>
@@ -136,28 +136,28 @@ test書かないエンジニアは頻繁に仕様変更するPMを軽蔑する�
 &lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
 もともとビルドが遅いmiddlemanそんなに好きではなかったし、いいきっかけたと思って引越しした。いい感じ。&lt;/p&gt;
 
-&lt;h3 id=&#34;hgが必要なのでhgをインストールする:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;hgが必要なのでhgをインストールする&lt;/h3&gt;
+&lt;h3 id=&#34;hgが必要なのでhgをインストールする&#34;&gt;hgが必要なのでhgをインストールする&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ brew install hg
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugoインストール:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;hugoインストール&lt;/h3&gt;
+&lt;h3 id=&#34;hugoインストール&#34;&gt;hugoインストール&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ go get -v github.com/spf13/hugo
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;site作成:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;site作成&lt;/h3&gt;
+&lt;h3 id=&#34;site作成&#34;&gt;site作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new site dongri.github.io
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;テーマを取得:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;テーマを取得&lt;/h3&gt;
+&lt;h3 id=&#34;テーマを取得&#34;&gt;テーマを取得&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cd dongri.github.io
 $ git clone --recursive https://github.com/spf13/hugoThemes themes
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;テーマ設定:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;テーマ設定&lt;/h3&gt;
+&lt;h3 id=&#34;テーマ設定&#34;&gt;テーマ設定&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ vim config.toml
 ...
@@ -165,7 +165,7 @@ theme = &amp;quot;boro&amp;quot;
 ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;post作成:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;post作成&lt;/h3&gt;
+&lt;h3 id=&#34;post作成&#34;&gt;post作成&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo new post/2016-01-17-hugo.md
 $ vim post/2016-01-17-hugo.md
@@ -178,12 +178,12 @@ tags = [&amp;quot;blog&amp;quot;]
 hogehoge
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;サーバー起動して確認:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;サーバー起動して確認&lt;/h3&gt;
+&lt;h3 id=&#34;サーバー起動して確認&#34;&gt;サーバー起動して確認&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;$ hugo server -w
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;github-pagesにデプロイ:c4f9d42d3ecf0c9c6bb616629d59a5d1&#34;&gt;github pagesにデプロイ&lt;/h3&gt;
+&lt;h3 id=&#34;github-pagesにデプロイ&#34;&gt;github pagesにデプロイ&lt;/h3&gt;
 
 &lt;p&gt;hugo siteをrepoAにして、publicをsubtreeで username.github.io にして毎回pushする。&lt;/p&gt;
 
@@ -249,25 +249,25 @@ Google+から「생일이에요? 축하해요」だったり、とにかく意�
 
 &lt;p&gt;Octopress, Jekyll, Cabin いろいろあるみたいけど、Middlemanを使ってみようかと思って設置してみた。&lt;/p&gt;
 
-&lt;h2 id=&#34;middleman-middleman-blogインストール:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;middleman, middleman-blogインストール&lt;/h2&gt;
+&lt;h2 id=&#34;middleman-middleman-blogインストール&#34;&gt;middleman, middleman-blogインストール&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ gem install middleman
 $ gem install middleman-blog
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;middleman-プロジェクト作成:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;middleman プロジェクト作成&lt;/h2&gt;
+&lt;h2 id=&#34;middleman-プロジェクト作成&#34;&gt;middleman プロジェクト作成&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman init dongri.github.io --template=blog
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;レポジトリ設定:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;レポジトリ設定&lt;/h2&gt;
+&lt;h2 id=&#34;レポジトリ設定&#34;&gt;レポジトリ設定&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cd dongri.github.io
 $ git init
 $ git remote add origin git@github.com:dongri/dongri.github.io.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;gemfile-を修正:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;Gemfile を修正&lt;/h2&gt;
+&lt;h2 id=&#34;gemfile-を修正&#34;&gt;Gemfile を修正&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;gem &amp;quot;middleman-deploy&amp;quot;
 gem &amp;quot;middleman-livereload&amp;quot;
@@ -278,7 +278,7 @@ gem &amp;quot;nokogiri&amp;quot;
 
 &lt;p&gt;&lt;code&gt;bundle install&lt;/code&gt; する。&lt;/p&gt;
 
-&lt;h2 id=&#34;config-rb-を設定:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;config.rb を設定&lt;/h2&gt;
+&lt;h2 id=&#34;config-rb-を設定&#34;&gt;config.rb を設定&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;Time.zone = &amp;quot;Tokyo&amp;quot;
 
@@ -306,19 +306,19 @@ activate :deploy do |deploy|
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;server起動:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;server起動&lt;/h2&gt;
+&lt;h2 id=&#34;server起動&#34;&gt;server起動&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman server
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;new-post:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;New Post&lt;/h2&gt;
+&lt;h2 id=&#34;new-post&#34;&gt;New Post&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman article new-post
       create  source/2014-04-21-new-post.html.markdown
 $
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;source-2014-04-21-new-post-html-markdown-編集:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;source/2014-04-21-new-post.html.markdown 編集&lt;/h2&gt;
+&lt;h2 id=&#34;source-2014-04-21-new-post-html-markdown-編集&#34;&gt;source/2014-04-21-new-post.html.markdown 編集&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;---
 layout: post
@@ -333,13 +333,13 @@ tags: middleman, blog
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;build-deploy:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;build &amp;amp; deploy&lt;/h2&gt;
+&lt;h2 id=&#34;build-deploy&#34;&gt;build &amp;amp; deploy&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;$ middleman build
 $ middleman deploy
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;template-css:310bf9e2aead1e6516e9f2c98152f4d9&#34;&gt;template &amp;amp; css&lt;/h2&gt;
+&lt;h2 id=&#34;template-css&#34;&gt;template &amp;amp; css&lt;/h2&gt;
 
 &lt;p&gt;theme, templateなどググっても出てこない。&lt;br /&gt;
 しょうがなく自分デザイン?してcss組んでこんなページが生まれた。&lt;/p&gt;
