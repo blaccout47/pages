@@ -45,6 +45,12 @@ finished. total time: 0.005s
 $
 ```
 
+強制的にtwrp起動する
+
+```
+$ fastboot boot twrp-2.8.6.0-bacon.img
+```
+
 ### 3. Wipe
 
 電源ボタンとボリュームダウンボタンを同時に押してTWRPを起動する。
