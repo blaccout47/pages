@@ -6,8 +6,63 @@
     <description>Recent content in Posts on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 May 2016 01:36:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 May 2016 22:21:05 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Wireless adb</title>
+      <link>https://dongri.github.io/post/2016-05-10-wireless-adb/</link>
+      <pubDate>Tue, 10 May 2016 22:21:05 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-05-10-wireless-adb/</guid>
+      <description>
+
+&lt;p&gt;毎回USB繋げるのが面倒。&lt;/p&gt;
+
+&lt;p&gt;wifi環境でandroid adb shellできるようにした。&lt;/p&gt;
+
+&lt;h3 id=&#34;adb-tcpip-listen-port&#34;&gt;adb tcpip listen_port&lt;/h3&gt;
+
+&lt;p&gt;USBで繋げて&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb tcpip 5555
+restarting in TCP mode port: 5555
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;adb-connect-ip-address-lesten-port&#34;&gt;adb connect ip_address:lesten_port&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb connect 192.168.10.5:5555
+connected to 192.168.10.5:5555
+
+$ adb devices
+List of devices attached
+192.168.10.5:5555       device
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;adb-shell&#34;&gt;adb shell&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb shell
+shell@bullhead:/ $ su
+root@bullhead:/ # ls -la
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでUSBケーブルなくてもadb shellで繋げるようになった。&lt;/p&gt;
+
+&lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
+
+&lt;p&gt;このまま放置しておくとIPアドレスバレると誰からもadbで入れるので、終わったら adb usbでusbモードに戻しておきましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ adb usb
+restarting in USB mode
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;追記&#34;&gt;追記&lt;/h3&gt;
+
+&lt;p&gt;wifi環境が変わったりすると不安定になるので、app使ったほうが簡単だし、安全&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.ttxapps.wifiadb&#34;&gt;https://play.google.com/store/apps/details?id=com.ttxapps.wifiadb&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Nexus 5X クリーンインストール &amp; Root化</title>
@@ -423,6 +478,11 @@ finished. total time: 0.005s
 $
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;強制的にtwrp起動する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ fastboot boot twrp-2.8.6.0-bacon.img
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h3 id=&#34;3-wipe&#34;&gt;3. Wipe&lt;/h3&gt;
 
 &lt;p&gt;電源ボタンとボリュームダウンボタンを同時に押してTWRPを起動する。
@@ -484,6 +544,9 @@ TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
 $ fastboot oem unlock
 $ fastboot flash recovery ***.img
 $ fastboot reboot
+or
+$ fastboot boot ***.img
+
 $ adb push oxygenos_1.0.0.flashable.zip /sdcard/
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -1010,68 +1073,6 @@ $ git commit --allow-empty -m &amp;quot;Upgrading to Cedar-14&amp;quot;
 
 $ git push heroku master
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Revel on Heroku</title>
-      <link>https://dongri.github.io/post/2014-12-11-revel-on-heroku/</link>
-      <pubDate>Thu, 11 Dec 2014 11:28:57 +0900</pubDate>
-      
-      <guid>https://dongri.github.io/post/2014-12-11-revel-on-heroku/</guid>
-      <description>
-
-&lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
-
-&lt;h3 id=&#34;事前確認&#34;&gt;事前確認&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ echo $GOPATH
-/Users/dongri/go
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;revelプロジェクト作成&#34;&gt;Revelプロジェクト作成&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ revel new team
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;↑で $GOPATH/src/にteamフォルダが出来上がる&lt;/p&gt;
-
-&lt;h3 id=&#34;ローカルで実行してみる&#34;&gt;ローカルで実行してみる&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ revel run team
-
-$ open http://localhost:9000
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;herokuにbuildpackでデプロイ&#34;&gt;herokuにbuildpackでデプロイ&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ heroku create -b https://github.com/robfig/heroku-buildpack-go-revel.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;heroku画面でアプリの名前を変更する&#34;&gt;heroku画面でアプリの名前を変更する。&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git remote -v
-$ git retemo rm origin
-$ git remote add origin git@heroku.com:[app].git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;godirファイル作成&#34;&gt;.godirファイル作成&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ pwd
-/Users/dongri/go/src/team
-$ echo &amp;quot;team&amp;quot; &amp;gt; .godir
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;デプロイ&#34;&gt;デプロイ&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git add .
-$ git commit -m &amp;quot;hoge&amp;quot;
-$ git push origin master
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以上で完了&lt;/p&gt;
 </description>
     </item>
     

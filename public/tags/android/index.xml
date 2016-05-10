@@ -185,6 +185,11 @@ finished. total time: 0.005s
 $
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;強制的にtwrp起動する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ fastboot boot twrp-2.8.6.0-bacon.img
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h3 id=&#34;3-wipe&#34;&gt;3. Wipe&lt;/h3&gt;
 
 &lt;p&gt;電源ボタンとボリュームダウンボタンを同時に押してTWRPを起動する。
@@ -246,6 +251,9 @@ TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
 $ fastboot oem unlock
 $ fastboot flash recovery ***.img
 $ fastboot reboot
+or
+$ fastboot boot ***.img
+
 $ adb push oxygenos_1.0.0.flashable.zip /sdcard/
 &lt;/code&gt;&lt;/pre&gt;
 
