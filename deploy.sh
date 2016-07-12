@@ -2,6 +2,8 @@
 
 echo -e "Deploying updates to GitHub..."
 
+git pull origin master
+
 # Build the project.
 hugo
 
