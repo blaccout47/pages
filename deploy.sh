@@ -26,4 +26,11 @@ git push origin master
 
 # New Deploy
 cd public
+git add -A
+# Commit changes.
+msg="rebuilding site `date`"
+if [ $# -eq 1 ]
+  then msg="$1"
+fi
+git commit -m "$msg"
 git push origin master
