@@ -1,7 +1,7 @@
 +++
 date = "2016-05-10T22:21:05+09:00"
 title = "Wireless adb"
-tas = ["android"]
+tass = ["android"]
 +++
 
 毎回USB繋げるのが面倒。
