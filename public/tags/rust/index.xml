@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on D</title>
+    <link>https://dongri.github.io/tags/rust/</link>
+    <description>Recent content in Rust on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Jul 2016 23:35:22 +0900</lastBuildDate>
+    <atom:link href="https://dongri.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hello Rust</title>
+      <link>https://dongri.github.io/post/2016-07-13-hello-rust/</link>
+      <pubDate>Wed, 13 Jul 2016 23:35:22 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-07-13-hello-rust/</guid>
+      <description>
+
+&lt;h1 id=&#34;install&#34;&gt;Install&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew search rust
+multirust    rust    uncrustify
+$ brew install rust
+
+$ rustc --version
+rustc 1.10.0
+$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;hello-world&#34;&gt;hello world&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;$ vim hello.rs
+fn main() {
+    println!(&amp;quot;Hello Rust!&amp;quot;);
+}
+
+$ rustc hello.rs
+$ ./hello
+Hello Rust!
+$
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
