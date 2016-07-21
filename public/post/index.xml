@@ -6,8 +6,32 @@
     <description>Recent content in Posts on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jul 2016 23:35:22 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jul 2016 02:10:36 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>新卒SI</title>
+      <link>https://dongri.github.io/post/2016-07-22-SI/</link>
+      <pubDate>Fri, 22 Jul 2016 02:10:36 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-07-22-SI/</guid>
+      <description>&lt;p&gt;新卒でSIの会社に入った。小さい会社で社員研修もくそもない。&lt;/p&gt;
+
+&lt;p&gt;初日から社長に取引先(現場)に連れて行って面接。面接で初めて気付いた、履歴書に俺の年が2つ上がってる！しかも入社三年目。いろんなシステム開発経験あり、いろんな言語でコード書ける、いろんなデータベース触ったことあることになってる。まあ、しょうがない、知ってるふりして質問に答えた。幸いに面接パスして現場で働けるようになった。&lt;/p&gt;
+
+&lt;p&gt;面接がそんなもんだから、同然現場では新卒扱いされない、いきなりJavaでフレームワーク作りに入る。業務関連の質問はできるけど、技術的な質問はできない雰囲気になってる。Javaもデータベースも知ってるふりしながら家に帰って必死にググる。それが数ヶ月続いたら本当にJavaもデータベースも知るようになった。&lt;/p&gt;
+
+&lt;p&gt;今も偶にその時の社長と飲みに行くんだけど、その時の履歴書改竄の話出ると笑いながら「しょうがないじゃ、現場のマネージャーは新卒はいらないと言ってるから、、、」&lt;/p&gt;
+
+&lt;p&gt;多分その時のよくない経験が影響してるか、その後現場が変わっても転職して別の会社に行っても業務関連の質問はよくするけど、技術的な質問はあんまりしないでググるか、本を買うことになってる。&lt;/p&gt;
+
+&lt;p&gt;幸いに途中で師匠に出会えていろいろ勉強ができた。技術だけではなく、社会人としての常識的なものも勉強できた。&lt;/p&gt;
+
+&lt;p&gt;偶に思うのは、もしちゃんとした社員研修もあって、何でも聞ける先輩がいる会社に新卒で入ったら俺はどれだけできる人間になったかなと。その逆もありうるけどね。&lt;/p&gt;
+
+&lt;p&gt;(今日ツイッターで「新卒SI」についてブログ書くと宣言したので、ここまで書くか)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Hello Rust</title>
@@ -1009,82 +1033,6 @@ $
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;CentOS 6.5 x64 (digitalocean) での作業でした。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Carthage</title>
-      <link>https://dongri.github.io/post/2015-01-15-carthage/</link>
-      <pubDate>Thu, 15 Jan 2015 11:28:57 +0900</pubDate>
-      
-      <guid>https://dongri.github.io/post/2015-01-15-carthage/</guid>
-      <description>
-
-&lt;p&gt;OAuthSwiftをCarthageに対応したので、メモとして残します。&lt;/p&gt;
-
-&lt;h3 id=&#34;carthageってなんなの&#34;&gt;Carthageってなんなの？&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Carthage/Carthage&#34;&gt;https://github.com/Carthage/Carthage&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;「カルタゴ」と読んで、Swift対応したライブラリ管理ツールです。&lt;/p&gt;
-
-&lt;p&gt;インストール、使い方はgithubページ見ればわかると思います。&lt;/p&gt;
-
-&lt;p&gt;基本的な使い方は Cartfile 作成して使いたいgithubのライブラリをリストで書いてから
-「carthage update」するとCarthage/Buildの下に ******.framework ファイルが出来上がるので
-それをプロジェクトにドラッグアンドドロップして入れる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ vim Cartfile
-github &amp;quot;dongri/OAuthSwift&amp;quot; ~&amp;gt; 0.1.7
-
-$ carthage update
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;既存のライブラリcarthage対応&#34;&gt;既存のライブラリCarthage対応&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Targets に 新しい Cocoa Touch Framework Schemeを作る。Shared になってること確認。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7583/15666092073_76b41b17b1.jpg&#34; alt=&#34;Scheme Shared&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;既存ライブラリを新しいTargetに移す&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Swift Compiler設定&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8598/16098635750_0c10d33669.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Compile Sourcesに必要なSwiftファイル追加&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://farm9.staticflickr.com/8561/16100158557_400084b6c6.jpg&#34; alt=&#34;Swift Compiler&#34; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Schemeを新しいtargetにしてビルドする。（iOS Deviceにして）
-エラーになったら自己解決&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;carthage buildしてみる。githubに上げる前に、ローカルでビルとして、正常に ******.framework が出来上がるのを確認。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;$ carthage build --no-skip-current
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;githubに上げる。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git tag v0.1.0
-$ git push origin v0.1.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以上でcarthage対応完了。&lt;/p&gt;
-
-&lt;p&gt;対応したプロジェクトがこれ。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/OAuthSwift&#34;&gt;https://github.com/dongri/OAuthSwift&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
