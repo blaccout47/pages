@@ -6,8 +6,36 @@
     <description>Recent content in Blog on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jul 2016 02:10:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Aug 2016 20:11:11 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>認めるエンジニア</title>
+      <link>https://dongri.github.io/post/2016-08-13-engineer/</link>
+      <pubDate>Sat, 13 Aug 2016 20:11:11 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-08-13-engineer/</guid>
+      <description>&lt;p&gt;自分の弱点から言うと人を簡単に認めないこと。例えその人があることですごい成功したとしても気軽く認めないこと。&lt;/p&gt;
+
+&lt;p&gt;でも、今まで認めたエンジニアは二人いる。一人は元L社のチームマネージャー、もう一人のはやめたAndroidエンジニア。&lt;/p&gt;
+
+&lt;p&gt;一人目の元L社のチームマネージャーは検索エンジンや、ゲームプログラミングの出身でiOSの開発には知識はゼロと言っても過言ではない。
+しかし途中で自分のコードにメモリリークじゃないの？こうやったほうがいいじゃないの？のアドバイスをしてくれた。
+自分も確かにと思いながらやって、プロジェクトの終わり飲み会でその真実を知った。
+&amp;ldquo;大変だったよ、俺はiOSの知識が全く無くてお前らが書いたObjcコードを深夜3,4時まで本読みながら解読して勉強した。まあ過去の話だし、今日飲もう！&amp;rdquo;
+そんなの早く言えば自分の知識を共有したのにと思いながら酒を飲んだ。&lt;/p&gt;
+
+&lt;p&gt;もう一人目はやめたやつだけど、厳しいやつだった。俺が作ったAPIのバグを探すのが趣味みたい。いろんな例外ケースを試してここがだめだ、そこがダメだ、と言ってくる。
+言ってることが正しいので、反論することなく修正してあげる。というかあいつはなんでそんな例外ケースを思い出すんだろうと思うぐらいだ。
+普段は無口で余計なことはしゃべらない、ただただ論理的にシステムを正しく設計しようとしてる。&lt;/p&gt;
+
+&lt;p&gt;よく考えてみると二人の共通点がある。なにことも終わってから話すことだ。
+先にここがもしかしてダメじゃない？とかなくて自分だ試して、要は手を動かす人達だった。
+それにわざわざ仕事アピールする人ではなかった。どっちも普段無口でコレをやるを宣言してからやるのではなくコレをやった派だった。無駄にアプールしないことだ。&lt;/p&gt;
+
+&lt;p&gt;おそらく人間は自分に近い人を評価しやすいと思うがこの二人は求めてる。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>新卒SI</title>
