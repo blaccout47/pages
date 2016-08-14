@@ -1,5 +1,5 @@
 +++
-date = "2016-08-14T22:12:35+09:00"
+date = "2016-08-15T00:32:35+09:00"
 title = "Goodbye Instagram"
 tags = ['Blog']
 +++
