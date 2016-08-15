@@ -6,8 +6,58 @@
     <description>Recent content in Posts on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Aug 2016 00:32:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2016 22:27:53 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust on Heroku with Docker</title>
+      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</link>
+      <pubDate>Mon, 15 Aug 2016 22:27:53 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</guid>
+      <description>&lt;p&gt;Rustで書いたhello rustをherokuに載せてみた。
+普通ならrust用のBuildpack使うのだが、今回はdockerを使うようにした。
+Dockerfile、ソースコードなどはこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/hello-rust&#34;&gt;https://github.com/dongri/hello-rust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;はじめはalpineで頑張ってみようかと思ったがrustのインストールがうまく行かなくて、ubuntuに変更。
+Dockerfileは以下のようになっている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Dockerfile&#34;&gt;FROM ubuntu:latest
+
+# rust, cargo buildに必要なソフトウェアインストール
+RUN apt-get -y update
+RUN apt-get -y install curl file sudo gcc
+
+# rustのインストール
+RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh
+
+RUN mkdir -p /app
+WORKDIR /app
+COPY . /app
+
+# ビルドして ./target/release/helloバイナリを作る
+RUN cargo build --release
+
+EXPOSE 8080
+
+# 実行
+CMD /app/target/release/hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;readmeにも書いてあるがherokuはdockerをサポートしていて、pushするだけでローカルのdockerと
+同じように動かせる。必要なのは、heroku-container-toolsというheroku plugin。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku plugins:install heroku-container-tools
+$ heroku container:push web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでだけでherokuにアップされて動く。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://hello-rust.herokuapp.com/&#34;&gt;https://hello-rust.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Goodbye Instagram</title>
@@ -898,74 +948,6 @@ hubot scriptでcalendar情報とか取得したい場合は、そうはいかな
 &lt;p&gt;上の結果、新しいexpires_inが3600の新しいaccess_tokenが返ってくる。&lt;/p&gt;
 
 &lt;p&gt;3600秒以内にaccess_tokenを更新して使えばOK!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>new vs make</title>
-      <link>https://dongri.github.io/post/2015-02-09-new-vs-make/</link>
-      <pubDate>Mon, 09 Feb 2015 11:28:57 +0900</pubDate>
-      
-      <guid>https://dongri.github.io/post/2015-02-09-new-vs-make/</guid>
-      <description>
-
-&lt;h2 id=&#34;new&#34;&gt;new&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://golang.org/pkg/builtin/#new&#34;&gt;http://golang.org/pkg/builtin/#new&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func new(Type) *Type
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;組み込み関数 new はメモリの割り当て、第一引数は型であり、値ではない。戻り値はポインタである。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;make&#34;&gt;make&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://golang.org/pkg/builtin/#make&#34;&gt;http://golang.org/pkg/builtin/#make&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;func make(Type, size IntegerType) Type
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;組み込み関数 make は slice, map, chan型のメモリ割り当てとオブジェクトを初期化する。&lt;/li&gt;
-&lt;li&gt;new と似ている、第一に引数は型であり、値ではない。new との違いは、make の戻り値はポインタではなく、値である。第一引数の型による。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;まとめ&#34;&gt;まとめ&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;new の役割はポインタの処理機か(*T)。make の役割は slice, map, chan 初期化かつ引用を戻す(T)。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import &amp;quot;fmt&amp;quot;
-
-func main() {
-  i := new(int)
-  fmt.Println(&amp;amp;i)
-  fmt.Println(*i)
-  *i = 1
-  fmt.Println(*i)
-
-  mySlice := make([]int, 10, 100)
-  fmt.Println(mySlice)
-  mySlice[2] = 2
-  fmt.Println(mySlice)
-
-  myMap := make(map[string]string)
-  fmt.Println(myMap)
-  myMap[&amp;quot;Android&amp;quot;] = &amp;quot;OnePlus&amp;quot;
-  myMap[&amp;quot;iOS&amp;quot;] = &amp;quot;iPhone&amp;quot;
-  fmt.Println(myMap)
-
-  myChan := make(chan int, 2)
-  myChan &amp;lt;- 1
-  myChan &amp;lt;- 2
-  fmt.Println(myChan)
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

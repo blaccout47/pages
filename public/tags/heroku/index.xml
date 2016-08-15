@@ -6,8 +6,58 @@
     <description>Recent content in Heroku on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 May 2015 11:28:57 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2016 22:27:53 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/heroku/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust on Heroku with Docker</title>
+      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</link>
+      <pubDate>Mon, 15 Aug 2016 22:27:53 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</guid>
+      <description>&lt;p&gt;Rustで書いたhello rustをherokuに載せてみた。
+普通ならrust用のBuildpack使うのだが、今回はdockerを使うようにした。
+Dockerfile、ソースコードなどはこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/hello-rust&#34;&gt;https://github.com/dongri/hello-rust&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;はじめはalpineで頑張ってみようかと思ったがrustのインストールがうまく行かなくて、ubuntuに変更。
+Dockerfileは以下のようになっている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Dockerfile&#34;&gt;FROM ubuntu:latest
+
+# rust, cargo buildに必要なソフトウェアインストール
+RUN apt-get -y update
+RUN apt-get -y install curl file sudo gcc
+
+# rustのインストール
+RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh
+
+RUN mkdir -p /app
+WORKDIR /app
+COPY . /app
+
+# ビルドして ./target/release/helloバイナリを作る
+RUN cargo build --release
+
+EXPOSE 8080
+
+# 実行
+CMD /app/target/release/hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;readmeにも書いてあるがherokuはdockerをサポートしていて、pushするだけでローカルのdockerと
+同じように動かせる。必要なのは、heroku-container-toolsというheroku plugin。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ heroku plugins:install heroku-container-tools
+$ heroku container:push web
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでだけでherokuにアップされて動く。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://hello-rust.herokuapp.com/&#34;&gt;https://hello-rust.herokuapp.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Goodbye Heroku</title>
