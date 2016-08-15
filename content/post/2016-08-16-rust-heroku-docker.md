@@ -1,5 +1,5 @@
 +++
-date = "2016-08-15T22:27:53+09:00"
+date = "2016-08-16T00:42:53+09:00"
 title = "Rust on Heroku with Docker"
 tags = ['rust', 'programming', 'heroku', 'docker']
 +++
