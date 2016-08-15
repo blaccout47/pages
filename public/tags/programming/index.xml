@@ -6,13 +6,13 @@
     <description>Recent content in Programming on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Aug 2016 22:27:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 16 Aug 2016 00:42:53 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Rust on Heroku with Docker</title>
       <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</link>
-      <pubDate>Mon, 15 Aug 2016 22:27:53 +0900</pubDate>
+      <pubDate>Tue, 16 Aug 2016 00:42:53 +0900</pubDate>
       
       <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</guid>
       <description>&lt;p&gt;Rustで書いたhello rustをherokuに載せてみた。
