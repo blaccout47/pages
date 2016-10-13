@@ -6,8 +6,40 @@
     <description>Recent content in Posts on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Aug 2016 00:42:53 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 13 Oct 2016 21:08:26 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Code review</title>
+      <link>https://dongri.github.io/post/2016-10-13-code-review/</link>
+      <pubDate>Thu, 13 Oct 2016 21:08:26 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-10-13-code-review/</guid>
+      <description>
+
+&lt;p&gt;こういうコードレビュー系の記事はたくさんありますが、大手もスタートアップも経験した私からコードレビューついて今まで悩んてたところと気を付けてたところをリストしてみようと思います。&lt;/p&gt;
+
+&lt;h2 id=&#34;レビューが終わってるかどうかわからない問題&#34;&gt;レビューが終わってるかどうかわからない問題&lt;/h2&gt;
+
+&lt;p&gt;PR出して半日経ったけど、コメントがない。やっとコメントが入り半日経過。よっし、レビューの修正とコメントに返信しようと思い修正なり、コメントに返事する。しかし、レビュー終わってなかった。また残りのレビューでコメントが入る。この繰り返しが数日続く時もある。こういうレビューの反映はほかのタスクやってうちに割り込みで対応するのでおそらくコードのクオリティよくないでしょう。割り込みで本来のタスクにも影響がでますよね。なのでレビュアーは時間をかけてもいいから一気にレビューして最後にレビュー終わりましたの合図を出すべきです。&lt;/p&gt;
+
+&lt;h2 id=&#34;言葉使いの問題&#34;&gt;言葉使いの問題&lt;/h2&gt;
+
+&lt;p&gt;「こうしてください。」「こうしたほうがいい。」「これ意味分からないｗｗｗ」などなど、理由もなしにこういう言い方されるとイラッとしますよね？こうしてくださいの代わりにこういう理由があってこうした方がいいと思います。この部分の意図が理解できないので説明してくれると助かります。などなど、代わりの言葉はいくらでもあると思います。敬語はもちろんで、です、ますだけではなく言い方にも気を付けましょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;アサインされても気付かない問題&#34;&gt;アサインされても気付かない問題&lt;/h2&gt;
+
+&lt;p&gt;PR出したけど、なかなか見てくれない。しょうがなくダイレクトメールかチャットでURL送ってお願いする場合もありますね。この問題はツールで解決できる問題だと思います。一日2,3回自分にアサインされて見てないPRをメールか、チャットで催促など、方法はいくらでもあるので、問題ないはずです。しかし、気付いたけどわざと見ないのはその人達間の人間関係の問題で解決方法は別途探しましょう。&lt;/p&gt;
+
+&lt;h2 id=&#34;対象ではないことろに触れる問題&#34;&gt;対象ではないことろに触れる問題&lt;/h2&gt;
+
+&lt;p&gt;プロジェクト全体のコードが理想の形になってない状態で1つの小さなPRでプロジェクト全体に対してのツッコミが入る時があります。それは今回のPRと関係ないです！と返す人もプロジェクト全体のコードを綺麗にしたいレビュアーもどっちも悪くはない思います。やる気あって且つデキる人はわかった全部直してやる！黙々と今回のPRと関係ないところも修正してPRを出し直す人もいれば、この機能のリリースが先だ、そんなの知らないよ！と返す人もいると思います。この辺は優先順位を決めれる人を捕まえて話し合いが必要ですね。&lt;/p&gt;
+
+&lt;h2 id=&#34;土日レビューしてくれる人がいない問題&#34;&gt;土日レビューしてくれる人がいない問題&lt;/h2&gt;
+
+&lt;p&gt;若者が（若者に限らないが）土日やる気出して1つの機能追加してリリースしたいのにレビュー出してもレビューしてくれそうな人がいない時があると思います。月曜日まで待ちたくない、今すぐリリースしたい、こういう時どうすればいいのか？自分でPR作って自分でマージする。コードレビューの意味がなくなってる。そもそもそういう若者をフォロー出来ないのは組織の問題なので、ここではその辺の話には触れたくないです。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Rust on Heroku with Docker</title>
@@ -870,84 +902,6 @@ Ghost is running in development...
 
 &lt;p&gt;設定して自分が欲しかったmarkdownで書けるようになったけど、意識高い系に似合うデザインのせいか
 メモ、コードを書くにはいまいち。。。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Google OAuth2</title>
-      <link>https://dongri.github.io/post/2015-02-16-google-oauth2/</link>
-      <pubDate>Mon, 16 Feb 2015 11:28:57 +0900</pubDate>
-      
-      <guid>https://dongri.github.io/post/2015-02-16-google-oauth2/</guid>
-      <description>
-
-&lt;p&gt;Google OAuth2のトークンを手動で取得メモ。通常はWebアプリはブラウザで取得してトークンとか保存すればいいのだが、
-hubot scriptでcalendar情報とか取得したい場合は、そうはいかない。&lt;/p&gt;
-
-&lt;h2 id=&#34;クライアントid作成&#34;&gt;クライアントID作成&lt;/h2&gt;
-
-&lt;p&gt;予めGoogle Developer Console画面で、クライアントIDを作成
-&lt;a href=&#34;https://console.developers.google.com/project&#34;&gt;https://console.developers.google.com/project&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;code-取得&#34;&gt;code 取得&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;https://accounts.google.com/o/oauth2/auth
-?client_id={client_id}
-&amp;amp;redirect_uri={callback_url}
-&amp;amp;scope={scope}
-&amp;amp;response_type=code
-&amp;amp;approval_prompt=force
-&amp;amp;access_type=offline
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;scopeは &lt;a href=&#34;https://www.googleapis.com/auth/calendar.readonly&#34;&gt;https://www.googleapis.com/auth/calendar.readonly&lt;/a&gt; など&lt;/p&gt;
-
-&lt;p&gt;GETで上のURLを叩く。認証画面が開き、承認すると、指定したcallback_urlにcodeが返ってくる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;{callback_url}?code=4/W30HqfsDKmamqdW*****************
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;access-token-refresh-token-取得&#34;&gt;access_token, refresh_token 取得&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ curl
--d client_id={client_id}
--d client_secret={client_secret}
--d redirect_uri={callback_url}
--d grant_type=authorization_code
--d code={code} https://accounts.google.com/o/oauth2/token
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;以下のJSON結果が返ってくる&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;access_token&amp;quot; : &amp;quot;{access_token}&amp;quot;,
-  &amp;quot;token_type&amp;quot; : &amp;quot;Bearer&amp;quot;,
-  &amp;quot;expires_in&amp;quot; : 3600,
-  &amp;quot;refresh_token&amp;quot; : &amp;quot;{refresh_token}&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;access_tokenの情報を確認してみる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;https://www.googleapis.com/oauth2/v1/tokeninfo?access_token={access_token}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;アクセスする度にexpires_inが減って行くのがわかる。0になると、access_tokenは失効されるので、使えない。&lt;/p&gt;
-
-&lt;h2 id=&#34;新しいaccess-tokenを取得&#34;&gt;新しいaccess_tokenを取得&lt;/h2&gt;
-
-&lt;p&gt;expires_inで有効期限切れるまえに以下のPOSTで新しいaccess_tokenを取得&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ curl
--d client_id={client_id}
--d client_secret={client_secret}
--d refresh_token={refresh_token}
--d grant_type=refresh_token https://accounts.google.com/o/oauth2/token
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上の結果、新しいexpires_inが3600の新しいaccess_tokenが返ってくる。&lt;/p&gt;
-
-&lt;p&gt;3600秒以内にaccess_tokenを更新して使えばOK!&lt;/p&gt;
 </description>
     </item>
     
