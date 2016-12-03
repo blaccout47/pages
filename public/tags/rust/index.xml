@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rust on D</title>
-    <link>https://dongri.github.io/tags/rust/</link>
+    <link>https://dongri.github.io/tags/rust/index.xml</link>
     <description>Recent content in Rust on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Aug 2016 00:42:53 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

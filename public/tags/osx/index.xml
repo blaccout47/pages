@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Osx on D</title>
-    <link>https://dongri.github.io/tags/osx/</link>
+    <link>https://dongri.github.io/tags/osx/index.xml</link>
     <description>Recent content in Osx on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Nov 2014 11:28:57 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/osx/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

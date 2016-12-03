@@ -2,11 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Middleman on D</title>
-    <link>https://dongri.github.io/tags/middleman/</link>
+    <link>https://dongri.github.io/tags/middleman/index.xml</link>
     <description>Recent content in Middleman on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Apr 2014 11:28:57 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/middleman/index.xml" rel="self" type="application/rss+xml" />
     
     <item>

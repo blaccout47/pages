@@ -2,12 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on D</title>
-    <link>https://dongri.github.io/tags/blog/</link>
+    <link>https://dongri.github.io/tags/blog/index.xml</link>
     <description>Recent content in Blog on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2016 21:08:26 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>LINE Translate BOT</title>
+      <link>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</link>
+      <pubDate>Sat, 03 Dec 2016 16:42:42 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</guid>
+      <description>
+
+&lt;p&gt;LINE BOTがMessaging apiを正式にリリースしたので翻訳BOTを作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://wise.guncy.com&#34; target=&#34;_blank&#34;&gt;wise.guncy.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;公式の通訳BOTも何個かあるのに何で今更翻訳BOT? と思う人もいるかも知らないですが、理由は2つあります。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-汎用性の問題&#34;&gt;1. 汎用性の問題&lt;/h3&gt;
+
+&lt;p&gt;LINE公式通訳BOTをディスってるわけではないが、正直言って不便でした。日英、日中、日韓と一つ一つが単体のBOTになっていて、一つのグループに複数BOTを招待できないのと、あくまで日本語をベースにしてるので、例えば韓国語を英語に翻訳することはできません。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-進化した翻訳技術&#34;&gt;2. 進化した翻訳技術&lt;/h3&gt;
+
+&lt;p&gt;ちょっと前に話題になっていた翻訳技術の進化です。ニューラルネットワーク機械学習の応用により翻訳の精度が今までと比較できないレベルまで進化してきました。&lt;/p&gt;
+
+&lt;p&gt;上の理由から今更なんですが翻訳BOTを作りました。英語がダメな私はまず普段辞書の代わりによく使うと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;エンジニア的な話をちょっと&#34;&gt;エンジニア的な話をちょっと&lt;/h3&gt;
+
+&lt;p&gt;今はdocker container一つで動かしていて正直言ってどれくらいのリクエストで死ぬかわからないです。
+このBOTの利用者が増えてリクエストをさばけない時にはサーバー増やしたりスペック上げたりなど考えることにしました。
+エンジニア達はすぐ分かったと思いますが、この俺が翻訳エンジンなんか作れるわけではないので、Google Translate APIを使ってます。
+こいつにも金取られるので、これ以上無理だと判断した時にはまた考えようかと思います。
+BOTサーバーはGo言語で書いていて、LINE BOT API Trialの時から自前で作ったGo言語用SDKを使ってます。
+&lt;a href=&#34;https://github.com/dongri/line-bot-sdk-go&#34;&gt;line-bot-sdk-go&lt;/a&gt; 。
+Landing PageはF7さんのLp使いました。 &lt;a href=&#34;https://github.com/F7/Lp&#34;&gt;https://github.com/F7/Lp&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;line-bot-awards&#34;&gt;LINE BOT AWARDS&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://botawards.line.me&#34;&gt;https://botawards.line.me&lt;/a&gt; これなんですが、この翻訳BOTはある意味今のLINE公式通訳BOTと競合？してるので、どうかなと思いますｗ。
+それと元中の人だったので応募するとなんか気まずいところもあって、悩んてるところですｗ。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Code review</title>

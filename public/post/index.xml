@@ -2,12 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on D</title>
-    <link>https://dongri.github.io/post/</link>
+    <link>https://dongri.github.io/post/index.xml</link>
     <description>Recent content in Posts on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2016 21:08:26 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Dec 2016 16:42:42 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>LINE Translate BOT</title>
+      <link>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</link>
+      <pubDate>Sat, 03 Dec 2016 16:42:42 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</guid>
+      <description>
+
+&lt;p&gt;LINE BOTがMessaging apiを正式にリリースしたので翻訳BOTを作りました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://wise.guncy.com&#34; target=&#34;_blank&#34;&gt;wise.guncy.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;公式の通訳BOTも何個かあるのに何で今更翻訳BOT? と思う人もいるかも知らないですが、理由は2つあります。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-汎用性の問題&#34;&gt;1. 汎用性の問題&lt;/h3&gt;
+
+&lt;p&gt;LINE公式通訳BOTをディスってるわけではないが、正直言って不便でした。日英、日中、日韓と一つ一つが単体のBOTになっていて、一つのグループに複数BOTを招待できないのと、あくまで日本語をベースにしてるので、例えば韓国語を英語に翻訳することはできません。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-進化した翻訳技術&#34;&gt;2. 進化した翻訳技術&lt;/h3&gt;
+
+&lt;p&gt;ちょっと前に話題になっていた翻訳技術の進化です。ニューラルネットワーク機械学習の応用により翻訳の精度が今までと比較できないレベルまで進化してきました。&lt;/p&gt;
+
+&lt;p&gt;上の理由から今更なんですが翻訳BOTを作りました。英語がダメな私はまず普段辞書の代わりによく使うと思います。&lt;/p&gt;
+
+&lt;h3 id=&#34;エンジニア的な話をちょっと&#34;&gt;エンジニア的な話をちょっと&lt;/h3&gt;
+
+&lt;p&gt;今はdocker container一つで動かしていて正直言ってどれくらいのリクエストで死ぬかわからないです。
+このBOTの利用者が増えてリクエストをさばけない時にはサーバー増やしたりスペック上げたりなど考えることにしました。
+エンジニア達はすぐ分かったと思いますが、この俺が翻訳エンジンなんか作れるわけではないので、Google Translate APIを使ってます。
+こいつにも金取られるので、これ以上無理だと判断した時にはまた考えようかと思います。
+BOTサーバーはGo言語で書いていて、LINE BOT API Trialの時から自前で作ったGo言語用SDKを使ってます。
+&lt;a href=&#34;https://github.com/dongri/line-bot-sdk-go&#34;&gt;line-bot-sdk-go&lt;/a&gt; 。
+Landing PageはF7さんのLp使いました。 &lt;a href=&#34;https://github.com/F7/Lp&#34;&gt;https://github.com/F7/Lp&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;line-bot-awards&#34;&gt;LINE BOT AWARDS&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://botawards.line.me&#34;&gt;https://botawards.line.me&lt;/a&gt; これなんですが、この翻訳BOTはある意味今のLINE公式通訳BOTと競合？してるので、どうかなと思いますｗ。
+それと元中の人だったので応募するとなんか気まずいところもあって、悩んてるところですｗ。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Code review</title>
@@ -789,119 +830,6 @@ $ vim oxygen_1.0.0_flashable.md5
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;チェックしたら一致してた。前回ダメだったのは恐らくzipファイルがおかしかったかも。。。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ghost On Heroku</title>
-      <link>https://dongri.github.io/post/2015-02-17-ghost-on-heroku/</link>
-      <pubDate>Tue, 17 Feb 2015 11:28:57 +0900</pubDate>
-      
-      <guid>https://dongri.github.io/post/2015-02-17-ghost-on-heroku/</guid>
-      <description>
-
-&lt;p&gt;Ghostをherokuにデプロイしてみた。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;以下はあくまでの自分の環境で、nodeとpostgresなど一通りの開発環境は整った環境です。&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;ghostをローカルで動かしてみる&#34;&gt;Ghostをローカルで動かしてみる&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd /path/to/ghost/folder/
-$ npm install --production
-
-$ npm start
-$ open http://localhost:2368
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;herokuにpg-addon追加&#34;&gt;herokuにpg addon追加&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ heroku addons:add heroku-postgresql:dev
-
-$ heroku config
-DATABASE_URL:                 postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
-HEROKU_POSTGRESQL_PURPLE_URL: postgres://{username}:{password}@ec2-***.compute-1.amazonaws.com:5432/{database}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;package-json-修正&#34;&gt;package.json 修正&lt;/h2&gt;
-
-&lt;p&gt;package.jsonのdependenciesにpg追加。バージョンは固定にしたほうがいいかも。。。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;dependencies&amp;quot;: {
-  ....,
-  &amp;quot;pg&amp;quot;: &amp;quot;4.2.0&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;config-js-修正&#34;&gt;config.js 修正&lt;/h2&gt;
-
-&lt;p&gt;以下の部分をproductionのところに設定する。databaseの部分は上のDATABASE_URLのところ参照&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;database: {
-  client: &#39;postgres&#39;,
-  connection: {
-        host: &#39;ec2-***.compute-1.amazonaws.com&#39;,
-        user: &#39;{username}&#39;,
-        password: &#39;{password}&#39;,
-        database: &#39;{database}&#39;,
-        port: &#39;5432&#39;
-  }
-},
-
-server: {
-    host: &#39;0.0.0.0&#39;,
-    port: process.env.PORT
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;procfileファイル追加&#34;&gt;Procfileファイル追加&lt;/h2&gt;
-
-&lt;p&gt;herokuにnodejsアプリをデプロイした人にはわかると思うがProfileを作成&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ vim Procfile
-web: node index.js --production
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;git-remote-push&#34;&gt;git remote, push&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git init
-$ git remote add origin git@heroku.com:{app}.git
-$ git add .
-$ git commit -m &amp;quot;Ghost&amp;quot;
-$ git push origin master
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;debug&#34;&gt;Debug&lt;/h2&gt;
-
-&lt;p&gt;heroku上でApplication Error!&lt;/p&gt;
-
-&lt;p&gt;log見てみる&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ heroku logs --tail
-
-Ghost is running in development...
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;developmentで実行されたようだ。&lt;/p&gt;
-
-&lt;p&gt;NODE_ENVをproductionに設定&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ heroku config:set NODE_ENV=production
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上のコマンドでenv設定とrebootするので、tailで完了確認できたら、もう一度アクセスしてみる。&lt;/p&gt;
-
-&lt;p&gt;うまく表示されたようだ&lt;/p&gt;
-
-&lt;h2 id=&#34;ghost設定&#34;&gt;Ghost設定&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;$ open http://{app}.herokuapp.com/ghost/setup/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;所感&#34;&gt;所感&lt;/h2&gt;
-
-&lt;p&gt;設定して自分が欲しかったmarkdownで書けるようになったけど、意識高い系に似合うデザインのせいか
-メモ、コードを書くにはいまいち。。。&lt;/p&gt;
 </description>
     </item>
     

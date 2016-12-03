@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://dongri.github.io/</loc>
-    <lastmod>2016-08-16T00:42:53+09:00</lastmod>
+    <loc>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</loc>
+    <lastmod>2016-12-03T16:42:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/post/2016-10-13-code-review/</loc>
+    <lastmod>2016-10-13T21:08:26+09:00</lastmod>
   </url>
   
   <url>
@@ -209,6 +214,155 @@
   <url>
     <loc>https://dongri.github.io/post/2012-01-01-example-article/</loc>
     <lastmod>2012-01-01T11:28:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/android/</loc>
+    <lastmod>2016-05-03T01:36:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/blog/</loc>
+    <lastmod>2016-12-03T16:42:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/bot/</loc>
+    <lastmod>2016-12-03T16:42:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/</loc>
+    <lastmod>2016-12-03T16:42:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/docker/</loc>
+    <lastmod>2016-08-16T00:42:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/github/</loc>
+    <lastmod>2015-01-15T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/golang/</loc>
+    <lastmod>2015-02-09T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/heroku/</loc>
+    <lastmod>2016-08-16T00:42:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/line/</loc>
+    <lastmod>2016-12-03T16:42:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/linux/</loc>
+    <lastmod>2015-01-28T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/middleman/</loc>
+    <lastmod>2014-04-21T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/mongodb/</loc>
+    <lastmod>2014-05-18T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/nexus/</loc>
+    <lastmod>2016-05-03T01:36:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/node/</loc>
+    <lastmod>2015-02-17T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/oauth/</loc>
+    <lastmod>2015-02-16T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/oss/</loc>
+    <lastmod>2015-01-15T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/osx/</loc>
+    <lastmod>2014-11-14T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/post/</loc>
+    <lastmod>2016-12-03T16:42:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/programming/</loc>
+    <lastmod>2016-08-16T00:42:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/rust/</loc>
+    <lastmod>2016-08-16T00:42:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/security/</loc>
+    <lastmod>2015-07-28T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/startup/</loc>
+    <lastmod>2014-11-02T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/swift/</loc>
+    <lastmod>2015-01-15T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/tool/</loc>
+    <lastmod>2014-11-14T11:28:57+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
