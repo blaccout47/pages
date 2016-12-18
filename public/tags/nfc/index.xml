@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nfc on D</title>
+    <link>https://dongri.github.io/tags/nfc/index.xml</link>
+    <description>Recent content in Nfc on D</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://dongri.github.io/tags/nfc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Suica PASMO リーダー</title>
+      <link>https://dongri.github.io/post/2016-12-18-NFC-Reader/</link>
+      <pubDate>Sun, 18 Dec 2016 15:58:44 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2016-12-18-NFC-Reader/</guid>
+      <description>&lt;p&gt;最近良く自分のPASMO残高を把握できず、改札口で引っかかって「ファック」と小さい声出した時がよくあって、
+AndroidでPASMOの残高を確認できるアプリを探してみたが、どれも必要ない機能ががたくさんあるのとデザインがイマイチ、
+且つうざい広告が出るので逆にイラッとしたり、自分のAndroidのせいか分からないが、クラッシュしまくったり、、、&lt;/p&gt;
+
+&lt;p&gt;今週Android Payも出たし、FeliCaとかNFCの勉強も含めてアプリを開発してみようと思ってSuica, PASMOリーダーを作ってみることにした。&lt;/p&gt;
+
+&lt;p&gt;一日でやっつけたもので処理は単純。かざすとアプリが起動して読み取ったデータを表示するだけ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.guncy.android.cardreader&#34;&gt;Play Store - Suica PASMO リーダー&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;参考になったページ&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://osdn.net/projects/felicalib/wiki/suica&#34;&gt;FeliCa Library&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.denno.net/SFCardFan/&#34;&gt;路線、駅コード&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://qiita.com/pear510/items/38f94d61c020a17314b6&#34;&gt;AndroidでFelica(NFC)のブロックデータの取得&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ダウンロード数がどれぐらいになるかわからないが、広告入れる予定もないし、機能追加しても課金する予定もないので、
+オープンソースにしてメンテナンスして行こうと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/dongri/CardReader&#34;&gt;Github - CardReader&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TODO&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;読み取れる件数は決まってるので、過去のデータを保存する機能&lt;/li&gt;
+&lt;li&gt;CSVフォーマットでUSBストレージに保存する機能&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
