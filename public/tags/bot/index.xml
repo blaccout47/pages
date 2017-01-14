@@ -10,10 +10,10 @@
     
     <item>
       <title>LINE Translate BOT</title>
-      <link>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</link>
+      <link>https://dongri.github.io/2016/12/line-translate-bot/</link>
       <pubDate>Sat, 03 Dec 2016 16:42:42 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</guid>
+      <guid>https://dongri.github.io/2016/12/line-translate-bot/</guid>
       <description>
 
 &lt;p&gt;LINE BOTがMessaging apiを正式にリリースしたので翻訳BOTを作りました。&lt;/p&gt;

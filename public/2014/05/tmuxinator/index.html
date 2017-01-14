@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" tmuxinator &middot;  D" />
+        <meta property="og:site_name" content="D" />
+        <meta property="og:url" content="https://dongri.github.io/2014/05/tmuxinator/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-05-25T11:28:57&#43;09:00" />
+        <meta property="og:article:tag" content="tool" />
+        <meta property="og:article:tag" content="osx" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="tmuxinator" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://dongri.github.io/2014/05/tmuxinator/" />
+    
+
+        <title> tmuxinator &middot;  D</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="https://dongri.github.io/index.xml" rel="alternate" type="application/rss+xml" title="D" />
+    
+
+    
+        <link rel="canonical" href="https://dongri.github.io/2014/05/tmuxinator/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "tmuxinator",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-05-25",
+        "description": "",
+        "wordCount":  299 
+    }
+    </script>
+    
+
+    <link type="text/css" href="https://dongri.github.io/css/crisp.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://dongri.github.io/"><img src="/images/avatar.png" alt="D" /></a>
+            <h1><a href="https://dongri.github.io/">D</a></h1>
+            <p>hello world</p>
+
+            <div id="follow-icons">
+	<a href="http://github.com/dongri" rel="me" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="http://twitter.com/dongrify" rel="me" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/dongri" rel="me" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="https://plus.google.com/u/0/100052427264226218799" rel="author" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	<a href="https://www.facebook.com/profile.php?id=100002573679774" rel="me" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+	<a href="https://dongri.github.io/index.xml" rel="me" target="_blank"><i class="fa fa-rss-square fa-2x"></i></a>
+</div>
+
+            
+
+        </header>
+
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2014-05-25T11:28:57&#43;09:00">
+            25 May 2014
+        </time>
+        <span class="taglist">
+        
+        &middot;
+        
+            <a href="https://dongri.github.io/tags/tool/">tool</a>
+        
+            <a href="https://dongri.github.io/tags/osx/">osx</a>
+        
+        
+        </span>
+    </div>
+    <h1 class="post-title">tmuxinator</h1>
+    
+
+<p>tmux使ってて一番困ったことがMac再起動した時にtmux sessionがクリアされて、windowを最初から
+起動しないとだめだった。</p>
+
+<p>そこでtmuxinatorが登場！</p>
+
+<p>tmuxinator は、tmuxで起動するウィンドウやレイアウトを事前に設定しておき、
+tmuxinatorコマンドを実行することにより設定通りのウィンドウ配置にするツールです。</p>
+
+<pre><code>% tmux -V
+tmux 1.9a
+% gem -v
+2.0.14
+</code></pre>
+
+<h3 id="tmuxinator-インストール-設定">tmuxinator インストール &amp; 設定</h3>
+
+<pre><code>% gem install tmuxinator
+% echo $SHELL
+/bin/zsh
+$ echo $EDITOR
+vim
+% echo 'source ~/.tmuxinator/tmuxinator.zsh' &gt;&gt; ${HOME}/.zshrc
+% soruce ~/.zshrc
+% mux doctor
+Checking if tmux is installed ==&gt; Yes
+Checking if $EDITOR is set ==&gt; Yes
+Checking if $SHELL is set ==&gt; Yes
+%
+</code></pre>
+
+<h3 id="project-作成-設定">project 作成 &amp; 設定</h3>
+
+<pre><code>% mux new dongri
+
+# ~/.tmuxinator/dongri.yml
+
+name: dongri
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - local:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        -
+        -
+        -
+        -
+  - vagrant:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-backend
+        - cd project/project-web
+        - cd project/inside-project
+  - git-server:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-backend
+        - cd project/project-api
+        - cd project/project-api
+        - cd project/server-config
+  - git-others:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-ios
+        - cd project/project-android
+        - cd project/project-web
+        - cd project/inside-project
+  - project-local:
+      layout: 16ba,238x62,0,0{119x62,0,0[119x31,0,0,34,119x30,0,32,37],118x62,120,0[118x31,120,0,35,118x30,120,32,36]}
+      panes:
+        - cd project/project-backend
+        - cd project/project-web
+        - cd project/project-api
+        - cd project/inside-project
+  - project-dev:
+      layout: a916,237x59,0,0{118x59,0,0,74,118x59,119,0,90}
+      panes:
+        - ssh project-dev
+        - ssh project-dev
+  - project-script:
+      layout: a916,237x59,0,0{118x59,0,0,74,118x59,119,0,90}
+      panes:
+        - ssh project-script
+        - ssh project-script
+  - project-bastion:
+      layout: a916,237x59,0,0{118x59,0,0,74,118x59,119,0,90}
+      panes:
+        - ssh aws-project-bastion
+        - ssh aws-project-bastion
+</code></pre>
+
+<p>layoutはところわけわらない数字は list-windows で表示された数字です。自分の設定したtmuxの環境で以下のコマンドで確認</p>
+
+<pre><code>% tmux list-windows
+0: local- (4 panes) [238x62] [layout 5297,238x62,0,0{119x62,0,0[119x31,0,0,0,119x30,0,32,8],118x62,120,0[118x31,120,0,9,118x30,120,32,10]}] @0
+1: vagrant* (3 panes) [238x62] [layout 162a,238x62,0,0{119x62,0,0[119x31,0,0,1,119x30,0,32,11],118x62,120,0,12}] @1
+</code></pre>
+
+<p>[layout ****] ***の部分を ~/.tmuxinator/dongri.yml のlayoutのところにペスト</p>
+
+<h3 id="プロジェクト起動">プロジェクト起動</h3>
+
+<pre><code>$ mux dongri
+</code></pre>
+
+<h3 id="イメージ">イメージ</h3>
+
+<p><img src="/images/posts/tmux.png" alt="Tmux" title="Tmux&quot; width=&quot;96px&quot; height=&quot;96px" /></p>
+
+    
+    
+
+    
+</article>
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">D &copy; 2016</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/dongri.github.io\/css/rrssb.css",
+            "https:\/\/dongri.github.io\/js/gist.min.js",
+            "https:\/\/dongri.github.io\/js/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	<script src="https://dongrity.appspot.com/t.js" type="text/javascript"></script>
+	</body>
+</html>
+

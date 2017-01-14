@@ -10,10 +10,10 @@
     
     <item>
       <title>Suica PASMO リーダー</title>
-      <link>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</link>
+      <link>https://dongri.github.io/2016/12/suica-pasmo-%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC/</link>
       <pubDate>Sun, 18 Dec 2016 15:58:44 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</guid>
+      <guid>https://dongri.github.io/2016/12/suica-pasmo-%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC/</guid>
       <description>&lt;p&gt;最近良く自分のPASMO残高を把握できず、改札口で引っかかって「ファック」と小さい声出した時がよくあって、
 AndroidでPASMOの残高を確認できるアプリを探してみたが、どれも必要ない機能ががたくさんあるのとデザインがイマイチ、
 且つうざい広告が出るので逆にイラッとしたり、自分のAndroidのせいか分からないが、クラッシュしまくったり、、、&lt;/p&gt;
@@ -50,10 +50,10 @@ AndroidでPASMOの残高を確認できるアプリを探してみたが、ど�
     
     <item>
       <title>Nexus 5X クリーンインストール &amp; Root化</title>
-      <link>https://dongri.github.io/post/2016-05-03-nexus-root.html</link>
+      <link>https://dongri.github.io/2016/05/nexus-5x-%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB--root%E5%8C%96/</link>
       <pubDate>Tue, 03 May 2016 01:36:00 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-05-03-nexus-root.html</guid>
+      <guid>https://dongri.github.io/2016/05/nexus-5x-%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB--root%E5%8C%96/</guid>
       <description>
 
 &lt;h2 id=&#34;factory-image&#34;&gt;Factory Image&lt;/h2&gt;
@@ -140,10 +140,10 @@ $ adb reboot bootloader
     
     <item>
       <title>Android Stagefright</title>
-      <link>https://dongri.github.io/post/2015-07-28-android-stagefright.html</link>
+      <link>https://dongri.github.io/2015/07/android-stagefright/</link>
       <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-07-28-android-stagefright.html</guid>
+      <guid>https://dongri.github.io/2015/07/android-stagefright/</guid>
       <description>
 
 &lt;p&gt;詳しいことはこちら。&lt;/p&gt;
@@ -181,10 +181,10 @@ $ adb reboot bootloader
     
     <item>
       <title>OnePlus One</title>
-      <link>https://dongri.github.io/post/2015-04-14-oneplus-one.html</link>
+      <link>https://dongri.github.io/2015/04/oneplus-one/</link>
       <pubDate>Tue, 14 Apr 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-04-14-oneplus-one.html</guid>
+      <guid>https://dongri.github.io/2015/04/oneplus-one/</guid>
       <description>
 
 &lt;h3 id=&#34;1-bootloader-unlock&#34;&gt;1. Bootloader Unlock&lt;/h3&gt;
@@ -255,10 +255,10 @@ TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
     
     <item>
       <title>OxygenOS</title>
-      <link>https://dongri.github.io/post/2015-04-05-oxygenos.html</link>
+      <link>https://dongri.github.io/2015/04/oxygenos/</link>
       <pubDate>Sun, 05 Apr 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-04-05-oxygenos.html</guid>
+      <guid>https://dongri.github.io/2015/04/oxygenos/</guid>
       <description>
 
 &lt;p&gt;(下に追記あり)&lt;/p&gt;
@@ -344,10 +344,10 @@ $ vim oxygen_1.0.0_flashable.md5
     
     <item>
       <title>Nexus5 Lollipop</title>
-      <link>https://dongri.github.io/post/2014-11-13-nexus5-lollipop.html</link>
+      <link>https://dongri.github.io/2014/11/nexus5-lollipop/</link>
       <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-11-13-nexus5-lollipop.html</guid>
+      <guid>https://dongri.github.io/2014/11/nexus5-lollipop/</guid>
       <description>&lt;p&gt;数ヶ月間ずっとAndroid L Preview版入れて使ってたけど、今日やっとGoogleのデベロッパーサイトにNexus5のLollipop Factory Imageが現れたので、手動で入れてみた。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;Factory Images for Nexus Devices&lt;/a&gt;
@@ -366,10 +366,10 @@ $ ./flash-all.sh
     
     <item>
       <title>Pull APK</title>
-      <link>https://dongri.github.io/post/2014-11-13-pull-apk.html</link>
+      <link>https://dongri.github.io/2014/11/pull-apk/</link>
       <pubDate>Thu, 13 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-11-13-pull-apk.html</guid>
+      <guid>https://dongri.github.io/2014/11/pull-apk/</guid>
       <description>&lt;p&gt;Androidにあるapkファイルを取り出す方法紹介。&lt;/p&gt;
 
 &lt;p&gt;PlayStoreに「apk 抽出」アプリたくさんあるけど、あえてadb shellで取り出す。&lt;/p&gt;

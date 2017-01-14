@@ -10,10 +10,10 @@
     
     <item>
       <title>middleman blog</title>
-      <link>https://dongri.github.io/post/2014-04-21-middleman-blog.html</link>
+      <link>https://dongri.github.io/2014/04/middleman-blog/</link>
       <pubDate>Mon, 21 Apr 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-04-21-middleman-blog.html</guid>
+      <guid>https://dongri.github.io/2014/04/middleman-blog/</guid>
       <description>
 
 &lt;p&gt;Octopress, Jekyll, Cabin いろいろあるみたいけど、Middlemanを使ってみようかと思って設置してみた。&lt;/p&gt;
@@ -117,10 +117,10 @@ $ middleman deploy
     
     <item>
       <title>Example Article</title>
-      <link>https://dongri.github.io/post/2012-01-01-example-article.html</link>
+      <link>https://dongri.github.io/2012/01/example-article/</link>
       <pubDate>Sun, 01 Jan 2012 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2012-01-01-example-article.html</guid>
+      <guid>https://dongri.github.io/2012/01/example-article/</guid>
       <description>&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
 </description>
     </item>

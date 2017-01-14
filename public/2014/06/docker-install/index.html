@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Docker Install &middot;  D" />
+        <meta property="og:site_name" content="D" />
+        <meta property="og:url" content="https://dongri.github.io/2014/06/docker-install/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-06-17T11:28:57&#43;09:00" />
+        <meta property="og:article:tag" content="docker" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Docker Install" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://dongri.github.io/2014/06/docker-install/" />
+    
+
+        <title> Docker Install &middot;  D</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="https://dongri.github.io/index.xml" rel="alternate" type="application/rss+xml" title="D" />
+    
+
+    
+        <link rel="canonical" href="https://dongri.github.io/2014/06/docker-install/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Docker Install",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-06-17",
+        "description": "",
+        "wordCount":  99 
+    }
+    </script>
+    
+
+    <link type="text/css" href="https://dongri.github.io/css/crisp.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://dongri.github.io/"><img src="/images/avatar.png" alt="D" /></a>
+            <h1><a href="https://dongri.github.io/">D</a></h1>
+            <p>hello world</p>
+
+            <div id="follow-icons">
+	<a href="http://github.com/dongri" rel="me" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="http://twitter.com/dongrify" rel="me" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/dongri" rel="me" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="https://plus.google.com/u/0/100052427264226218799" rel="author" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>
+	<a href="https://www.facebook.com/profile.php?id=100002573679774" rel="me" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+	<a href="https://dongri.github.io/index.xml" rel="me" target="_blank"><i class="fa fa-rss-square fa-2x"></i></a>
+</div>
+
+            
+
+        </header>
+
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2014-06-17T11:28:57&#43;09:00">
+            17 Jun 2014
+        </time>
+        <span class="taglist">
+        
+        &middot;
+        
+            <a href="https://dongri.github.io/tags/docker/">docker</a>
+        
+        
+        </span>
+    </div>
+    <h1 class="post-title">Docker Install</h1>
+    <p><a href="https://docs.docker.com/installation/mac/" title="docker install">https://docs.docker.com/installation/mac/</a></p>
+
+<p>youtube動画通りにダウンロードしてインストールする。</p>
+
+<p>applicationsに入ったappアイコンをクリックするとboot2dockerがinit, start, DOCKER_HOSTまで設定してくれるので、作業はそのまま進められる。</p>
+
+<p>もしくはboot2dockerコマンドで一から作りなおしてもいい。</p>
+
+<pre><code>➜  ~  boot2docker init
+➜  ~  boot2docker start
+➜  ~  export DOCKER_HOST=tcp://:2375
+</code></pre>
+
+<p>exportの部分は.zshrcとかに入れとけば毎回設定する必要なくなる。
+DOCKER_HOST正しく設定されないと以下のエラーが出る。</p>
+
+<pre><code>2014/06/17 22:07:38 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
+</code></pre>
+
+<p>dockerコマンドを確認してみる</p>
+
+<pre><code>➜  ~  docker version
+Client version: 1.0.0
+Client API version: 1.12
+Go version (client): go1.2.1
+Git commit (client): 63fe64c
+Server version: 1.0.0
+Server API version: 1.12
+Go version (server): go1.2.1
+Git commit (server): 63fe64c
+➜  ~  docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+centos               centos6             0c752394b855        7 days ago          124.1 MB
+centos               latest              0c752394b855        7 days ago          124.1 MB
+➜  ~  
+</code></pre>
+
+    
+    
+
+    
+</article>
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">D &copy; 2016</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/dongri.github.io\/css/rrssb.css",
+            "https:\/\/dongri.github.io\/js/gist.min.js",
+            "https:\/\/dongri.github.io\/js/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	<script src="https://dongrity.appspot.com/t.js" type="text/javascript"></script>
+	</body>
+</html>
+

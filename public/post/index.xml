@@ -11,10 +11,10 @@
     
     <item>
       <title>開発環境をLinuxにした</title>
-      <link>https://dongri.github.io/post/2017-01-14-ubuntu.html</link>
+      <link>https://dongri.github.io/2017/01/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92linux%E3%81%AB%E3%81%97%E3%81%9F/</link>
       <pubDate>Sat, 14 Jan 2017 23:25:44 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2017-01-14-ubuntu.html</guid>
+      <guid>https://dongri.github.io/2017/01/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92linux%E3%81%AB%E3%81%97%E3%81%9F/</guid>
       <description>
 
 &lt;p&gt;開発者のMac離れ?(去年からそういう噂があるけど)の流れで年末帰国時に買って来た
@@ -80,10 +80,10 @@ PCを買ってこのままLinuxをサーバー開発環境マシーンにしよ�
     
     <item>
       <title>Suica PASMO リーダー</title>
-      <link>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</link>
+      <link>https://dongri.github.io/2016/12/suica-pasmo-%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC/</link>
       <pubDate>Sun, 18 Dec 2016 15:58:44 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</guid>
+      <guid>https://dongri.github.io/2016/12/suica-pasmo-%E3%83%AA%E3%83%BC%E3%83%80%E3%83%BC/</guid>
       <description>&lt;p&gt;最近良く自分のPASMO残高を把握できず、改札口で引っかかって「ファック」と小さい声出した時がよくあって、
 AndroidでPASMOの残高を確認できるアプリを探してみたが、どれも必要ない機能ががたくさんあるのとデザインがイマイチ、
 且つうざい広告が出るので逆にイラッとしたり、自分のAndroidのせいか分からないが、クラッシュしまくったり、、、&lt;/p&gt;
@@ -120,10 +120,10 @@ AndroidでPASMOの残高を確認できるアプリを探してみたが、ど�
     
     <item>
       <title>LINE Translate BOT</title>
-      <link>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</link>
+      <link>https://dongri.github.io/2016/12/line-translate-bot/</link>
       <pubDate>Sat, 03 Dec 2016 16:42:42 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</guid>
+      <guid>https://dongri.github.io/2016/12/line-translate-bot/</guid>
       <description>
 
 &lt;p&gt;LINE BOTがMessaging apiを正式にリリースしたので翻訳BOTを作りました。&lt;/p&gt;
@@ -161,10 +161,10 @@ Landing PageはF7さんのLp使いました。 &lt;a href=&#34;https://github.co
     
     <item>
       <title>Code review</title>
-      <link>https://dongri.github.io/post/2016-10-13-code-review.html</link>
+      <link>https://dongri.github.io/2016/10/code-review/</link>
       <pubDate>Thu, 13 Oct 2016 21:08:26 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-10-13-code-review.html</guid>
+      <guid>https://dongri.github.io/2016/10/code-review/</guid>
       <description>
 
 &lt;p&gt;こういうコードレビュー系の記事はたくさんありますが、大手もスタートアップも経験した私からコードレビューついて今まで悩んてたところと気を付けてたところをリストしてみようと思います。&lt;/p&gt;
@@ -193,10 +193,10 @@ Landing PageはF7さんのLp使いました。 &lt;a href=&#34;https://github.co
     
     <item>
       <title>Rust on Heroku with Docker</title>
-      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</link>
+      <link>https://dongri.github.io/2016/08/rust-on-heroku-with-docker/</link>
       <pubDate>Tue, 16 Aug 2016 00:42:53 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</guid>
+      <guid>https://dongri.github.io/2016/08/rust-on-heroku-with-docker/</guid>
       <description>&lt;p&gt;Rustで書いたhello rustをherokuに載せてみた。
 普通ならrust用のBuildpack使うのだが、今回はdockerを使うようにした。
 Dockerfile、ソースコードなどはこちら&lt;/p&gt;
@@ -243,10 +243,10 @@ $ heroku container:push web
     
     <item>
       <title>Goodbye Instagram</title>
-      <link>https://dongri.github.io/post/2016-08-15-goodbye-instagram.html</link>
+      <link>https://dongri.github.io/2016/08/goodbye-instagram/</link>
       <pubDate>Mon, 15 Aug 2016 00:32:35 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-15-goodbye-instagram.html</guid>
+      <guid>https://dongri.github.io/2016/08/goodbye-instagram/</guid>
       <description>&lt;p&gt;ついにInstagramの写真まで全部消した。API仕様が変わってからずっと投稿してなくて、写真残しても意味ないと思って全部消してしまった。&lt;/p&gt;
 
 &lt;p&gt;Instagramは他のSNSと違って見てると気分がよくなる。
@@ -274,10 +274,10 @@ APIの制限にはそれなりの理由があると思うが、これ以上付�
     
     <item>
       <title>認めるエンジニア</title>
-      <link>https://dongri.github.io/post/2016-08-13-engineer.html</link>
+      <link>https://dongri.github.io/2016/08/%E8%AA%8D%E3%82%81%E3%82%8B%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/</link>
       <pubDate>Sat, 13 Aug 2016 20:11:11 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-13-engineer.html</guid>
+      <guid>https://dongri.github.io/2016/08/%E8%AA%8D%E3%82%81%E3%82%8B%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/</guid>
       <description>&lt;p&gt;自分の弱点から言うと人を簡単に認めないこと。例えその人があることですごい成功したとしても気軽く認めないこと。&lt;/p&gt;
 
 &lt;p&gt;でも、今まで認めたエンジニアは二人いる。一人は元L社のチームマネージャー、もう一人のはやめたAndroidエンジニア。&lt;/p&gt;
@@ -299,10 +299,10 @@ APIの制限にはそれなりの理由があると思うが、これ以上付�
     
     <item>
       <title>新卒SI</title>
-      <link>https://dongri.github.io/post/2016-07-22-SI.html</link>
+      <link>https://dongri.github.io/2016/07/%E6%96%B0%E5%8D%92si/</link>
       <pubDate>Fri, 22 Jul 2016 02:10:36 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-07-22-SI.html</guid>
+      <guid>https://dongri.github.io/2016/07/%E6%96%B0%E5%8D%92si/</guid>
       <description>&lt;p&gt;新卒でSIの会社に入った。小さい会社で社員研修もくそもない。&lt;/p&gt;
 
 &lt;p&gt;初日から社長に取引先(現場)に連れて行って面接。面接で初めて気付いた、履歴書に俺の年が2つ上がってる！しかも入社三年目。いろんなシステム開発経験あり、いろんな言語でコード書ける、いろんなデータベース触ったことあることになってる。まあ、しょうがない、知ってるふりして質問に答えた。幸いに面接パスして現場で働けるようになった。&lt;/p&gt;
@@ -323,10 +323,10 @@ APIの制限にはそれなりの理由があると思うが、これ以上付�
     
     <item>
       <title>Hello Rust</title>
-      <link>https://dongri.github.io/post/2016-07-13-hello-rust.html</link>
+      <link>https://dongri.github.io/2016/07/hello-rust/</link>
       <pubDate>Wed, 13 Jul 2016 23:35:22 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-07-13-hello-rust.html</guid>
+      <guid>https://dongri.github.io/2016/07/hello-rust/</guid>
       <description>
 
 &lt;h1 id=&#34;install&#34;&gt;Install&lt;/h1&gt;
@@ -357,10 +357,10 @@ $
     
     <item>
       <title>Wireless adb</title>
-      <link>https://dongri.github.io/post/2016-05-10-wireless-adb.html</link>
+      <link>https://dongri.github.io/2016/05/wireless-adb/</link>
       <pubDate>Tue, 10 May 2016 22:21:05 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-05-10-wireless-adb.html</guid>
+      <guid>https://dongri.github.io/2016/05/wireless-adb/</guid>
       <description>
 
 &lt;p&gt;毎回USB繋げるのが面倒。&lt;/p&gt;
@@ -412,10 +412,10 @@ restarting in USB mode
     
     <item>
       <title>Nexus 5X クリーンインストール &amp; Root化</title>
-      <link>https://dongri.github.io/post/2016-05-03-nexus-root.html</link>
+      <link>https://dongri.github.io/2016/05/nexus-5x-%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB--root%E5%8C%96/</link>
       <pubDate>Tue, 03 May 2016 01:36:00 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-05-03-nexus-root.html</guid>
+      <guid>https://dongri.github.io/2016/05/nexus-5x-%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB--root%E5%8C%96/</guid>
       <description>
 
 &lt;h2 id=&#34;factory-image&#34;&gt;Factory Image&lt;/h2&gt;
@@ -502,10 +502,10 @@ $ adb reboot bootloader
     
     <item>
       <title>エンジニア軽蔑チェーン</title>
-      <link>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy.html</link>
+      <link>https://dongri.github.io/2016/02/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E8%BB%BD%E8%94%91%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3/</link>
       <pubDate>Tue, 23 Feb 2016 00:05:42 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy.html</guid>
+      <guid>https://dongri.github.io/2016/02/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E8%BB%BD%E8%94%91%E3%83%81%E3%82%A7%E3%83%BC%E3%83%B3/</guid>
       <description>
 
 &lt;h2 id=&#34;言語編&#34;&gt;言語編&lt;/h2&gt;
@@ -618,10 +618,10 @@ test書かないエンジニアは頻繁に仕様変更するPMを軽蔑する�
     
     <item>
       <title>Hugo</title>
-      <link>https://dongri.github.io/post/2016-01-17-hugo.html</link>
+      <link>https://dongri.github.io/2016/01/hugo/</link>
       <pubDate>Sun, 17 Jan 2016 15:20:15 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-01-17-hugo.html</guid>
+      <guid>https://dongri.github.io/2016/01/hugo/</guid>
       <description>
 
 &lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
@@ -706,10 +706,10 @@ git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git mast
     
     <item>
       <title>Android Stagefright</title>
-      <link>https://dongri.github.io/post/2015-07-28-android-stagefright.html</link>
+      <link>https://dongri.github.io/2015/07/android-stagefright/</link>
       <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-07-28-android-stagefright.html</guid>
+      <guid>https://dongri.github.io/2015/07/android-stagefright/</guid>
       <description>
 
 &lt;p&gt;詳しいことはこちら。&lt;/p&gt;
@@ -747,10 +747,10 @@ git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git mast
     
     <item>
       <title>Goodbye Heroku</title>
-      <link>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</link>
+      <link>https://dongri.github.io/2015/05/goodbye-heroku/</link>
       <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</guid>
+      <guid>https://dongri.github.io/2015/05/goodbye-heroku/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;

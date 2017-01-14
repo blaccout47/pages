@@ -10,10 +10,10 @@
     
     <item>
       <title>開発環境をLinuxにした</title>
-      <link>https://dongri.github.io/post/2017-01-14-ubuntu.html</link>
+      <link>https://dongri.github.io/2017/01/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92linux%E3%81%AB%E3%81%97%E3%81%9F/</link>
       <pubDate>Sat, 14 Jan 2017 23:25:44 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2017-01-14-ubuntu.html</guid>
+      <guid>https://dongri.github.io/2017/01/%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92linux%E3%81%AB%E3%81%97%E3%81%9F/</guid>
       <description>
 
 &lt;p&gt;開発者のMac離れ?(去年からそういう噂があるけど)の流れで年末帰国時に買って来た
@@ -79,10 +79,10 @@ PCを買ってこのままLinuxをサーバー開発環境マシーンにしよ�
     
     <item>
       <title>GHOST (CVE-2015-0235)</title>
-      <link>https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235.html</link>
+      <link>https://dongri.github.io/2015/01/ghost-cve-2015-0235/</link>
       <pubDate>Wed, 28 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235.html</guid>
+      <guid>https://dongri.github.io/2015/01/ghost-cve-2015-0235/</guid>
       <description>
 
 &lt;p&gt;クラウドセキュリティ企業Qualysの研究者が、Linux GNU Cライブラリ（glibc）に深刻なセキュリティホールである「GHOST」（CVE-2015-0235）を発見したらしい。&lt;/p&gt;
@@ -176,10 +176,10 @@ $
     
     <item>
       <title>cron debug</title>
-      <link>https://dongri.github.io/post/2014-11-10-cron-debug.html</link>
+      <link>https://dongri.github.io/2014/11/cron-debug/</link>
       <pubDate>Mon, 10 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-11-10-cron-debug.html</guid>
+      <guid>https://dongri.github.io/2014/11/cron-debug/</guid>
       <description>&lt;p&gt;毎回ハマるのでメモしとく。&lt;/p&gt;
 
 &lt;p&gt;コンソールでは正しく動くけど、crontabに記述すると動かない。&lt;/p&gt;
@@ -226,10 +226,10 @@ crond (pid  25500) is running...
     
     <item>
       <title>ShellShock</title>
-      <link>https://dongri.github.io/post/2014-09-28-shellshock.html</link>
+      <link>https://dongri.github.io/2014/09/shellshock/</link>
       <pubDate>Sun, 28 Sep 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-09-28-shellshock.html</guid>
+      <guid>https://dongri.github.io/2014/09/shellshock/</guid>
       <description>
 
 &lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;bash 脆弱性 ｷﾀ━(ﾟ∀ﾟ)━! &lt;a href=&#34;http://t.co/a4anqJxILC&#34;&gt;pic.twitter.com/a4anqJxILC&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dongri Jin (@dongriat) &lt;a href=&#34;https://twitter.com/dongriat/status/514962923010019328&#34;&gt;September 25, 2014&lt;/a&gt;&lt;/blockquote&gt;

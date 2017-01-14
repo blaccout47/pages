@@ -7,3 +7,6 @@ theme = "boro"
 
 [params]
   message = "hello world"
+[permalinks]
+  post = "/:year/:month/:title/"
+    
