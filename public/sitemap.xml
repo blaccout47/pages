@@ -2,389 +2,400 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://dongri.github.io/post/2016-12-18-NFC-Reader/</loc>
+    <loc>https://dongri.github.io/post/2017-01-14-ubuntu.html</loc>
+    <lastmod>2017-01-14T23:25:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</loc>
     <lastmod>2016-12-18T15:58:44+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</loc>
+    <loc>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</loc>
     <lastmod>2016-12-03T16:42:42+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-10-13-code-review/</loc>
+    <loc>https://dongri.github.io/post/2016-10-13-code-review.html</loc>
     <lastmod>2016-10-13T21:08:26+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</loc>
+    <loc>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</loc>
     <lastmod>2016-08-16T00:42:53+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-08-15-goodbye-instagram/</loc>
+    <loc>https://dongri.github.io/post/2016-08-15-goodbye-instagram.html</loc>
     <lastmod>2016-08-15T00:32:35+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-08-13-engineer/</loc>
+    <loc>https://dongri.github.io/post/2016-08-13-engineer.html</loc>
     <lastmod>2016-08-13T20:11:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-07-22-SI/</loc>
+    <loc>https://dongri.github.io/post/2016-07-22-SI.html</loc>
     <lastmod>2016-07-22T02:10:36+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-07-13-hello-rust/</loc>
+    <loc>https://dongri.github.io/post/2016-07-13-hello-rust.html</loc>
     <lastmod>2016-07-13T23:35:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-05-10-wireless-adb/</loc>
+    <loc>https://dongri.github.io/post/2016-05-10-wireless-adb.html</loc>
     <lastmod>2016-05-10T22:21:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-05-03-nexus-root/</loc>
+    <loc>https://dongri.github.io/post/2016-05-03-nexus-root.html</loc>
     <lastmod>2016-05-03T01:36:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy/</loc>
+    <loc>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy.html</loc>
     <lastmod>2016-02-23T00:05:42+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2016-01-17-hugo/</loc>
+    <loc>https://dongri.github.io/post/2016-01-17-hugo.html</loc>
     <lastmod>2016-01-17T15:20:15+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-07-28-android-stagefright/</loc>
+    <loc>https://dongri.github.io/post/2015-07-28-android-stagefright.html</loc>
     <lastmod>2015-07-28T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-05-11-goodbye-heroku/</loc>
+    <loc>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</loc>
     <lastmod>2015-05-11T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-04-14-oneplus-one/</loc>
+    <loc>https://dongri.github.io/post/2015-04-14-oneplus-one.html</loc>
     <lastmod>2015-04-14T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-04-05-oxygenos/</loc>
+    <loc>https://dongri.github.io/post/2015-04-05-oxygenos.html</loc>
     <lastmod>2015-04-05T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-02-17-ghost-on-heroku/</loc>
+    <loc>https://dongri.github.io/post/2015-02-17-ghost-on-heroku.html</loc>
     <lastmod>2015-02-17T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-02-16-google-oauth2/</loc>
+    <loc>https://dongri.github.io/post/2015-02-16-google-oauth2.html</loc>
     <lastmod>2015-02-16T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-02-09-new-vs-make/</loc>
+    <loc>https://dongri.github.io/post/2015-02-09-new-vs-make.html</loc>
     <lastmod>2015-02-09T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-02-03-birthday/</loc>
+    <loc>https://dongri.github.io/post/2015-02-03-birthday.html</loc>
     <lastmod>2015-02-03T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235/</loc>
+    <loc>https://dongri.github.io/post/2015-01-28-ghost-cve-2015-0235.html</loc>
     <lastmod>2015-01-28T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-01-15-carthage/</loc>
+    <loc>https://dongri.github.io/post/2015-01-15-carthage.html</loc>
     <lastmod>2015-01-15T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</loc>
+    <loc>https://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack.html</loc>
     <lastmod>2015-01-10T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-12-11-revel-on-heroku/</loc>
+    <loc>https://dongri.github.io/post/2014-12-11-revel-on-heroku.html</loc>
     <lastmod>2014-12-11T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-29-docker-commands/</loc>
+    <loc>https://dongri.github.io/post/2014-11-29-docker-commands.html</loc>
     <lastmod>2014-11-29T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-18-github-multiple-accounts/</loc>
+    <loc>https://dongri.github.io/post/2014-11-18-github-multiple-accounts.html</loc>
     <lastmod>2014-11-18T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-14-tmux-on-yosemite/</loc>
+    <loc>https://dongri.github.io/post/2014-11-14-tmux-on-yosemite.html</loc>
     <lastmod>2014-11-14T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-13-nexus5-lollipop/</loc>
+    <loc>https://dongri.github.io/post/2014-11-13-nexus5-lollipop.html</loc>
     <lastmod>2014-11-13T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-13-pull-apk/</loc>
+    <loc>https://dongri.github.io/post/2014-11-13-pull-apk.html</loc>
     <lastmod>2014-11-13T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-10-cron-debug/</loc>
+    <loc>https://dongri.github.io/post/2014-11-10-cron-debug.html</loc>
     <lastmod>2014-11-10T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-11-02-startup-recruiting/</loc>
+    <loc>https://dongri.github.io/post/2014-11-02-startup-recruiting.html</loc>
     <lastmod>2014-11-02T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-10-11-golang-on-heroku/</loc>
+    <loc>https://dongri.github.io/post/2014-10-11-golang-on-heroku.html</loc>
     <lastmod>2014-10-11T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-09-28-shellshock/</loc>
+    <loc>https://dongri.github.io/post/2014-09-28-shellshock.html</loc>
     <lastmod>2014-09-28T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-06-29-oauthswift/</loc>
+    <loc>https://dongri.github.io/post/2014-06-29-oauthswift.html</loc>
     <lastmod>2014-06-29T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-06-17-docker-install/</loc>
+    <loc>https://dongri.github.io/post/2014-06-17-docker-install.html</loc>
     <lastmod>2014-06-17T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-06-17-docker-nginx/</loc>
+    <loc>https://dongri.github.io/post/2014-06-17-docker-nginx.html</loc>
     <lastmod>2014-06-17T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-06-17-docker-sharing/</loc>
+    <loc>https://dongri.github.io/post/2014-06-17-docker-sharing.html</loc>
     <lastmod>2014-06-17T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-06-17-docker-node/</loc>
+    <loc>https://dongri.github.io/post/2014-06-17-docker-node.html</loc>
     <lastmod>2014-06-17T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-05-27-oh-my-zsh/</loc>
+    <loc>https://dongri.github.io/post/2014-05-27-oh-my-zsh.html</loc>
     <lastmod>2014-05-27T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-05-26-powerline/</loc>
+    <loc>https://dongri.github.io/post/2014-05-26-powerline.html</loc>
     <lastmod>2014-05-26T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-05-25-tmuxinator/</loc>
+    <loc>https://dongri.github.io/post/2014-05-25-tmuxinator.html</loc>
     <lastmod>2014-05-25T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-05-18-mongri/</loc>
+    <loc>https://dongri.github.io/post/2014-05-18-mongri.html</loc>
     <lastmod>2014-05-18T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2014-04-21-middleman-blog/</loc>
+    <loc>https://dongri.github.io/post/2014-04-21-middleman-blog.html</loc>
     <lastmod>2014-04-21T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/2012-01-01-example-article/</loc>
+    <loc>https://dongri.github.io/post/2012-01-01-example-article.html</loc>
     <lastmod>2012-01-01T11:28:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/android/</loc>
+    <loc>https://dongri.github.io/tags/android</loc>
     <lastmod>2016-12-18T15:58:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/blog/</loc>
+    <loc>https://dongri.github.io/tags/blog</loc>
     <lastmod>2016-12-03T16:42:42+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/bot/</loc>
+    <loc>https://dongri.github.io/tags/bot</loc>
     <lastmod>2016-12-03T16:42:42+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dongri.github.io/</loc>
-    <lastmod>2016-12-18T15:58:44+09:00</lastmod>
+    <lastmod>2017-01-14T23:25:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/docker/</loc>
+    <loc>https://dongri.github.io/tags/docker</loc>
     <lastmod>2016-08-16T00:42:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/github/</loc>
+    <loc>https://dongri.github.io/tags/github</loc>
     <lastmod>2015-01-15T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/golang/</loc>
+    <loc>https://dongri.github.io/tags/golang</loc>
     <lastmod>2015-02-09T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/heroku/</loc>
+    <loc>https://dongri.github.io/tags/heroku</loc>
     <lastmod>2016-08-16T00:42:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/line/</loc>
+    <loc>https://dongri.github.io/tags/line</loc>
     <lastmod>2016-12-03T16:42:42+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/linux/</loc>
-    <lastmod>2015-01-28T11:28:57+09:00</lastmod>
+    <loc>https://dongri.github.io/tags/linux</loc>
+    <lastmod>2017-01-14T23:25:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/middleman/</loc>
+    <loc>https://dongri.github.io/tags/middleman</loc>
     <lastmod>2014-04-21T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/mongodb/</loc>
+    <loc>https://dongri.github.io/tags/mongodb</loc>
     <lastmod>2014-05-18T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/nexus/</loc>
+    <loc>https://dongri.github.io/tags/nexus</loc>
     <lastmod>2016-05-03T01:36:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/nfc/</loc>
+    <loc>https://dongri.github.io/tags/nfc</loc>
     <lastmod>2016-12-18T15:58:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/node/</loc>
+    <loc>https://dongri.github.io/tags/node</loc>
     <lastmod>2015-02-17T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/oauth/</loc>
+    <loc>https://dongri.github.io/tags/oauth</loc>
     <lastmod>2015-02-16T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/oss/</loc>
+    <loc>https://dongri.github.io/tags/oss</loc>
     <lastmod>2015-01-15T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/osx/</loc>
+    <loc>https://dongri.github.io/tags/osx</loc>
     <lastmod>2014-11-14T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/pasmo/</loc>
+    <loc>https://dongri.github.io/tags/pasmo</loc>
     <lastmod>2016-12-18T15:58:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/post/</loc>
-    <lastmod>2016-12-18T15:58:44+09:00</lastmod>
+    <loc>https://dongri.github.io/post</loc>
+    <lastmod>2017-01-14T23:25:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/programming/</loc>
+    <loc>https://dongri.github.io/tags/programming</loc>
     <lastmod>2016-08-16T00:42:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/rust/</loc>
+    <loc>https://dongri.github.io/tags/rust</loc>
     <lastmod>2016-08-16T00:42:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/security/</loc>
+    <loc>https://dongri.github.io/tags/security</loc>
     <lastmod>2015-07-28T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/startup/</loc>
+    <loc>https://dongri.github.io/tags/startup</loc>
     <lastmod>2014-11-02T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/suica/</loc>
+    <loc>https://dongri.github.io/tags/suica</loc>
     <lastmod>2016-12-18T15:58:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/swift/</loc>
+    <loc>https://dongri.github.io/tags/swift</loc>
     <lastmod>2015-01-15T11:28:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/</loc>
+    <loc>https://dongri.github.io/tags</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dongri.github.io/tags/tool/</loc>
+    <loc>https://dongri.github.io/tags/tool</loc>
     <lastmod>2014-11-14T11:28:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dongri.github.io/tags/ubuntu</loc>
+    <lastmod>2017-01-14T23:25:44+09:00</lastmod>
     <priority>0</priority>
   </url>
   

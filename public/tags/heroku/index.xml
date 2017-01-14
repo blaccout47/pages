@@ -10,10 +10,10 @@
     
     <item>
       <title>Rust on Heroku with Docker</title>
-      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</link>
+      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</link>
       <pubDate>Tue, 16 Aug 2016 00:42:53 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</guid>
+      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</guid>
       <description>&lt;p&gt;Rustで書いたhello rustをherokuに載せてみた。
 普通ならrust用のBuildpack使うのだが、今回はdockerを使うようにした。
 Dockerfile、ソースコードなどはこちら&lt;/p&gt;
@@ -60,10 +60,10 @@ $ heroku container:push web
     
     <item>
       <title>Goodbye Heroku</title>
-      <link>https://dongri.github.io/post/2015-05-11-goodbye-heroku/</link>
+      <link>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</link>
       <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-05-11-goodbye-heroku/</guid>
+      <guid>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;
@@ -94,10 +94,10 @@ $ heroku container:push web
     
     <item>
       <title>Ghost On Heroku</title>
-      <link>https://dongri.github.io/post/2015-02-17-ghost-on-heroku/</link>
+      <link>https://dongri.github.io/post/2015-02-17-ghost-on-heroku.html</link>
       <pubDate>Tue, 17 Feb 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-02-17-ghost-on-heroku/</guid>
+      <guid>https://dongri.github.io/post/2015-02-17-ghost-on-heroku.html</guid>
       <description>
 
 &lt;p&gt;Ghostをherokuにデプロイしてみた。&lt;/p&gt;
@@ -207,10 +207,10 @@ Ghost is running in development...
     
     <item>
       <title>Migrating to Cedar-14 Stack</title>
-      <link>https://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</link>
+      <link>https://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack.html</link>
       <pubDate>Sat, 10 Jan 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack/</guid>
+      <guid>https://dongri.github.io/post/2015-01-10-migrating-to-cedar-14-stack.html</guid>
       <description>&lt;p&gt;bamboo-mri-1.9.2 stack 下岗了。&lt;/p&gt;
 
 &lt;p&gt;Migrating to the Celadon Cedar-14 Stack&lt;/p&gt;
@@ -229,10 +229,10 @@ $ git push heroku master
     
     <item>
       <title>Revel on Heroku</title>
-      <link>https://dongri.github.io/post/2014-12-11-revel-on-heroku/</link>
+      <link>https://dongri.github.io/post/2014-12-11-revel-on-heroku.html</link>
       <pubDate>Thu, 11 Dec 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-12-11-revel-on-heroku/</guid>
+      <guid>https://dongri.github.io/post/2014-12-11-revel-on-heroku.html</guid>
       <description>
 
 &lt;p&gt;RevelをHerokuにデプロイしてみる。&lt;/p&gt;
@@ -291,10 +291,10 @@ $ git push origin master
     
     <item>
       <title>Golang on heroku</title>
-      <link>https://dongri.github.io/post/2014-10-11-golang-on-heroku/</link>
+      <link>https://dongri.github.io/post/2014-10-11-golang-on-heroku.html</link>
       <pubDate>Sat, 11 Oct 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-10-11-golang-on-heroku/</guid>
+      <guid>https://dongri.github.io/post/2014-10-11-golang-on-heroku.html</guid>
       <description>
 
 &lt;p&gt;今までGolangプロジェクトはGoogle App Engineにデプロイしたが、管理画面がいまだに

@@ -6,15 +6,84 @@
     <description>Recent content on D</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Dec 2016 15:58:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jan 2017 23:25:44 +0900</lastBuildDate>
     <atom:link href="https://dongri.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>開発環境をLinuxにした</title>
+      <link>https://dongri.github.io/post/2017-01-14-ubuntu.html</link>
+      <pubDate>Sat, 14 Jan 2017 23:25:44 +0900</pubDate>
+      
+      <guid>https://dongri.github.io/post/2017-01-14-ubuntu.html</guid>
+      <description>
+
+&lt;p&gt;開発者のMac離れ?(去年からそういう噂があるけど)の流れで年末帰国時に買って来た
+Mi Notebook Air (&lt;a href=&#34;http://www.mi.com/mibookair/&#34;&gt;http://www.mi.com/mibookair/&lt;/a&gt;) にLinuxを入れて開発環境を構築してみた。
+Mi Notebook Airは1.07kgでMacBook Air1.35kgより軽くてリュックが非常に軽くなった。&lt;/p&gt;
+
+&lt;h2 id=&#34;macが嫌いになった理由&#34;&gt;Macが嫌いになった理由&lt;/h2&gt;
+
+&lt;p&gt;自分は強烈なApple, Macファンでもないが、常に新しいMacBookを買って開発環境にしてた。しかし、
+今回のMacBook TouchBarにはがっかりした。なかなか慣れないキーボードのパチパチ感、仕様にはバッテリーで
+最大10時間使えると書いてあるのに実はフル充電から４時間ほどしか使えないし、macOSのバージョンアップで
+バッテリ残量の残り時間も消したりしてappleに対しての不信感が増してきた。&lt;/p&gt;
+
+&lt;h2 id=&#34;ubuntuにした理由&#34;&gt;Ubuntuにした理由&lt;/h2&gt;
+
+&lt;p&gt;別にLinux OSとvimさえあればいいというエンジニアもいるかも知らないが、自分の場合は業務開発端末としては
+ある程度GUIツールを使わないといけないのでLinux Desktopでシェアが一番高いUbuntuにした。
+実はUbuntu Desktopにもいろんなディストリビューションがあって選択が非常に多くて、
+3日かけて以下の順に試してみたが、最終的にはUbuntuにした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ubuntu -&amp;gt; kubuntu -&amp;gt; xubuntu -&amp;gt; budgie -&amp;gt; gnome -&amp;gt; mate -&amp;gt; elementary os -&amp;gt; ubuntu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;xubuntuは非常に軽い、budgieは非常に格好いい、elementary osはインタフェースがmacと似ていて操作しやすい。
+それぞれメリットもあればデメリットもあった。dropboxのアイコンが表示されなかったり同期できなかったり、
+OS Update後起動できなくなかったり、Chromeがクラッシュしたりと不安定なものもあった。
+サードパーティ製のアプリ見ても標準ubuntuでは絶対正しく動くように開発されてるので、GUIツールをある程度使う
+ためにはubuntuを使う必要があった。以上の理由からUbuntuにした。&lt;/p&gt;
+
+&lt;h2 id=&#34;引越して困ったこと&#34;&gt;引越して困ったこと&lt;/h2&gt;
+
+&lt;p&gt;言わなくてもわかるようにiOSの開発ができなくなった。覚悟した上で引っ越ししたので家にも会社にもMacを用意した。&lt;/p&gt;
+
+&lt;p&gt;引越しで一番頑張って設定してみようとして失敗したのがVPNだった。VPN PPTPはデフォルトでサポートしてるが
+l2tp ipsecは入ってなくて自前でなんとかしないといけなくて以下のツール使って頑張ったけどダメだった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nm-l2tp/network-manager-l2tp&#34;&gt;https://github.com/nm-l2tp/network-manager-l2tp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hwdsl2/setup-ipsec-vpn&#34;&gt;https://github.com/hwdsl2/setup-ipsec-vpn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;あとは1password。こいつは最初どうしようと思ったが、1pass CUIが何個かあってなんとかなった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/georgebrock/1pass&#34;&gt;https://github.com/georgebrock/1pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/oggy/1pass&#34;&gt;https://github.com/oggy/1pass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dlokesh/1pass&#34;&gt;https://github.com/dlokesh/1pass&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;引越して良かったこと&#34;&gt;引越して良かったこと&lt;/h2&gt;
+
+&lt;p&gt;プライベートも会社も開発環境がすべてDockerだったので、Docker for Macとさようならできたのがよかった。
+そいつが使いにくいわけではないが、本来のDockerを使う感じがよかった。 &lt;code&gt;brew&lt;/code&gt; より &lt;code&gt;apt-get&lt;/code&gt; が好きだった。
+LINE, Wechatなど余計なアプリ入れてなくて、terminal, chrome, atom しか入れてないんでコード書くのにもっと集中できる。&lt;/p&gt;
+
+&lt;h2 id=&#34;これから&#34;&gt;これから&lt;/h2&gt;
+
+&lt;p&gt;買ったMi Notebook Airのスペックが今まで使ってたMacBookに比べると低い。Docker container10個
+以上立ち上げるとPCが重くなったりするので、このまま続けて業務と開発に障害が出なかったらもっとよいスペックの
+PCを買ってこのままLinuxをサーバー開発環境マシーンにしようと思った。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Suica PASMO リーダー</title>
-      <link>https://dongri.github.io/post/2016-12-18-NFC-Reader/</link>
+      <link>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</link>
       <pubDate>Sun, 18 Dec 2016 15:58:44 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-12-18-NFC-Reader/</guid>
+      <guid>https://dongri.github.io/post/2016-12-18-NFC-Reader.html</guid>
       <description>&lt;p&gt;最近良く自分のPASMO残高を把握できず、改札口で引っかかって「ファック」と小さい声出した時がよくあって、
 AndroidでPASMOの残高を確認できるアプリを探してみたが、どれも必要ない機能ががたくさんあるのとデザインがイマイチ、
 且つうざい広告が出るので逆にイラッとしたり、自分のAndroidのせいか分からないが、クラッシュしまくったり、、、&lt;/p&gt;
@@ -51,10 +120,10 @@ AndroidでPASMOの残高を確認できるアプリを探してみたが、ど�
     
     <item>
       <title>LINE Translate BOT</title>
-      <link>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</link>
+      <link>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</link>
       <pubDate>Sat, 03 Dec 2016 16:42:42 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT/</guid>
+      <guid>https://dongri.github.io/post/2016-12-03-LINE-Translate-BOT.html</guid>
       <description>
 
 &lt;p&gt;LINE BOTがMessaging apiを正式にリリースしたので翻訳BOTを作りました。&lt;/p&gt;
@@ -92,10 +161,10 @@ Landing PageはF7さんのLp使いました。 &lt;a href=&#34;https://github.co
     
     <item>
       <title>Code review</title>
-      <link>https://dongri.github.io/post/2016-10-13-code-review/</link>
+      <link>https://dongri.github.io/post/2016-10-13-code-review.html</link>
       <pubDate>Thu, 13 Oct 2016 21:08:26 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-10-13-code-review/</guid>
+      <guid>https://dongri.github.io/post/2016-10-13-code-review.html</guid>
       <description>
 
 &lt;p&gt;こういうコードレビュー系の記事はたくさんありますが、大手もスタートアップも経験した私からコードレビューついて今まで悩んてたところと気を付けてたところをリストしてみようと思います。&lt;/p&gt;
@@ -124,10 +193,10 @@ Landing PageはF7さんのLp使いました。 &lt;a href=&#34;https://github.co
     
     <item>
       <title>Rust on Heroku with Docker</title>
-      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</link>
+      <link>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</link>
       <pubDate>Tue, 16 Aug 2016 00:42:53 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker/</guid>
+      <guid>https://dongri.github.io/post/2016-08-16-rust-heroku-docker.html</guid>
       <description>&lt;p&gt;Rustで書いたhello rustをherokuに載せてみた。
 普通ならrust用のBuildpack使うのだが、今回はdockerを使うようにした。
 Dockerfile、ソースコードなどはこちら&lt;/p&gt;
@@ -174,10 +243,10 @@ $ heroku container:push web
     
     <item>
       <title>Goodbye Instagram</title>
-      <link>https://dongri.github.io/post/2016-08-15-goodbye-instagram/</link>
+      <link>https://dongri.github.io/post/2016-08-15-goodbye-instagram.html</link>
       <pubDate>Mon, 15 Aug 2016 00:32:35 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-15-goodbye-instagram/</guid>
+      <guid>https://dongri.github.io/post/2016-08-15-goodbye-instagram.html</guid>
       <description>&lt;p&gt;ついにInstagramの写真まで全部消した。API仕様が変わってからずっと投稿してなくて、写真残しても意味ないと思って全部消してしまった。&lt;/p&gt;
 
 &lt;p&gt;Instagramは他のSNSと違って見てると気分がよくなる。
@@ -205,10 +274,10 @@ APIの制限にはそれなりの理由があると思うが、これ以上付�
     
     <item>
       <title>認めるエンジニア</title>
-      <link>https://dongri.github.io/post/2016-08-13-engineer/</link>
+      <link>https://dongri.github.io/post/2016-08-13-engineer.html</link>
       <pubDate>Sat, 13 Aug 2016 20:11:11 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-08-13-engineer/</guid>
+      <guid>https://dongri.github.io/post/2016-08-13-engineer.html</guid>
       <description>&lt;p&gt;自分の弱点から言うと人を簡単に認めないこと。例えその人があることですごい成功したとしても気軽く認めないこと。&lt;/p&gt;
 
 &lt;p&gt;でも、今まで認めたエンジニアは二人いる。一人は元L社のチームマネージャー、もう一人のはやめたAndroidエンジニア。&lt;/p&gt;
@@ -230,10 +299,10 @@ APIの制限にはそれなりの理由があると思うが、これ以上付�
     
     <item>
       <title>新卒SI</title>
-      <link>https://dongri.github.io/post/2016-07-22-SI/</link>
+      <link>https://dongri.github.io/post/2016-07-22-SI.html</link>
       <pubDate>Fri, 22 Jul 2016 02:10:36 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-07-22-SI/</guid>
+      <guid>https://dongri.github.io/post/2016-07-22-SI.html</guid>
       <description>&lt;p&gt;新卒でSIの会社に入った。小さい会社で社員研修もくそもない。&lt;/p&gt;
 
 &lt;p&gt;初日から社長に取引先(現場)に連れて行って面接。面接で初めて気付いた、履歴書に俺の年が2つ上がってる！しかも入社三年目。いろんなシステム開発経験あり、いろんな言語でコード書ける、いろんなデータベース触ったことあることになってる。まあ、しょうがない、知ってるふりして質問に答えた。幸いに面接パスして現場で働けるようになった。&lt;/p&gt;
@@ -254,10 +323,10 @@ APIの制限にはそれなりの理由があると思うが、これ以上付�
     
     <item>
       <title>Hello Rust</title>
-      <link>https://dongri.github.io/post/2016-07-13-hello-rust/</link>
+      <link>https://dongri.github.io/post/2016-07-13-hello-rust.html</link>
       <pubDate>Wed, 13 Jul 2016 23:35:22 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-07-13-hello-rust/</guid>
+      <guid>https://dongri.github.io/post/2016-07-13-hello-rust.html</guid>
       <description>
 
 &lt;h1 id=&#34;install&#34;&gt;Install&lt;/h1&gt;
@@ -288,10 +357,10 @@ $
     
     <item>
       <title>Wireless adb</title>
-      <link>https://dongri.github.io/post/2016-05-10-wireless-adb/</link>
+      <link>https://dongri.github.io/post/2016-05-10-wireless-adb.html</link>
       <pubDate>Tue, 10 May 2016 22:21:05 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-05-10-wireless-adb/</guid>
+      <guid>https://dongri.github.io/post/2016-05-10-wireless-adb.html</guid>
       <description>
 
 &lt;p&gt;毎回USB繋げるのが面倒。&lt;/p&gt;
@@ -343,10 +412,10 @@ restarting in USB mode
     
     <item>
       <title>Nexus 5X クリーンインストール &amp; Root化</title>
-      <link>https://dongri.github.io/post/2016-05-03-nexus-root/</link>
+      <link>https://dongri.github.io/post/2016-05-03-nexus-root.html</link>
       <pubDate>Tue, 03 May 2016 01:36:00 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-05-03-nexus-root/</guid>
+      <guid>https://dongri.github.io/post/2016-05-03-nexus-root.html</guid>
       <description>
 
 &lt;h2 id=&#34;factory-image&#34;&gt;Factory Image&lt;/h2&gt;
@@ -433,10 +502,10 @@ $ adb reboot bootloader
     
     <item>
       <title>エンジニア軽蔑チェーン</title>
-      <link>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy/</link>
+      <link>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy.html</link>
       <pubDate>Tue, 23 Feb 2016 00:05:42 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy/</guid>
+      <guid>https://dongri.github.io/post/2016-02-22-the-programmer-hierarchy.html</guid>
       <description>
 
 &lt;h2 id=&#34;言語編&#34;&gt;言語編&lt;/h2&gt;
@@ -549,10 +618,10 @@ test書かないエンジニアは頻繁に仕様変更するPMを軽蔑する�
     
     <item>
       <title>Hugo</title>
-      <link>https://dongri.github.io/post/2016-01-17-hugo/</link>
+      <link>https://dongri.github.io/post/2016-01-17-hugo.html</link>
       <pubDate>Sun, 17 Jan 2016 15:20:15 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2016-01-17-hugo/</guid>
+      <guid>https://dongri.github.io/post/2016-01-17-hugo.html</guid>
       <description>
 
 &lt;p&gt;macクリーンインストールした後、middlemanのインストールでgemにバージョンとかでいろいろ引っかかったので、hugoに引っ越しするようにした。
@@ -637,10 +706,10 @@ git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git mast
     
     <item>
       <title>Android Stagefright</title>
-      <link>https://dongri.github.io/post/2015-07-28-android-stagefright/</link>
+      <link>https://dongri.github.io/post/2015-07-28-android-stagefright.html</link>
       <pubDate>Tue, 28 Jul 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-07-28-android-stagefright/</guid>
+      <guid>https://dongri.github.io/post/2015-07-28-android-stagefright.html</guid>
       <description>
 
 &lt;p&gt;詳しいことはこちら。&lt;/p&gt;
@@ -678,10 +747,10 @@ git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git mast
     
     <item>
       <title>Goodbye Heroku</title>
-      <link>https://dongri.github.io/post/2015-05-11-goodbye-heroku/</link>
+      <link>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</link>
       <pubDate>Mon, 11 May 2015 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2015-05-11-goodbye-heroku/</guid>
+      <guid>https://dongri.github.io/post/2015-05-11-goodbye-heroku.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/dongriat/16899138724&#34; title=&#34;heroku_shot by Dongri Jin, 於 Flickr&#34;&gt;&lt;img src=&#34;https://c1.staticflickr.com/9/8707/16899138724_1bc1099219_z.jpg&#34; width=&#34;640&#34; height=&#34;479&#34; alt=&#34;heroku_shot&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;これが2007年同時のherokuでした。エディタ使わずブラウザでコード書いてSaveするとRailsが動く！素晴らしい！&lt;/p&gt;
@@ -707,80 +776,6 @@ git subtree push --prefix=public git@github.com:dongri/dongri.github.io.git mast
 &lt;p&gt;heroku長い間お世話になりました！&lt;/p&gt;
 
 &lt;p&gt;Goodbye! Heroku!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>OnePlus One</title>
-      <link>https://dongri.github.io/post/2015-04-14-oneplus-one/</link>
-      <pubDate>Tue, 14 Apr 2015 11:28:57 +0900</pubDate>
-      
-      <guid>https://dongri.github.io/post/2015-04-14-oneplus-one/</guid>
-      <description>
-
-&lt;h3 id=&#34;1-bootloader-unlock&#34;&gt;1. Bootloader Unlock&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;CyanogenMod Logoが出る&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ fastboot oem unlock
-...
-OKAY [  0.005s]
-finished. total time: 0.005s
-$  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;2-install-twrp&#34;&gt;2. Install TWRP&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dl.twrp.me/bacon/&#34;&gt;http://dl.twrp.me/bacon/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;twrp-2.8.6.0-bacon.img ダウンロード&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ adb reboot bootloader
-
-$ fastboot flash recovery twrp-2.8.6.0-bacon.img
-target reported max download size of 536870912 bytes
-sending &#39;recovery&#39; (10180 KB)...
-OKAY [  0.323s]
-writing &#39;recovery&#39;...
-OKAY [  0.132s]
-finished. total time: 0.455s
-
-$ fastboot reboot
-rebooting...
-
-finished. total time: 0.005s
-$
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;強制的にtwrp起動する&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ fastboot boot twrp-2.8.6.0-bacon.img
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;3-wipe&#34;&gt;3. Wipe&lt;/h3&gt;
-
-&lt;p&gt;電源ボタンとボリュームダウンボタンを同時に押してTWRPを起動する。
-TWRP起動したらwipeを選択して全ての削除する！&lt;/p&gt;
-
-&lt;h3 id=&#34;4-install-oxygen-os&#34;&gt;4. Install Oxygen OS&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://oneplus.net/oxygenos&#34;&gt;https://oneplus.net/oxygenos&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;oxygenos_1.0.0.zip ダウンロード&lt;/p&gt;
-
-&lt;p&gt;oxygenos_1.0.0.zip を解凍して oxygenos_1.0.0.flashable.zip を OnePlus One に入れる&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ adb push oxygen_1.0.0_flashable.zip /sdcard/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;TWRPでinstallを選択して、oxygen_1.0.0_flashable.zipを選択してインストール&lt;/p&gt;
-
-&lt;p&gt;SuperSUもインストールするようにする。デバイスが再起動したらもう一度SuperSUを起動してROOTを取る&lt;/p&gt;
-
-&lt;p&gt;以上&lt;/p&gt;
 </description>
     </item>
     

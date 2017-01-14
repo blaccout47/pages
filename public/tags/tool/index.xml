@@ -10,10 +10,10 @@
     
     <item>
       <title>tmux on yosemite</title>
-      <link>https://dongri.github.io/post/2014-11-14-tmux-on-yosemite/</link>
+      <link>https://dongri.github.io/post/2014-11-14-tmux-on-yosemite.html</link>
       <pubDate>Fri, 14 Nov 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-11-14-tmux-on-yosemite/</guid>
+      <guid>https://dongri.github.io/post/2014-11-14-tmux-on-yosemite.html</guid>
       <description>
 
 &lt;p&gt;やっとYosemiteにした。&lt;/p&gt;
@@ -70,10 +70,10 @@ set-option -g default-command &amp;quot;which reattach-to-user-namespace &amp;gt
     
     <item>
       <title>oh-my-zsh</title>
-      <link>https://dongri.github.io/post/2014-05-27-oh-my-zsh/</link>
+      <link>https://dongri.github.io/post/2014-05-27-oh-my-zsh.html</link>
       <pubDate>Tue, 27 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-05-27-oh-my-zsh/</guid>
+      <guid>https://dongri.github.io/post/2014-05-27-oh-my-zsh.html</guid>
       <description>
 
 &lt;h3 id=&#34;oh-my-zshとは&#34;&gt;oh-my-zshとは&lt;/h3&gt;
@@ -147,10 +147,10 @@ plugins=(git ruby gem)
     
     <item>
       <title>Powerline</title>
-      <link>https://dongri.github.io/post/2014-05-26-powerline/</link>
+      <link>https://dongri.github.io/post/2014-05-26-powerline.html</link>
       <pubDate>Mon, 26 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-05-26-powerline/</guid>
+      <guid>https://dongri.github.io/post/2014-05-26-powerline.html</guid>
       <description>
 
 &lt;p&gt;Powerline化！&lt;/p&gt;
@@ -245,10 +245,10 @@ set noshowmode&lt;/p&gt;
     
     <item>
       <title>tmuxinator</title>
-      <link>https://dongri.github.io/post/2014-05-25-tmuxinator/</link>
+      <link>https://dongri.github.io/post/2014-05-25-tmuxinator.html</link>
       <pubDate>Sun, 25 May 2014 11:28:57 +0900</pubDate>
       
-      <guid>https://dongri.github.io/post/2014-05-25-tmuxinator/</guid>
+      <guid>https://dongri.github.io/post/2014-05-25-tmuxinator.html</guid>
       <description>
 
 &lt;p&gt;tmux使ってて一番困ったことがMac再起動した時にtmux sessionがクリアされて、windowを最初から
